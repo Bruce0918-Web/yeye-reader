@@ -1,0 +1,1174 @@
+# 被讨厌的勇气 / The courage to be disliked
+#
+# Shape of the lesson: four choice points, same pattern as task separation. The option closest
+# to the book goes one layer deeper; every other option gets a detour written only for it.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: courage-disliked
+
+title:
+  zh: 被讨厌的勇气
+  en: The courage to be disliked
+
+question:
+  zh: 想让所有人都满意的我，自由吗？
+  en: If I need everyone to be happy with me, am I free?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 阿德勒心理学否定“寻求认可”。人不是为了满足别人的期待而活的。
+    en: Adlerian psychology rejects the pursuit of recognition. You are not living to meet other people’s expectations.
+  - zh: 一味寻求认可，就得按别人的期待来安排自己，等于在过别人的人生。这是不自由的。
+    en: If you keep chasing recognition, you arrange yourself around what others expect and end up living their life. That is unfreedom.
+  - zh: 不想被讨厌是很自然的愿望。但想不被任何人讨厌，就得对所有人言听计从，最后对自己和别人都不诚实。
+    en: Not wanting to be disliked is a natural wish. But to be disliked by no one, you would have to go along with everyone, and you end up dishonest with yourself and with them.
+  - zh: 别人喜不喜欢你、怎么评价你，是别人的课题。
+    en: Whether others like you, and what they make of you, is their task.
+  - zh: 想要自由地活，就得接受有人可能不喜欢你。被讨厌是自由的代价。
+    en: To live freely you have to accept that some people may not like you. Being disliked is the price of freedom.
+  - zh: 这不是鼓励故意惹人讨厌，也不是我行我素。意思只是：不因为害怕被讨厌，就放弃按自己的方针生活。
+    en: This is no encouragement to get yourself disliked or to do as you please. It means only that fear of being disliked shouldn’t make you give up living by your own lights.
+
+cast:
+  yu:
+    name: { zh: 阿屿, en: Theo }
+  man:
+    name: { zh: 小满, en: Jess }
+
+start: open
+
+nodes:
+  # ───────────────────────── Choice point 1: the mirror ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课的名字听着有点吓人。我们先不管它，看一个周五晚上的群聊。
+          en: This lesson’s name sounds a little alarming. Never mind it for now. Here’s a group chat on a Friday night.
+    next: scene_chat
+
+  scene_chat:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 六个人的群，在定周六晚上去哪。五个人说 KTV。
+          en: Six people in the chat, deciding where to go Saturday night. Five say karaoke.
+      - speaker: narrator
+        text:
+          zh: 你这周累坏了。周六你本来想一个人待着，把那幅画了一半的画画完。
+          en: You’re wiped out from the week. You’d planned to spend Saturday alone, finishing the painting that’s been half done for a month.
+      - speaker: narrator
+        text:
+          zh: 阿屿@你：“你呢？就差你了。”
+          en: Theo tags you. “And you? You’re the only one left.”
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 你会打出哪一句？
+      en: What do you type?
+    options:
+      - id: go_along
+        stance: detour
+        text:
+          zh: “都行～”就差我一个了，我不想扫大家的兴。
+          en: “I’m in!” I’m the last one. I’m not going to be the person who spoils it.
+        next: along_1
+      - id: excuse
+        stance: detour
+        text:
+          zh: “啊我周六刚好有事。”不用讲真实原因，谁也不得罪。
+          en: “Ah, I’ve got a thing Saturday.” No need for the real reason, and nobody’s offended.
+        next: excuse_1
+      - id: plain
+        stance: book
+        text:
+          zh: “这次我不去啦，想自己待一晚。你们玩得开心。”
+          en: “I’ll skip this one, I need a night to myself. Have fun, you guys.”
+        next: plain_1
+
+  # go_along
+  along_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 不想扫兴，是替别人着想。这份体贴是真的。
+          en: Not wanting to spoil it is a way of thinking of other people. That consideration is real.
+      - speaker: narrator
+        text:
+          zh: 周六晚上十点。你坐在包厢的角落，第三次看手机。
+          en: Saturday, 10 p.m. You’re in the corner of the karaoke room, checking your phone for the third time.
+    next: along_q
+
+  along_q:
+    type: choice
+    prompt:
+      zh: 此刻坐在包厢里的，是谁？
+      en: Who is that, sitting in the room right now?
+    options:
+      - id: just_me
+        stance: open
+        text:
+          zh: 是我啊，只是没那么开心而已。
+          en: It’s me. Just a slightly less happy me.
+        next: along_a1
+      - id: a_version
+        stance: open
+        text:
+          zh: 是一个他们会喜欢的版本的我。
+          en: A version of me that they’ll like.
+        next: along_a2
+
+  along_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 一个晚上没那么开心，确实不算什么。
+          en: One slightly unhappy evening really is no big deal.
+      - speaker: guide
+        text:
+          zh: 把它乘以一年五十二个周六试试。到那时，他们认识的一直是那个说“都行”的人。真正的你想要什么，他们没机会知道，也就没机会喜欢。
+          en: Now multiply it by fifty-two Saturdays. By then, the person they know is the one who always says “I’m in.” What you actually want, they never got the chance to find out. So they never got the chance to like it.
+    next: reveal_expect
+
+  along_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你说得很准。
+          en: That’s precise.
+      - speaker: guide
+        text:
+          zh: 那我只多问一句：他们喜欢的是那个版本。这份喜欢，到得了你身上吗？
+          en: Then one more question. The one they like is that version. Does the liking ever reach you?
+    next: reveal_expect
+
+  # excuse
+  excuse_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个办法很聪明，也很常用：周六归你了，而且没有人不高兴。
+          en: It’s a clever move, and a common one. You keep your Saturday and nobody’s upset.
+      - speaker: narrator
+        text:
+          zh: 下周五，他们又约了。再下一周，又约了。
+          en: Next Friday they make plans again. The Friday after, again.
+    next: excuse_q
+
+  excuse_q:
+    type: choice
+    prompt:
+      zh: 你打算怎么办？
+      en: What’s your plan?
+    options:
+      - id: more_excuses
+        stance: open
+        text:
+          zh: 每次再想一个理由。
+          en: Come up with a new reason each time.
+        next: excuse_a1
+      - id: truth_someday
+        stance: open
+        text:
+          zh: 总有一次得说实话吧。
+          en: At some point I’ll have to tell the truth.
+        next: excuse_a2
+
+  excuse_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那你得一直记着，自己跟谁说过哪个理由。
+          en: Then you’ll have to keep track of which reason you gave to whom.
+      - speaker: guide
+        text:
+          zh: 更要紧的是这笔账：你保住的是“他们不讨厌我”，付出去的是“他们不知道我是谁”。借口越用越多，他们认识的你就越少。
+          en: The bigger issue is the trade. What you keep is “they don’t dislike me.” What you pay is “they don’t know who I am.” The more excuses, the less of you they know.
+    next: reveal_expect
+
+  excuse_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。借口买到的只是时间。
+          en: Right. An excuse only buys time.
+      - speaker: guide
+        text:
+          zh: 而且留意一下它在保护谁。不是在保护他们的心情，是在保护你自己不被讨厌。那句实话迟早要说，只是越晚说，越像是你一直在瞒着他们。
+          en: And notice who it protects. Not their feelings. It protects you from being disliked. The true sentence has to be said sooner or later, and the later it comes, the more it looks like you were hiding from them.
+    next: reveal_expect
+
+  # plain (closest to the book -> one layer deeper)
+  plain_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 一句话。没有借口，也没有贬低他们的选择。这和书的方向很接近。
+          en: One sentence. No excuse, and no dig at what they chose. That’s close to where the book points.
+      - speaker: guide
+        text:
+          zh: 不过发出去之后，才是难的部分。
+          en: The hard part comes after you hit send, though.
+      - speaker: narrator
+        text:
+          zh: 你发了。群里安静了两分钟。然后阿屿回了一个字：“哦。”
+          en: You send it. The chat goes quiet for two minutes. Then Theo replies with one word. “Oh.”
+    next: plain_q
+
+  plain_q:
+    type: choice
+    prompt:
+      zh: 这个“哦”，你怎么办？
+      en: That “Oh.” What do you do with it?
+    options:
+      - id: take_back
+        stance: detour
+        text:
+          zh: 马上补一句：“算了算了，我还是去吧！”
+          en: Add right away, “Actually, you know what, I’ll come!”
+        next: plain_a1
+      - id: dm_him
+        stance: detour
+        text:
+          zh: 私聊他：“你是不是不高兴了？”
+          en: Message him privately. “Are you mad at me?”
+        next: plain_a2
+      - id: let_it_be
+        stance: book
+        text:
+          zh: 心里有点慌，但不追加什么。那个“哦”是他的。
+          en: Feel a bit shaky, and add nothing. That “Oh” is his.
+        next: plain_a3
+
+  plain_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那两分钟的安静确实难熬，想让它立刻结束，太能理解了。
+          en: Those two silent minutes are hard to sit through. Wanting them over makes complete sense.
+      - speaker: guide
+        text:
+          zh: 只是看看刚才是什么改了你的周六：一个字。如果一个“哦”就能把你的决定收回去，那你周六去哪，其实是由群里皱眉最快的那个人定的。
+          en: Look at what just changed your Saturday, though. One word. If a single “Oh” can take your decision back, then where you spend Saturday is set by whoever in the chat frowns fastest.
+    next: reveal_expect
+
+  plain_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想确认关系没坏，是因为你在乎他。
+          en: You want to make sure nothing’s broken, because you care about him.
+      - speaker: guide
+        text:
+          zh: 留意这个问题在要什么：它在等他说“没有啊，我没生气”。也就是请他来安抚你。上一课我们见过这个动作，那是在试着管理他的反应。他要不要不高兴、不高兴多久，是他的课题。
+          en: Notice what the question is asking for. It’s waiting for him to say “No, of course not.” You’re asking him to soothe you. We met this move last lesson. It’s an attempt to manage his reaction. Whether he’s put out, and for how long, is his task.
+    next: reveal_expect
+
+  plain_a3:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 慌是正常的。你没有假装不慌，只是没有让它替你打字。
+          en: Shaky is normal. You didn’t pretend otherwise. You just didn’t let it do the typing.
+      - speaker: guide
+        text:
+          zh: 这就是这一课要练的全部肌肉：有人不太高兴，而你没有因此收回自己。
+          en: That’s the whole muscle this lesson trains. Someone is less than pleased, and you don’t take yourself back because of it.
+    next: reveal_expect
+
+  # ───────────────────────── Not living for expectations (book) ─────────────────────────
+  reveal_expect:
+    type: reveal
+    source: book
+    title:
+      zh: 你不是为了让别人满意而活的
+      en: You aren’t here to satisfy other people
+    body:
+      zh: |-
+        作者的立场很直接：阿德勒心理学否定“寻求认可”。
+
+        理由是，如果一直寻求认可，就得按别人的期待来安排自己。那等于在过别人的人生。
+
+        > 你活着，不是为了满足别人的期待。
+
+        反过来也一样：别人也没有义务满足你的期待。
+      en: |-
+        The authors are blunt about it. Adlerian psychology rejects the pursuit of recognition.
+
+        Their reason: if you keep seeking recognition, you have to arrange yourself around what other people expect. That amounts to living someone else’s life.
+
+        > You are not living to meet other people’s expectations.
+
+        It cuts the other way too. Nobody else is obliged to meet yours.
+    next: after_expect
+
+  after_expect:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 说“否定”可能太重了。你大概已经想反驳了。我替你把反驳说出来。
+          en: “Rejects” is a strong word. You’re probably already objecting. Let me say the objection for you.
+    next: cp2
+
+  # ───────────────────────── Choice point 2: what's wrong with wanting to be liked ─────────────────────────
+  cp2:
+    type: choice
+    prompt:
+      zh: “想被所有人喜欢”，你怎么看？
+      en: Wanting everyone to like you. What do you make of it?
+    options:
+      - id: natural
+        stance: detour
+        text:
+          zh: 这是人之常情。不想被讨厌，有什么不对？
+          en: It’s only human. What’s wrong with not wanting to be disliked?
+        next: natural_1
+      - id: doable
+        stance: detour
+        text:
+          zh: 只要足够周到、足够努力，是可以谁都不得罪的。
+          en: If you’re thoughtful enough and try hard enough, you can keep everyone happy.
+        next: doable_1
+      - id: kind
+        stance: detour
+        text:
+          zh: 让别人满意是一种善良。只顾自己才是自私。
+          en: Keeping people happy is kindness. Looking after only yourself is what’s selfish.
+        next: kind_1
+      - id: steering
+        stance: book
+        text:
+          zh: 想归想。可一旦把它当成目标，我就得看着别人的脸色活。
+          en: Wanting it is one thing. Make it the goal, and I’ll be living by other people’s faces.
+        next: steering_1
+
+  # natural
+  natural_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 没有不对。书里也承认：没有人想被讨厌，这是很自然的愿望。
+          en: Nothing’s wrong with it. The book grants this too. Nobody wants to be disliked, and that wish is perfectly natural.
+      - speaker: guide
+        text:
+          zh: 我只请你分辨两句话。它们只差一个字。
+          en: I’d only ask you to tell two sentences apart. They differ by a few words.
+    next: natural_q
+
+  natural_q:
+    type: choice
+    prompt:
+      zh: 哪一句更像你？
+      en: Which one sounds more like you?
+    options:
+      - id: dont_want
+        stance: open
+        text:
+          zh: “我不想被讨厌。”真被讨厌了，我也过得下去。
+          en: “I’d rather not be disliked.” If it happens, I’ll survive.
+        next: natural_a1
+      - id: cannot
+        stance: open
+        text:
+          zh: “我不能被讨厌。”说实话，更像这一句。
+          en: “I can’t be disliked.” Honestly, more this one.
+        next: natural_a2
+
+  natural_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那你其实已经站在书这一边了。
+          en: Then you’re already standing where the book stands.
+      - speaker: guide
+        text:
+          zh: 这个愿望可以留着。书反对的不是它，而是让它来握方向盘。
+          en: You can keep the wish. What the book objects to isn’t the wish. It’s letting the wish hold the steering wheel.
+    next: reveal_price
+
+  natural_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 谢谢你说实话。这比答对重要。
+          en: Thank you for the honest answer. It matters more than a correct one.
+      - speaker: guide
+        text:
+          zh: “不能”的意思是：任何一个人皱眉，你就得改。于是你周六去哪、读什么、和谁来往，决定权分散在所有可能皱眉的人手里。书里把这种状态叫作不自由。
+          en: “Can’t” means that when anyone frowns, you have to change. So where you go on Saturday, what you study, who you spend time with, all of it gets decided by everyone who might frown. The book’s name for that condition is unfreedom.
+    next: reveal_price
+
+  # doable
+  doable_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 周到和努力是真本事，它们也确实能让多数人喜欢你。
+          en: Being thoughtful and trying hard are real skills, and they do get most people to like you.
+      - speaker: narrator
+        text:
+          zh: 同一个周五。室友问你周六能不能帮她搬家。社团学长让你周六来布展。妈妈说周六回家吃饭吧。
+          en: Same Friday. Your roommate asks if you can help her move on Saturday. The club president needs you Saturday to set up the show. Your mom says come home for dinner Saturday.
+    next: doable_q
+
+  doable_q:
+    type: choice
+    prompt:
+      zh: 谁都不得罪的做法是？
+      en: What’s the move that disappoints no one?
+    options:
+      - id: yes_to_all
+        stance: open
+        text:
+          zh: 三个都先答应，到时候再想办法。
+          en: Say yes to all three and work it out on the day.
+        next: doable_a1
+      - id: no_such
+        stance: open
+        text:
+          zh: ……没有这种做法。总得让一个人失望。
+          en: …There isn’t one. Somebody has to be let down.
+        next: doable_a2
+
+  doable_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 到了周六，你会迟到一个，敷衍一个，放掉一个，然后给每个人一个不完全真实的解释。
+          en: Come Saturday you’ll be late to one, half-present at one, and a no-show at one, with a not-quite-true explanation for each.
+      - speaker: guide
+        text:
+          zh: 这正是书里的提醒：想谁都不得罪，最后会变成对每个人都不够诚实，包括对你自己。
+          en: This is exactly the book’s warning. Trying to disappoint no one ends in being less than honest with everyone, yourself included.
+    next: reveal_price
+
+  doable_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。而且这不是你不够周到，这是一道算术题。
+          en: Right. And it isn’t a failure of thoughtfulness. It’s arithmetic.
+      - speaker: guide
+        text:
+          zh: 别人的期待彼此是冲突的。只要你在做选择，就一定有人不满意。“谁都不得罪”从一开始就不在选项里。
+          en: Other people’s expectations collide with one another. As long as you’re choosing anything at all, someone will be unhappy. “Disappoint no one” was never on the menu.
+    next: reveal_price
+
+  # kind
+  kind_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想让别人高兴，这份心是好的。这本书的后半部分其实非常看重“为别人做点什么”。
+          en: Wanting other people to be happy is a good impulse. The second half of this book actually cares a great deal about doing things for others.
+      - speaker: narrator
+        text:
+          zh: 你帮室友搬了一整天家。结束的时候她没说谢谢，还嘟囔了一句你来晚了。
+          en: You spend a whole day helping your roommate move. At the end she doesn’t say thanks, and mutters that you showed up late.
+    next: kind_q
+
+  kind_q:
+    type: choice
+    prompt:
+      zh: 你心里的第一反应是？
+      en: What’s your first reaction, inside?
+    options:
+      - id: still_fine
+        stance: open
+        text:
+          zh: 有点失落。不过是我自己想帮的。
+          en: A little deflated. But I helped because I wanted to.
+        next: kind_a1
+      - id: wronged
+        stance: open
+        text:
+          zh: 很委屈。我都做到这样了，她怎么还不满意？
+          en: Hurt. After all that, she’s still not satisfied?
+        next: kind_a2
+
+  kind_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那这一天是善良。你给出去了，没有拿它去换什么。
+          en: Then that day was kindness. You gave it, and you weren’t trading it for anything.
+      - speaker: guide
+        text:
+          zh: 这和“让别人满意”不是一回事。她满不满意，你都已经做完了你想做的事。
+          en: Which is a different thing from keeping people happy. Whether she’s satisfied or not, you’d already done what you set out to do.
+    next: reveal_price
+
+  kind_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 委屈是真的。它也是一个值得看一眼的信号。
+          en: The hurt is real. It’s also a signal worth a look.
+      - speaker: guide
+        text:
+          zh: 它说明那天的付出里夹着一张没说出口的账单：我这样做了，你就该喜欢我。那是一笔交易，不是给予。交易没成，所以委屈。真正的善良，不需要对方先付款。
+          en: It means the day came with an unspoken invoice. I did this, so now you should like me. That’s a trade, not a gift. The trade fell through, and so it hurts. Real kindness doesn’t need the other person to pay first.
+    next: reveal_price
+
+  # steering (closest to the book -> one layer deeper)
+  steering_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你把“愿望”和“目标”分开了。愿望谁都有；把它当成目标，才是书反对的。
+          en: You’ve separated the wish from the goal. Everyone has the wish. It’s making it the goal that the book objects to.
+      - speaker: guide
+        text:
+          zh: 那我反过来问。
+          en: So let me turn it around.
+    next: steering_q
+
+  steering_q:
+    type: choice
+    prompt:
+      zh: “我才不在乎任何人怎么看我。”这算自由吗？
+      en: “I don’t care what anyone thinks of me.” Is that freedom?
+    options:
+      - id: yes_free
+        stance: detour
+        text:
+          zh: 算。谁的看法都不管，才是彻底的自由。
+          en: Yes. Ignoring everyone’s opinion is freedom all the way down.
+        next: steering_a1
+      - id: still_tied
+        stance: book
+        text:
+          zh: 不算。整天强调不在乎的人，其实还在被别人牵着。
+          en: No. Someone who keeps announcing they don’t care is still on the leash.
+        next: steering_a2
+
+  steering_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 听起来很痛快，而且比讨好要硬气得多。
+          en: It sounds exhilarating, and it has a lot more spine than people-pleasing.
+      - speaker: guide
+        text:
+          zh: 只是留意：一个专门唱反调的人，得先看别人往哪边走，才知道自己该往哪边反。他的方向仍然是别人定的，只是前面多了一个负号。
+          en: Notice one thing, though. A person who makes a point of going against the crowd has to check where the crowd is heading before they know which way is against. Their direction is still set by other people. It just has a minus sign in front.
+    next: reveal_price
+
+  steering_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。讨好和叛逆是同一枚硬币的两面：一个追着别人的目光，一个背对着别人的目光。两个人的眼睛都还在别人身上。
+          en: Yes. Pleasing and rebelling are two sides of one coin. One chases the gaze, the other turns its back on the gaze. Both still have their eyes on other people.
+      - speaker: guide
+        text:
+          zh: 这是我们顺着书的逻辑补的一句。书自己的话更简单：它不是叫人不在乎别人，只是叫人别让“怕被讨厌”来替自己做决定。
+          en: That line is ours, following the book’s logic. The book’s own point is simpler. It doesn’t ask you to stop caring about people. It asks you not to let the fear of being disliked make your decisions.
+    next: reveal_price
+
+  # ───────────────────────── The price (book) ─────────────────────────
+  reveal_price:
+    type: reveal
+    source: book
+    title:
+      zh: 自由的代价
+      en: What freedom costs
+    body:
+      zh: |-
+        作者在这里给出了全书最重的一个结论：想要自由地活，就得接受有人可能不喜欢你。
+
+        > 被讨厌，是自由的代价。
+
+        这要接着上一课来读。别人喜不喜欢你、怎么评价你，是别人的课题，你左右不了。你的课题是：选自己认为对的路，并且不因为害怕被讨厌而放弃它。
+      en: |-
+        Here the authors reach the heaviest conclusion in the book. To live freely, you have to accept that some people may not like you.
+
+        > Being disliked is the price of freedom.
+
+        Read it as a continuation of the last lesson. Whether others like you, and what they make of you, is their task, and you can’t control it. Your task is to choose the road you believe is right, and not abandon it out of fear of being disliked.
+    next: after_price
+
+  after_price:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话很容易被读歪。我们马上看一个读歪的人。
+          en: That sentence is very easy to misread. Let’s go and meet someone who misread it.
+    next: scene_jess
+
+  # ───────────────────────── Choice point 3: the misreading ─────────────────────────
+  scene_jess:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 小满读完了这本书。第二天，她在群里发了一句：“说真的，你们选歌的品味很土。我这人说话直，不喜欢我是你们的课题。”
+          en: Jess finishes the book. The next day she posts in the chat. “Honestly, your taste in songs is tragic. I’m just a blunt person. If you don’t like me, that’s your task.”
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 小满做到“被讨厌的勇气”了吗？
+      en: Has Jess found the courage to be disliked?
+    options:
+      - id: yes_brave
+        stance: detour
+        text:
+          zh: 做到了。她敢说真话，不怕得罪人。
+          en: Yes. She says what’s true and isn’t afraid of who it offends.
+        next: brave_1
+      - id: never_hurt
+        stance: detour
+        text:
+          zh: 没有。真正有勇气的人，不会让别人不舒服。
+          en: No. A person with real courage doesn’t make others uncomfortable.
+        next: hurt_1
+      - id: shield
+        stance: book
+        text:
+          zh: 没有。她是在主动找讨厌，还拿这句话当挡箭牌。
+          en: No. She’s going out looking for it, and using the phrase as a shield.
+        next: shield_1
+
+  # yes_brave
+  brave_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 敢开口确实需要胆量，这比沉默难。这一点小满是有的。
+          en: Speaking up does take nerve, and it’s harder than staying quiet. Jess has that much.
+      - speaker: guide
+        text:
+          zh: 我们只看那一句话本身。
+          en: Let’s look only at the sentence itself.
+    next: brave_q
+
+  brave_q:
+    type: choice
+    prompt:
+      zh: “你们的品味很土。”这句话在做什么？
+      en: “Your taste is tragic.” What is that sentence doing?
+    options:
+      - id: judging
+        stance: open
+        text:
+          zh: 在给别人的选择打分。
+          en: Grading other people’s choices.
+        next: brave_a1
+      - id: opinion
+        stance: open
+        text:
+          zh: 只是在表达她自己的看法吧。
+          en: Just expressing her own opinion, surely.
+        next: brave_a2
+
+  brave_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。书里的勇气是：走自己的路时，不因为有人皱眉就停下来。
+          en: Right. The courage in the book is this. While walking your own road, you don’t stop because someone frowns.
+      - speaker: guide
+        text:
+          zh: 小满没有在走自己的路。她在给别人的路打分，也就是踩进了别人的课题。那不需要这一课说的勇气，只需要嗓门。
+          en: Jess isn’t walking her own road. She’s grading everyone else’s, which is stepping into their tasks. That doesn’t take the courage this lesson is about. It only takes volume.
+    next: reveal_not_goal
+
+  brave_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 表达看法没有问题。她的看法是“我不喜欢这些歌”。
+          en: Expressing an opinion is fine. Her opinion is “I don’t like these songs.”
+      - speaker: guide
+        text:
+          zh: “你们很土”是另一句话：它给别人下了判决。而且她预先把后果推掉了，“不喜欢我是你们的课题”。书里说的勇气是承担被讨厌的后果，不是提前给自己办好豁免。
+          en: “Your taste is tragic” is a different sentence. It passes a verdict on them. And she’s waved off the consequences in advance with “that’s your task.” The courage the book means is bearing the cost of being disliked. It isn’t arranging your own exemption up front.
+    next: reveal_not_goal
+
+  # never_hurt
+  hurt_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 不想伤人，这很好。而且小满确实伤了人。
+          en: Not wanting to hurt people is good. And Jess did hurt people.
+      - speaker: guide
+        text:
+          zh: 只是把这条标准拿回周五的群里试一下。你说“这次我不去啦”，阿屿回了个“哦”，明显不太高兴。
+          en: Just try that standard on last Friday’s chat. You said “I’ll skip this one,” and Theo answered “Oh,” plainly not thrilled.
+    next: hurt_q
+
+  hurt_q:
+    type: choice
+    prompt:
+      zh: 你让他不舒服了。你做错了吗？
+      en: You made him uncomfortable. Did you do something wrong?
+    options:
+      - id: not_wrong
+        stance: open
+        text:
+          zh: 没有。我没有攻击谁，只是做了自己的选择。
+          en: No. I didn’t attack anyone. I just made my own choice.
+        next: hurt_a1
+      - id: maybe_wrong
+        stance: open
+        text:
+          zh: 可能还是错了。毕竟他不高兴了。
+          en: Maybe I did. He was unhappy, after all.
+        next: hurt_a2
+
+  hurt_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。所以区别不在“有没有人不舒服”，而在这份不舒服是从哪来的。
+          en: Right. So the difference isn’t whether anyone ends up uncomfortable. It’s where the discomfort comes from.
+      - speaker: guide
+        text:
+          zh: 小满那边的，来自她对别人的攻击。你这边的，来自你对自己的诚实。前一种可以避免，也应该避免。后一种避免不了，也不必避免。
+          en: Jess’s comes from her attack on other people. Yours comes from being honest about yourself. The first kind can be avoided and should be. The second can’t be avoided, and doesn’t need to be.
+    next: reveal_not_goal
+
+  hurt_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 他不高兴是真的，你会在意，也说明你不是小满。
+          en: His being unhappy is real, and the fact that it weighs on you shows you’re not Jess.
+      - speaker: guide
+        text:
+          zh: 可如果“有人不高兴”就等于“我错了”，那判断对错的权力就全交给别人的脸色了，我们又回到了起点。他的不高兴，是他对你这个选择的反应，不是你这个选择有罪的证据。
+          en: But if “someone is unhappy” equals “I was wrong,” then other people’s faces get the whole power to decide right and wrong, and we’re back where we started. His displeasure is his reaction to your choice. It isn’t evidence that the choice was a crime.
+    next: reveal_not_goal
+
+  # shield (closest to the book -> one layer deeper)
+  shield_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 很准。被讨厌是代价，不是目的，更不是许可证。
+          en: Exactly. Being disliked is a price. It isn’t a goal, and it certainly isn’t a license.
+      - speaker: man
+        text:
+          zh: “那你倒是说说怎么分？我说真话被讨厌，和我嘴欠被讨厌，从外面看一模一样。”
+          en: “Fine, then tell me the difference. Being disliked for telling the truth and being disliked for being a jerk look exactly the same from outside.”
+    next: shield_q
+
+  shield_q:
+    type: choice
+    prompt:
+      zh: 你怎么回答小满？
+      en: How do you answer Jess?
+    options:
+      - id: audience
+        stance: detour
+        text:
+          zh: 看别人最后接不接受。大家接受了，就是真话。
+          en: It depends on whether people come round. If they accept it, it was the truth.
+        next: shield_a1
+      - id: whose_road
+        stance: book
+        text:
+          zh: 看你说的是自己的事，还是在裁决别人的事。
+          en: It depends on whether you’re speaking about your own business or ruling on theirs.
+        next: shield_a2
+
+  shield_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这把尺子用起来很方便，事后一看就知道。
+          en: That ruler is convenient. You can read it off afterwards.
+      - speaker: guide
+        text:
+          zh: 可它又把裁判席还给了观众：别人接受才算数，那没人接受的真话呢？书的方向是往里找，不往外找。问的是这句话在走你自己的路，还是在管别人的路。
+          en: But it hands the judge’s seat straight back to the audience. If it only counts when people accept it, what about a truth nobody accepts? The book looks inward for the answer, not outward. The question is whether the sentence is walking your own road or policing someone else’s.
+    next: reveal_not_goal
+
+  shield_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你拿上一课的尺子，量了这一课。
+          en: You took last lesson’s ruler and measured this lesson with it.
+      - speaker: guide
+        text:
+          zh: “我不去”“我不喜欢”“我选这个”，是你的课题。“你们很土”“你不该这样”，是对别人课题的裁决。为前一种被讨厌，是自由的代价。为后一种被讨厌，只是后果。
+          en: “I’m not going,” “I don’t like it,” “I choose this” are your tasks. “Your taste is tragic” and “you shouldn’t do that” are rulings on other people’s tasks. Being disliked for the first kind is the price of freedom. Being disliked for the second is just a consequence.
+    next: reveal_not_goal
+
+  reveal_not_goal:
+    type: reveal
+    source: book
+    title:
+      zh: 是代价，不是目标
+      en: A price, not a goal
+    body:
+      zh: |-
+        作者说得很清楚：这不是鼓励人去惹人讨厌，也不是我行我素。
+
+        意思只是：不要因为害怕被讨厌，就放弃按自己的方针生活。
+
+        作者还指出另一头的问题：想不被任何人讨厌，就得对所有人言听计从，结果是许下做不到的承诺，对自己和别人都不诚实。
+      en: |-
+        The authors are clear. This is not a call to go and get yourself disliked, and it isn’t “do whatever you like.”
+
+        It means only this. Don’t let the fear of being disliked make you give up living by your own lights.
+
+        They point at the trouble on the other side too. To be disliked by no one, you’d have to go along with everyone, and you’d end up making promises you can’t keep, dishonest with yourself and with them.
+    next: reveal_ruler
+
+  reveal_ruler:
+    type: reveal
+    source: ours
+    title:
+      zh: 开口之前的一把尺子
+      en: A ruler for before you speak
+    body:
+      zh: |-
+        这不是书里的内容，是我们顺着它的逻辑整理的。分不清自己是“有勇气”还是“嘴欠”的时候，问两句：
+
+        - 我是在说“我要怎么做”，还是在说“你该怎么做”？
+        - 我是不怕被讨厌，还是其实想要一点被讨厌带来的关注？
+
+        第一句量的是课题。第二句量的是动机。
+      en: |-
+        This isn’t from the book. We put it together by following its logic. When you can’t tell whether you’re being brave or being a jerk, ask two things:
+
+        - Am I saying what I’m going to do, or what you ought to do?
+        - Am I unafraid of being disliked, or do I actually want the attention that comes with it?
+
+        The first question measures whose task it is. The second measures the motive.
+    next: scene_two_weeks
+
+  # ───────────────────────── Choice point 4: the cost is real ─────────────────────────
+  scene_two_weeks:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 最后一段，也是最不好受的一段。书说被讨厌是“代价”，代价就是真的会疼。
+          en: The last stretch, and the least comfortable. The book calls being disliked a price, and a price is something that really costs.
+      - speaker: narrator
+        text:
+          zh: 回到那个群。你说“这次不去”之后的两周里，他们又约了两次。两次都没有@你。
+          en: Back to the group chat. In the two weeks since you skipped karaoke, they’ve made plans twice. Neither time did anyone tag you.
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: 你看着聊天记录。接下来呢？
+      en: You’re looking at the chat history. What now?
+    options:
+      - id: regret
+        stance: detour
+        text:
+          zh: 果然。早知道就去了。下次他们再约，我说“都行”。
+          en: Knew it. I should have just gone. Next time they ask, I’m saying “I’m in.”
+        next: regret_1
+      - id: sour
+        stance: detour
+        text:
+          zh: 行吧。这种朋友不要也罢，本来也不是一路人。
+          en: Fine. Who needs friends like that. We were never the same kind of people anyway.
+        next: sour_1
+      - id: reach
+        stance: book
+        text:
+          zh: 难受是真的。不过我可以主动约他们，做点我也想做的事。
+          en: It stings, no question. But I can invite them to something I’d actually like to do.
+        next: reach_1
+
+  # regret
+  regret_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这份难受是真的。书没有假装它不存在，我也不想假装。
+          en: The sting is real. The book doesn’t pretend it away, and neither will I.
+      - speaker: guide
+        text:
+          zh: 我们把“下次说都行”走完看看。你说了，他们又开始@你了。
+          en: Let’s play “next time I’m in” through to the end. You say it, and they start tagging you again.
+    next: regret_q
+
+  regret_q:
+    type: choice
+    prompt:
+      zh: 回到群里的，是什么？
+      en: What is it that came back to the group?
+    options:
+      - id: my_place
+        stance: open
+        text:
+          zh: 是我在这个群里原来的位置。
+          en: My old place among them, the one I had before.
+        next: regret_a1
+      - id: yes_person
+        stance: open
+        text:
+          zh: 是那个只会说“都行”的人的位置。
+          en: The place of the person who always says “I’m in.”
+        next: regret_a2
+
+  regret_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 位置是回来了。
+          en: The place is back, yes.
+      - speaker: guide
+        text:
+          zh: 只是留意保住它的条件：永远别说“不”。那是一个租来的位置，租金是你的每一个周六。书没有说这个价钱不能付，它只是请你看清自己在付什么。
+          en: Just notice the condition for keeping it. Never say no. It’s a rented place, and the rent is every Saturday you have. The book doesn’t say you can’t pay that price. It only asks you to see what you’re paying.
+    next: reveal_debate
+
+  regret_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 是的。你一眼就看到了。
+          en: Yes. You saw it at once.
+      - speaker: guide
+        text:
+          zh: 自由和孤单，有时候是一起来的。书没有否认这个代价。它只是把另一个价钱也摆了出来：一直做那个说“都行”的人，你付得起多久？
+          en: Freedom and loneliness sometimes arrive together. The book doesn’t deny that cost. It just sets the other price beside it. Being the one who always says “I’m in.” How long can you afford that?
+    next: reveal_debate
+
+  # sour
+  sour_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 被晾着的时候想先转身走，是在保护自己。这很能理解。
+          en: When you’re left out, wanting to be the one who walks away first is self-protection. Very understandable.
+      - speaker: guide
+        text:
+          zh: 我只想确认一件事。
+          en: I only want to check one thing.
+    next: sour_q
+
+  sour_q:
+    type: choice
+    prompt:
+      zh: “不要也罢”，是你想清楚的决定，还是被刺痛之后的反击？
+      en: “Who needs them.” Is that a decision you’ve thought through, or a jab back because it stung?
+    options:
+      - id: jab
+        stance: open
+        text:
+          zh: 是反击。其实我挺在乎他们的。
+          en: A jab. The truth is I care about them a lot.
+        next: sour_a1
+      - id: decided
+        stance: open
+        text:
+          zh: 是决定。合不来就是合不来。
+          en: A decision. If we don’t fit, we don’t fit.
+        next: sour_a2
+
+  sour_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那就别让反击替你做决定。
+          en: Then don’t let the jab make the decision for you.
+      - speaker: guide
+        text:
+          zh: 有勇气被讨厌，不等于要抢先讨厌回去。你两周前说的是一次“不”，不是“再见”。
+          en: Having the courage to be disliked doesn’t mean getting your dislike in first. What you said two weeks ago was one “no.” It wasn’t “goodbye.”
+    next: reveal_debate
+
+  sour_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果你真的想清楚了，这是你的课题，没有人能替你判。
+          en: If you’ve really thought it through, that’s your task, and nobody gets to rule on it for you.
+      - speaker: guide
+        text:
+          zh: 我只提醒一点：两周前你拒绝的是一场 KTV，不是这几个人。别让一个“哦”和两次没被@，替你把这两件事合并了。
+          en: One reminder only. What you turned down two weeks ago was a karaoke night, not these people. Don’t let one “Oh” and two missed tags merge those into the same thing for you.
+    next: reveal_debate
+
+  # reach (closest to the book -> one layer deeper)
+  reach_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有收回自己的“不”，也没有把门关上。两件事一起做到，很不容易。
+          en: You didn’t take back your no, and you didn’t close the door either. Doing both at once is not easy.
+      - speaker: narrator
+        text:
+          zh: 你在群里发：“周日下午有人想去看那个插画展吗？”过了一会儿，阿屿回：“不了，我们不太感兴趣。”
+          en: You post in the chat. “Anyone want to see that illustration show Sunday afternoon?” After a while Theo replies. “Nah, not really our thing.”
+    next: reach_q
+
+  reach_q:
+    type: choice
+    prompt:
+      zh: 现在，你手里有什么？
+      en: What are you holding now?
+    options:
+      - id: study_them
+        stance: detour
+        text:
+          zh: 有点丢脸。也许该先摸清他们喜欢什么，再开口。
+          en: Some embarrassment. Maybe I should work out what they like before I open my mouth.
+        next: reach_a1
+      - id: intact
+        stance: book
+        text:
+          zh: 一个被拒绝的邀请，和一个没有变形的自己。
+          en: One declined invitation, and a self that hasn’t been bent out of shape.
+        next: reach_a2
+
+  reach_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 丢脸的感觉很真实，被当众说“不感兴趣”谁都会缩一下。
+          en: The embarrassment is real. Anyone flinches at a public “not our thing.”
+      - speaker: guide
+        text:
+          zh: 不过看看刚才发生了什么：阿屿说了“不”，为自己选了周日。你会因此讨厌他吗？大概不会，顶多有点失落。你两周前做的，就是同一件事。而“先摸清他们喜欢什么再开口”，是把方向盘又递了回去。
+          en: Look at what just happened, though. Theo said no and chose his own Sunday. Do you dislike him for it? Probably not. A little let down, at most. That is exactly what you did two weeks ago. And “work out what they like before I speak” is handing the wheel back.
+    next: reveal_debate
+
+  reach_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 是的。而且你刚刚站到了阿屿两周前的位置上：有人对你说了“不”，你不太舒服，但你大概不会说他做错了。
+          en: Yes. And you’ve just stood where Theo stood two weeks ago. Someone told you no, it wasn’t pleasant, and you still wouldn’t say he did anything wrong.
+      - speaker: guide
+        text:
+          zh: 这就是这一课的两半。你有权说不，他也有。谁都不必为了被喜欢而变形。
+          en: Those are the two halves of this lesson. You get to say no, and so does he. Nobody has to bend out of shape to be liked.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。下面是我们整理的常见质疑和边界：
+
+        - 被讨厌有真实的代价。当成绩、饭碗、去留握在别人手里的时候，“不在乎评价”不是每个人都付得起的。
+        - 在重视集体和面子的环境里，这个主张更难落地。不少读者觉得它太个人主义。
+        - 心理学里有不同的看法：很多研究者认为，想被人接纳是人的基本需要，而不只是一种该放下的欲望。
+        - 它很容易被当成无礼的许可证。有人讨厌你，并不能证明你是对的。
+        - 书自己也没有停在这里。它后面要谈的是怎样真正与人连接，这一课只是半程。
+      en: |-
+        That was the book’s position. Here are the common objections and limits, as we’ve gathered them:
+
+        - Being disliked has real costs. When your grade, your job, or your place depends on someone else, not minding their opinion isn’t a price everyone can pay.
+        - In settings that prize the group and saving face, this is harder to live by. Plenty of readers find it too individualistic.
+        - Psychology has other views. Many researchers hold that wanting to be accepted is a basic human need, not merely a desire to be dropped.
+        - It’s easily used as a license for rudeness. Someone disliking you is no proof that you’re right.
+        - The book doesn’t stop here either. What comes later is how to really connect with people. This lesson is only half the road.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。小满问你：“所以‘被讨厌的勇气’不就是别管别人怎么想吗？”用你自己的话回答她，两三句就够。
+      en: Your turn. Jess asks you, “So the courage to be disliked just means don’t care what anyone thinks, right?” Answer her in your own words. Two or three sentences will do.
+    checkpoints:
+      - id: why
+        label:
+          zh: 我讲了为什么：一直求认可，就是按别人的期待活，不自由
+          en: "I said why: chasing approval means living by others’ expectations, which isn’t free"
+        hint:
+          zh: 这是书的出发点：一直寻求认可，就得按别人的期待来安排自己，等于在过别人的人生。
+          en: "This is where the book starts: if you keep seeking recognition, you arrange yourself around what others expect, and live their life instead of yours."
+        cues:
+          zh: [期待, 认可, 讨好, 满意, 自由, 脸色, 别人的人生]
+          en: [expect, approv, recogni, pleas, validat, free, everyone happy]
+      - id: price
+        label:
+          zh: 我讲了它是代价，不是目标：不是故意惹人讨厌
+          en: I said it’s a price and not a goal, so no trying to get disliked
+        hint:
+          zh: 被讨厌是按自己的方针生活时可能要付的代价。它不是目的，也不是无礼的许可证。
+          en: Being disliked is what living by your own lights may cost. It isn’t the aim, and it isn’t a license to be rude.
+        cues:
+          zh: [代价, 故意, 目标, 目的, 不是为了, 惹, 任性, 无礼, 嘴欠, 许可]
+          en: [price, cost, on purpose, deliberate, goal, aim, rude, jerk, license, excuse]
+      - id: whose
+        label:
+          zh: 我讲了分界：喜不喜欢我是别人的课题，走自己的路是我的
+          en: "I said where the line is: liking me is their task, my own road is mine"
+        hint:
+          zh: 别人怎么看你，是别人的课题。你的课题是选自己认为对的路，不因为怕被讨厌而放弃。
+          en: What others think of you is their task. Yours is to choose the road you believe in and not drop it out of fear of being disliked.
+        cues:
+          zh: [课题, 自己的路, 自己选, 自己的方针, 我的事, 他们的事, 别人的事, 左右不了]
+          en: [task, their business, my own, my road, my path, up to them, their call, can’t control, cannot control]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。它没有叫你去被讨厌。它只是让你看清：一直不被讨厌，要花多少钱。
+          en: That’s this lesson. It never told you to go and be disliked. It only showed you what never being disliked costs.
+      - speaker: guide
+        text:
+          zh: 不过它也拿走了一样东西：别人的认可。那么，由谁来说“我是谁、我这样活算不算数”？下一课从这里开始。
+          en: It does take something away, though. Other people’s approval. So who gets to say who I am, and whether the way I live counts? The next lesson starts there.

@@ -1,0 +1,25 @@
+# Wording fixes for Traditional Chinese (Taiwan), applied after the automatic conversion.
+# Each entry: [what the automatic conversion produces, what a reader in Taiwan would say].
+# Longer phrases first, so a short entry never breaks a longer one.
+- [數字媒體, 數位媒體]
+- [轉專業, 轉系]
+- [把專業轉回去, 把系轉回去]
+- [你的專業, 你的科系]
+- [哪個專業, 哪個科系]
+- [這個專業, 這個科系]
+- [微信, LINE]
+- [關鍵詞, 關鍵字]
+- [文件夾, 資料夾]
+- [空白文件, 空白檔案]
+- [小組作業, 分組報告]
+- [擺爛, 擺爛]
+- [群裡, 群組裡]
+# Known slips of the automatic conversion.
+- [幹涉, 干涉]
+- [隻有, 只有]
+- [和麵子, 和面子]
+- [下麵, 下面]
+- [裡麵, 裡面]
+- [方麵, 方面]
+- [麵對, 面對]
+- [見麵, 見面]

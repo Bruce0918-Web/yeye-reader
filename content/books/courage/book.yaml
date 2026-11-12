@@ -1,5 +1,6 @@
 id: courage
-languages: [zh, en]
+# zh-Hant is made automatically from zh at build time (see tools/derive.ts).
+languages: [zh, zh-Hant, en]
 
 title:
   zh: 被讨厌的勇气

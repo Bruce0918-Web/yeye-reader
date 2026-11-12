@@ -88,7 +88,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-:lang(zh-Hans) body {
+:lang(zh) body {
   line-height: 1.85;
   letter-spacing: 0.01em;
 }
@@ -219,7 +219,7 @@ button:disabled {
   letter-spacing: -0.01em;
   text-wrap: balance;
 }
-:lang(zh-Hans) .book-title {
+:lang(zh) .book-title {
   font-weight: 900;
   font-size: clamp(46px, 13.5vw, 80px);
   line-height: 1.12;
@@ -230,7 +230,7 @@ button:disabled {
   font-style: italic;
   color: var(--ink-soft);
 }
-:lang(zh-Hans) .book-authors {
+:lang(zh) .book-authors {
   font-style: normal;
 }
 .book-intro {
@@ -317,7 +317,7 @@ button:disabled {
   font-size: clamp(40px, 11vw, 60px);
   line-height: 1.05;
 }
-:lang(zh-Hans) .lesson-head h1 {
+:lang(zh) .lesson-head h1 {
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -395,7 +395,7 @@ button:disabled {
   line-height: 1.2;
   text-wrap: balance;
 }
-:lang(zh-Hans) .prompt {
+:lang(zh) .prompt {
   font-size: 25px;
   font-weight: 600;
   line-height: 1.5;
@@ -504,7 +504,7 @@ button:disabled {
   font-size: 32px;
   line-height: 1.15;
 }
-:lang(zh-Hans) .card-title {
+:lang(zh) .card-title {
   font-size: 26px;
   font-weight: 600;
   line-height: 1.4;
@@ -549,7 +549,7 @@ button:disabled {
   color: var(--accent);
   text-wrap: balance;
 }
-:lang(zh-Hans) .keyline {
+:lang(zh) .keyline {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.6;
@@ -612,7 +612,7 @@ textarea::placeholder {
   font-family: var(--display);
   font-size: 28px;
 }
-:lang(zh-Hans) .check-title {
+:lang(zh) .check-title {
   font-size: 23px;
   font-weight: 600;
 }
@@ -676,7 +676,7 @@ textarea::placeholder {
   text-transform: uppercase;
   transition: background 0.25s ease, opacity 0.25s ease, transform 0.2s ease;
 }
-:lang(zh-Hans) .btn {
+:lang(zh) .btn {
   font-size: 15px;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
@@ -774,9 +774,16 @@ textarea::placeholder {
 }
 
 /* Chinese headlines break at punctuation, not in the middle of a phrase. */
-:lang(zh-Hans) .keyline,
-:lang(zh-Hans) .prompt {
+:lang(zh) .keyline,
+:lang(zh) .prompt {
   word-break: keep-all;
   overflow-wrap: anywhere;
   text-wrap: wrap;
+}
+
+/* Traditional Chinese uses the Traditional cut of the same typeface. */
+:root:lang(zh-Hant) {
+  --serif: 'Newsreader', 'Noto Serif TC', 'Source Han Serif TC', 'Songti TC', 'PMingLiU', Georgia, serif;
+  --display: 'Instrument Serif', 'Noto Serif TC', 'Source Han Serif TC', 'Songti TC', 'PMingLiU', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei UI', sans-serif;
 }

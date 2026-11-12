@@ -105,7 +105,7 @@ async function walk(page: Page, concept: Concept, route: Route, lang: Lang, tag:
       await page.click(`[data-active] [data-option-id="${pick.optionId}"]`);
       nodeId = node.options.find((o) => o.id === pick.optionId)!.next;
     } else if (node.type === 'retell') {
-      await page.fill('[data-active] textarea', lang === 'zh' ? '看后果由谁承担。' : 'Whoever lives with the consequences.');
+      await page.fill('[data-active] textarea', node.checkpoints[0].cues[lang][0]);
       await page.click('[data-action=retell-submit]');
       await page.click('[data-action=retell-confirm]');
       nodeId = node.next;

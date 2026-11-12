@@ -9,7 +9,8 @@
     "preview": "vite preview --port 4173 --strictPort",
     "lint:content": "tsx tools/lint-content.ts",
     "test": "vitest run",
-    "walk": "tsx tools/walk-all.ts"
+    "walk": "tsx tools/walk-all.ts",
+    "build:single": "npm run lint:content && tsc --noEmit && vite build --mode single"
   },
   "dependencies": {
     "preact": "^10.24.0"
@@ -17,10 +18,12 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.9.0",
     "@types/node": "^26.6.6",
+    "opencc-js": "^1.4.2",
     "playwright-core": "^1.48.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
     "vite": "^5.4.0",
+    "vite-plugin-singlefile": "^2.3.4",
     "vitest": "^2.1.0",
     "yaml": "^2.6.0"
   }
