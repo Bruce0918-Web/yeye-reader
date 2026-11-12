@@ -25,7 +25,7 @@ export function Lines({ lines, concept, lang }: { lines: Line[]; concept: Concep
         }
         const name = group.speaker === 'guide' ? null : concept.cast[group.speaker]?.name[lang];
         return (
-          <div class="said rise">
+          <div class={name ? 'said said-named rise' : 'said rise'}>
             <div class="said-mark">{name ? <span class="label">{name}</span> : <Guide />}</div>
             <div class="said-lines">
               {group.lines.map((line) => (
