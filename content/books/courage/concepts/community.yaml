@@ -1,0 +1,1160 @@
+# 共同体感觉 / Community feeling
+#
+# This is where the book turns. The earlier lessons drew lines and let go; this one answers
+# "and then how do we live with people." Its job is to resolve the apparent conflict between
+# "don't seek approval" and "contribute to others."
+#
+# Shape of the lesson: it opens on a question about the reader's own sense of belonging (four
+# real answers, including "rarely"), then three choice points: where attention sits,
+# contribution versus sacrifice, and worth when you can do nothing.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: community
+
+title:
+  zh: 共同体感觉
+  en: Community feeling
+
+question:
+  zh: “这里有我的位置”，这种感觉是从哪来的？
+  en: Where does the feeling “there’s a place for me here” come from?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 人际关系的目标是“共同体感觉”：把别人看作伙伴，并感到“这里有我的位置”。
+    en: The goal of interpersonal relationships is “community feeling”, which means seeing others as comrades and feeling that there is a place for you here.
+  - zh: 归属感不是别人给的，而是靠自己主动参与、为别人做点什么而得来的。
+    en: The sense of belonging is not handed to you by others. You gain it by taking part of your own accord and doing something for others.
+  - zh: 一心想被认可的人，看的其实是“别人怎么看我”，关心的还是自己。要从关心自己，转向关心别人。
+    en: A person bent on being recognized is really looking at “how others see me,” and is still concerned with themselves. The shift to make is from concern for self to concern for others.
+  - zh: 撑起共同体感觉的有三件事：自我接纳（如实接受现在的自己，分清能改变的和不能改变的）、他者信赖（不附加条件地相信别人）、他者贡献（为伙伴做点什么）。
+    en: "Three things hold community feeling up: self-acceptance (accepting yourself as you are now, and telling apart what can be changed from what can’t), confidence in others (believing in them without conditions), and contribution to others (doing something for your comrades)."
+  - zh: 贡献不是牺牲自己，也不需要被看见。重要的是自己感到“我对别人有用”。作者认为，幸福就是这种贡献感。
+    en: Contribution is not self-sacrifice, and it doesn’t need to be seen. What matters is feeling for yourself that you are of use to someone. The authors hold that happiness is this feeling of contribution.
+  - zh: 一个人的价值不只在“做了什么”，也在“存在”本身。
+    en: A person’s worth lies not only in what they do but in their being here at all.
+  - zh: 共同体不止眼前这一个。在一个小圈子里待不下去的时候，外面还有更大的世界。
+    en: The community in front of you is not the only one. When you can’t bear a small circle, there is a larger world outside it.
+
+cast:
+  man:
+    name: { zh: 小满, en: Jess }
+  wei:
+    name: { zh: 一苇, en: Wren }
+
+start: open
+
+nodes:
+  # ───────────────────────── Opening: when do you feel you belong ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 前面几课一直在做减法：分开课题，放下认可，不和人比。你可能已经觉得，照这样走下去，身边的人会越来越少。
+          en: The earlier lessons have all been subtraction. Separate the tasks, put down approval, stop comparing. You may already feel that if this goes on, the people around you will only get fewer.
+      - speaker: guide
+        text:
+          zh: 这一课是全书拐弯的地方。先问你一个问题，四个回答都是真的，没有哪个更好。
+          en: This lesson is where the book turns. A question first. All four answers are real ones, and none is better than another.
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: “我属于这里”的感觉，你通常在什么时候有？
+      en: The feeling “I belong here.” When do you usually have it?
+    options:
+      - id: liked
+        stance: detour
+        text:
+          zh: 被大家喜欢、有人主动找我的时候。
+          en: When people like me and come looking for me.
+        next: liked_1
+      - id: same
+        stance: detour
+        text:
+          zh: 和大家差不多、不显得奇怪的时候。
+          en: When I’m like everyone else and don’t stick out.
+        next: same_1
+      - id: rarely
+        stance: open
+        text:
+          zh: 说实话，很少有这种感觉。
+          en: Honestly, I rarely feel it.
+        next: rarely_1
+      - id: helped
+        stance: book
+        text:
+          zh: 我出了一份力、帮上了忙的时候。
+          en: When I’ve pitched in and been of some help.
+        next: helped_1
+
+  # liked
+  liked_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 被人喜欢、被人找，是很暖的事。想要它一点也不丢人。
+          en: Being liked and sought out is a warm thing. There’s nothing shameful in wanting it.
+      - speaker: narrator
+        text:
+          zh: 这个星期，群里聊得很热闹，但一整周没有人@你，也没有人私聊你。
+          en: This week the group chat has been lively, but all week nobody has tagged you or messaged you.
+    next: liked_q
+
+  liked_q:
+    type: choice
+    prompt:
+      zh: 这一周，你还属于这个群吗？
+      en: This week, do you still belong to that group?
+    options:
+      - id: not_sure
+        stance: open
+        text:
+          zh: 感觉不太属于了，像个旁观的。
+          en: Not really. I feel like a bystander.
+        next: liked_a1
+      - id: still_do
+        stance: open
+        text:
+          zh: 应该还属于吧，只是没那么踏实。
+          en: I suppose so. It just feels less solid.
+        next: liked_a2
+
+  liked_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 一周没人找，归属感就掉了。这说明它一直握在别人手里。
+          en: A week of nobody reaching out, and the belonging drops away. Which shows it was in other people’s hands all along.
+      - speaker: guide
+        text:
+          zh: 别人喜不喜欢你、找不找你，是别人的课题。把归属感建在这上面，就等于每周都要等别人来续。书的主张是换一块地基：归属感不是别人给的，是靠自己参与、自己出力得来的。这一周你也可以是先开口的那个人。
+          en: Whether people like you and seek you out is their task. Build belonging on that and it has to be renewed by others every week. The book proposes a different foundation. Belonging isn’t given by others. You gain it by taking part and pitching in. This week you could be the one who speaks first.
+    next: reveal_belong
+
+  liked_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “没那么踏实”这几个字很准。
+          en: “Less solid” is exactly the word.
+      - speaker: guide
+        text:
+          zh: 不踏实，是因为它的开关在别人手里：他们找你，它就亮；他们忙，它就暗。书的主张是换一块地基：归属感不是等别人给的，是靠自己参与、自己出力得来的。那样的话，没人@你的一周，你也可以是先开口的那个人。
+          en: It’s unsteady because the switch is in other people’s hands. They reach out and it lights up. They’re busy and it dims. The book proposes a different foundation. Belonging isn’t something you wait for others to give. You gain it by taking part and pitching in. On that footing, in a week when nobody tags you, you can be the one who speaks first.
+    next: reveal_belong
+
+  # same
+  same_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 不想显得奇怪，是因为想留在人群里。这是很正常的愿望。
+          en: Not wanting to stick out comes from wanting to stay among people. A perfectly normal wish.
+      - speaker: guide
+        text:
+          zh: 我只问那些被你收起来的东西：你真正喜欢的歌，你的真实看法，你觉得不好笑却跟着笑的那一下。
+          en: I only want to ask about the things you put away. The songs you actually like, what you really think, the laugh you joined in when you didn’t find it funny.
+    next: same_q
+
+  same_q:
+    type: choice
+    prompt:
+      zh: 被收起来的那部分你，属于这个群吗？
+      en: The part of you that got put away. Does it belong to the group?
+    options:
+      - id: no_it_doesnt
+        stance: open
+        text:
+          zh: 不属于。属于的是修剪过的那个我。
+          en: No. The one who belongs is the trimmed version.
+        next: same_a1
+      - id: everyone_does
+        stance: open
+        text:
+          zh: 收一点没什么，谁不是这样呢。
+          en: Putting a little away is nothing. Doesn’t everyone?
+        next: same_a2
+
+  same_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。所以哪怕坐在最中间，你心里还是会有一种没进门的感觉。
+          en: Yes. Which is why, even sitting right in the middle, part of you still feels it never came through the door.
+      - speaker: guide
+        text:
+          zh: “和大家一样”换来的是不被排斥，那和“属于”不是一回事。书说的归属感是另一条路：不是靠把自己修得和别人一样，而是带着自己本来的样子，在这里出一份力。
+          en: What “being like everyone” buys is not being pushed out, which isn’t the same as belonging. The belonging the book talks about takes another road. Not trimming yourself to match the others, but pitching in here as you actually are.
+    next: reveal_belong
+
+  same_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 是，人人都会收一点，这是体贴，也是礼貌。
+          en: True, everyone puts a little away. That’s consideration, and manners.
+      - speaker: guide
+        text:
+          zh: 分界线在这里：收起来的是“此刻不合适说的话”，还是“我这个人”？如果在一个地方待得越久，你收起来的越多，那你得到的是不被排斥，不是归属。书说的归属感是另一条路：带着自己本来的样子，在这里出一份力。
+          en: Here’s the dividing line. Is what you’re putting away “something that isn’t right to say just now,” or “who I am”? If the longer you stay somewhere, the more of yourself you put away, then what you’ve got is not being pushed out. It isn’t belonging. The belonging the book talks about takes another road. Pitching in here as you actually are.
+    next: reveal_belong
+
+  # rarely
+  rarely_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 谢谢你这样回答。有这种感受的人比你以为的多得多，只是很少有人说。
+          en: Thank you for answering that way. Far more people feel this than you’d think. Very few say it.
+      - speaker: guide
+        text:
+          zh: 我不急着给你办法。只问一句。
+          en: I’m in no hurry to hand you a fix. Just one question.
+    next: rarely_q
+
+  rarely_q:
+    type: choice
+    prompt:
+      zh: 没有归属感的时候，你通常在做什么？
+      en: When the feeling of belonging isn’t there, what are you usually doing?
+    options:
+      - id: waiting
+        stance: open
+        text:
+          zh: 在等。等有人来叫我、接纳我。
+          en: Waiting. For someone to call me over and take me in.
+        next: rarely_a1
+      - id: not_my_kind
+        stance: open
+        text:
+          zh: 没在等。我觉得自己本来就不合群。
+          en: Not waiting. I just don’t think I’m the fitting-in kind.
+        next: rarely_a2
+
+  rarely_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 等人来叫，是因为怕自己走过去不受欢迎。这个怕很真实。
+          en: You wait to be called because you fear walking over and not being welcome. That fear is real.
+      - speaker: guide
+        text:
+          zh: 书的回答可能有点意外：归属感不是别人发的入场券，是自己走进去、做了点什么之后才有的。不需要大事：帮人搬一把椅子，回答群里一个没人回的问题。走过去的那一步很难，但等的那扇门，其实从来不是锁着的。
+          en: The book’s answer may surprise you. Belonging isn’t a ticket other people issue. It comes after you’ve walked in and done something. Nothing grand. Carrying a chair for someone, answering a question in the chat that nobody else answered. Taking that step is hard. But the door you’ve been waiting at was never actually locked.
+    next: reveal_belong
+
+  rarely_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 有可能你确实比较慢热，也有可能你待的那个圈子确实不适合你。两种都不是你的错。
+          en: It may be that you really are slow to warm up. It may be that the circle you’re in really doesn’t suit you. Neither is your fault.
+      - speaker: guide
+        text:
+          zh: 只是“我本来就不合群”是一个结论。按第一课的问法：这个结论替你省掉了什么？也许是走过去、然后被冷落的那个风险。书的主张是，归属感不是一种体质，是靠自己参与得来的。而且圈子不止眼前这一个，这一点后面会说。
+          en: But “I’m not the fitting-in kind” is a conclusion. In the first lesson’s terms, what does that conclusion spare you? Perhaps the risk of walking over and being left standing. The book holds that belonging isn’t a constitution you’re born with. You gain it by taking part. And the circle in front of you isn’t the only one, which we’ll come to.
+    next: reveal_belong
+
+  # helped (closest to the book -> one layer deeper)
+  helped_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的回答：归属感来自自己出的那份力，不来自别人的喜欢。
+          en: That’s the book’s own answer. Belonging comes from what you put in, not from being liked.
+      - speaker: narrator
+        text:
+          zh: 社团办活动，你搬了一下午的箱子。结束后大家在台上合影，没有人想起来叫你。也没有人对你说谢谢。
+          en: The club runs an event and you spend the afternoon hauling boxes. Afterwards everyone takes a group photo on stage, and nobody thinks to call you over. Nobody says thank you either.
+    next: helped_q
+
+  helped_q:
+    type: choice
+    prompt:
+      zh: 那一下午，算数吗？
+      en: That afternoon. Does it count?
+    options:
+      - id: wasted
+        stance: detour
+        text:
+          zh: 不算。没人看见，就等于白干了。
+          en: No. Nobody noticed, so it was for nothing.
+        next: helped_a1
+      - id: i_know
+        stance: book
+        text:
+          zh: 算。箱子是我搬的，活动办成了，我知道。
+          en: Yes. I carried those boxes, the event happened, and I know it.
+        next: helped_a2
+
+  helped_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 没被叫去合影，没人道谢，心里会空一下。这很正常。
+          en: Left out of the photo, no thanks from anyone. Something goes hollow for a moment. That’s normal.
+      - speaker: guide
+        text:
+          zh: 只是看一下：箱子到了该到的地方，活动因此办成了。这些事不会因为没人道谢就退回去。如果“被看见”才算数，那你出力换来的归属感，又回到了别人手里。书在这里用的词是“贡献感”：重要的是你自己知道，我对这件事有用。
+          en: But look. The boxes got where they needed to go, and the event happened because of it. None of that is undone by the absence of thanks. If it only counts when someone sees it, then the belonging you earned by pitching in is back in other people’s hands. The book’s word here is “feeling of contribution.” What matters is that you know, for yourself, that you were of use.
+    next: reveal_belong
+
+  helped_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。没人说谢谢，可那一下午并没有因此变成没发生过。
+          en: Yes. Nobody said thank you, and the afternoon didn’t become un-happened because of it.
+      - speaker: guide
+        text:
+          zh: 书在这里用的词是“贡献感”：不需要被看见，不需要被认可，重要的是你自己知道“我对这件事有用”。这样得来的归属感，别人拿不走，因为它本来就不是别人给的。
+          en: The book’s word here is “feeling of contribution.” It doesn’t need to be seen or acknowledged. What matters is that you know, for yourself, “I was of use here.” Belonging gained that way can’t be taken from you, because it was never given by others in the first place.
+    next: reveal_belong
+
+  reveal_belong:
+    type: reveal
+    source: book
+    title:
+      zh: 位置不是别人给的
+      en: Your place isn’t handed to you
+    body:
+      zh: |-
+        作者说，课题分离只是人际关系的入口。它的终点叫“共同体感觉”：
+
+        > 把别人看作伙伴，并且感到“这里有我的位置”。
+
+        这种归属感从哪里来？作者的回答是：它不是别人给的，不是等来的，也不是天生就有的。它是靠自己主动参与、为别人做点什么而得来的。
+      en: |-
+        The authors say separation of tasks is only the doorway into relationships. The destination is called “community feeling”:
+
+        > Seeing others as comrades, and feeling that “there is a place for me here.”
+
+        Where does that belonging come from? The authors’ answer is that it isn’t given by others, isn’t something you wait for, and isn’t something you’re born with. You gain it by taking part of your own accord and doing something for others.
+    next: scene_party
+
+  # ───────────────────────── Choice point 2: where the attention sits ─────────────────────────
+  scene_party:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “为别人做点什么”听着像一句口号。我们先看一个更小的动作：注意力放在哪里。
+          en: “Doing something for others” sounds like a slogan. Let’s look at a smaller movement first. Where your attention sits.
+      - speaker: narrator
+        text:
+          zh: 你第一次去一个读书会，一屋子人都不认识。整个晚上你都在想：我刚才那句话是不是很蠢？他们会不会觉得我很无聊？
+          en: "Your first time at a book club, a room full of strangers. All evening you’re thinking: was that a stupid thing I just said? Do they think I’m boring?"
+    next: cp2
+
+  cp2:
+    type: choice
+    prompt:
+      zh: 这个晚上，你的注意力在谁身上？
+      en: This evening, who is your attention on?
+    options:
+      - id: on_them
+        stance: detour
+        text:
+          zh: 在别人身上。我一直在想他们怎么看我。
+          en: On other people. I keep thinking about how they see me.
+        next: onthem_1
+      - id: considerate
+        stance: detour
+        text:
+          zh: 这叫在乎别人的感受，不能算只想着自己。
+          en: This is caring how others feel. It isn’t thinking only of myself.
+        next: considerate_1
+      - id: on_me
+        stance: book
+        text:
+          zh: 在我自己身上。“他们怎么看我”，主角还是我。
+          en: On me. “How do they see me” still has me in the lead role.
+        next: onme_1
+
+  # on_them
+  onthem_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 感觉上确实如此：满脑子都是别人的眼光，累得不行。
+          en: It does feel that way. Your whole head full of other people’s eyes, and it’s exhausting.
+      - speaker: guide
+        text:
+          zh: 我们把那句话慢慢读一遍：“他们，怎么看，我。”
+          en: Let’s read the sentence again, slowly. “How do they see me.”
+    next: onthem_q
+
+  onthem_q:
+    type: choice
+    prompt:
+      zh: 这句话里，谁是主角？
+      en: Who’s the main character in that sentence?
+    options:
+      - id: me_actually
+        stance: open
+        text:
+          zh: ……是我。他们只是在看我的人。
+          en: …Me. They’re only the ones looking at me.
+        next: onthem_a1
+      - id: them
+        stance: open
+        text:
+          zh: 是他们。动作是他们在做。
+          en: Them. They’re the ones doing the seeing.
+        next: onthem_a2
+
+  onthem_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。他们只是镜子，镜子里照的是你。
+          en: Right. They’re only mirrors, and what’s in the mirrors is you.
+      - speaker: guide
+        text:
+          zh: 这正是书里一个不太好听的观察：一心在意别人怎么看自己的人，看起来在关心别人，其实关心的是自己。书没有骂这样的人自私，它只是指出：这样会很孤单，因为一整晚你都没有真的看见屋里的任何一个人。
+          en: This is one of the book’s less flattering observations. A person absorbed in how others see them looks as if they’re attending to others, and is really attending to themselves. The book doesn’t call such a person selfish. It only points out that it’s lonely. All evening you haven’t actually seen a single person in the room.
+    next: reveal_concern
+
+  onthem_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 语法上是他们在看。可他们在看的是谁？
+          en: Grammatically, they’re doing the looking. But who are they looking at?
+      - speaker: guide
+        text:
+          zh: 是你。整句话从头到尾关心的只有一件事：我在他们眼里是什么样。这正是书里一个不太好听的观察：一心在意别人怎么看自己的人，看起来在关心别人，其实关心的是自己。结果是，一整晚你都没有真的看见屋里的任何一个人。
+          en: At you. From start to finish the sentence cares about one thing only. What I look like in their eyes. This is one of the book’s less flattering observations. A person absorbed in how others see them looks as if they’re attending to others, and is really attending to themselves. The upshot is that all evening you haven’t actually seen a single person in the room.
+    next: reveal_concern
+
+  # considerate
+  considerate_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 怕自己说错话让别人不舒服，这里面确实有体贴。
+          en: Worrying that you’ve said the wrong thing and made someone uncomfortable does have consideration in it.
+      - speaker: guide
+        text:
+          zh: 我们用一个小测验分一下。坐你对面的那个女生，今晚说过一本她很喜欢的书。
+          en: Let’s use a small test to sort it out. The girl sitting across from you mentioned a book tonight that she loves.
+    next: considerate_q
+
+  considerate_q:
+    type: choice
+    prompt:
+      zh: 那本书叫什么？她说的时候是什么表情？
+      en: What was the book called? What was her face like when she said it?
+    options:
+      - id: no_idea
+        stance: open
+        text:
+          zh: 不记得了。我光顾着紧张了。
+          en: No idea. I was too busy being nervous.
+        next: considerate_a1
+      - id: some
+        stance: open
+        text:
+          zh: 记得一点。她讲的时候眼睛很亮。
+          en: A little. Her eyes lit up as she talked.
+        next: considerate_a2
+
+  considerate_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这就是分界线。在乎别人的感受，会让你记住别人。在乎别人怎么看你，会让你只记得自己。
+          en: That’s the dividing line. Caring how others feel leaves you remembering them. Caring how they see you leaves you remembering only yourself.
+      - speaker: guide
+        text:
+          zh: 这不是在怪你，紧张的时候人人如此。书只是指出这个方向：一心在意别人怎么看自己，看起来是在关心别人，其实注意力一直在自己身上。它建议的是把它挪出去。
+          en: This isn’t blame. Everyone’s like this when they’re nervous. The book is only pointing out a direction. Being absorbed in how others see you looks like attending to them, and all the while your attention is on yourself. What it suggests is moving it outward.
+    next: reveal_concern
+
+  considerate_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那一刻，你的注意力是真的在她身上。
+          en: In that moment your attention really was on her.
+      - speaker: guide
+        text:
+          zh: 留意那一刻你紧不紧张：多半没那么紧张，因为你没在想自己。这就是书说的方向：从“他们怎么看我”，挪到“她在说什么”。前一种看着像在关心别人，其实关心的是自己。后一种才是。
+          en: Notice whether you were nervous in that moment. Probably much less, because you weren’t thinking about yourself. This is the direction the book points in. From “how do they see me” over to “what is she saying.” The first looks like attending to others and is really attending to yourself. The second is the real thing.
+    next: reveal_concern
+
+  # on_me (closest to the book -> one layer deeper)
+  onme_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个观察不太舒服，但你自己看见了：满脑子别人的眼光，其实满脑子是自己。
+          en: Not a comfortable thing to notice, but you saw it yourself. A head full of other people’s eyes is a head full of yourself.
+      - speaker: guide
+        text:
+          zh: 那下一步是：怎么把注意力挪出去？
+          en: So the next step is how to move the attention outward.
+    next: onme_q
+
+  onme_q:
+    type: choice
+    prompt:
+      zh: 你会怎么做？
+      en: What would you do?
+    options:
+      - id: calm_down
+        stance: detour
+        text:
+          zh: 在心里对自己说：别紧张，别想了，放松。
+          en: "Tell myself inwardly: don’t be nervous, stop thinking, relax."
+        next: onme_a1
+      - id: ask_her
+        stance: book
+        text:
+          zh: 问对面那个人一个我真想知道的问题。
+          en: Ask the person opposite a question I really want answered.
+        next: onme_a2
+
+  onme_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是最自然的办法，大多数人都是这么对付紧张的。
+          en: The most natural approach, and how most people deal with nerves.
+      - speaker: guide
+        text:
+          zh: 只是留意“别紧张”这句话是说给谁听的：还是你。注意力从“他们怎么看我”换成了“我紧不紧张”，绕了一圈还在自己身上。这是我们的补充：想把注意力从自己身上挪开，最快的办法不是管住自己，而是真的去看另一个人，比如问她一个你想知道的问题。
+          en: But notice who “don’t be nervous” is addressed to. Still you. Your attention has moved from “how do they see me” to “am I nervous,” gone all the way round and landed on yourself again. This is our own addition. The quickest way to get your attention off yourself isn’t to manage yourself. It’s to actually look at another person. Ask her something you’d like to know, say.
+    next: reveal_concern
+
+  onme_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。你没有去管自己的紧张，而是直接去看了另一个人。
+          en: Yes. You didn’t go and manage your own nerves. You went straight to looking at another person.
+      - speaker: guide
+        text:
+          zh: 这是我们的补充，书里没有这个具体做法，但方向是它的：从关心自己，到关心别人。而且顺带的效果是，她会觉得这屋里有人在听她说话。你刚刚给了一个陌生人一点位置。
+          en: This is our own addition. The book doesn’t give this particular move, but the direction is its own. From concern for self to concern for others. And as a side effect, she’ll feel there’s someone in the room listening to her. You’ve just given a stranger a little bit of a place.
+    next: reveal_concern
+
+  reveal_concern:
+    type: reveal
+    source: book
+    title:
+      zh: 从“我”挪到“我们”
+      en: Moving from “me” toward “us”
+    body:
+      zh: |-
+        作者在这里把“寻求认可”又往深处看了一层：一心想被认可的人，时时在看的是“别人怎么看我”。他看起来在关心别人，其实关心的是自己。
+
+        > 你不是世界的中心，只是共同体的一部分。
+
+        作者的建议是换一个问题：不问“这个人能给我什么”，而问“我能给这个人什么”。从关心自己，转向关心别人。
+      en: |-
+        Here the authors look one layer deeper into the pursuit of recognition. A person bent on being recognized is constantly watching “how do others see me.” They look as if they’re attending to others, and are really attending to themselves.
+
+        > You are not the center of the world. You are one part of a community.
+
+        Their suggestion is to change the question. Not “what can this person give me,” but “what can I give this person.” From concern for self to concern for others.
+    next: scene_fever
+
+  # ───────────────────────── Choice point 3: contribution is not sacrifice ─────────────────────────
+  scene_fever:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 说到这里，你可能觉得不对劲：这不是又绕回去了吗？第四课刚说别讨好。
+          en: By now something may feel off. Haven’t we gone back round? Lesson four just said not to people-please.
+      - speaker: narrator
+        text:
+          zh: 这学期，你成了社团里什么都答应的人：做海报、搬东西、订场地、替人值班。这周你发烧三十八度五，躺在床上，手机亮了。
+          en: This term you’ve become the one in the club who says yes to everything. Posters, hauling things, booking rooms, covering shifts. This week you’re in bed with a fever of 38.5, and your phone lights up.
+      - speaker: narrator
+        text:
+          zh: “周六的值班也拜托你啦，你最靠谱了～”
+          en: “Could you take Saturday’s shift too? You’re the reliable one~”
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 按“为别人贡献”的说法，你该怎么回？
+      en: By the logic of “contributing to others,” how should you answer?
+    options:
+      - id: take_it
+        stance: detour
+        text:
+          zh: 接下来。为别人付出，哪怕自己难受，才叫贡献。
+          en: Take it. Giving to others even when it costs you is what contribution means.
+        next: take_1
+      - id: reject_idea
+        stance: detour
+        text:
+          zh: 不接。而且“贡献”这套，听着就像道德绑架。
+          en: Refuse. And this whole “contribution” thing sounds like a guilt trip.
+        next: reject_1
+      - id: not_this_time
+        stance: book
+        text:
+          zh: 这次不接。贡献是我愿意给的，不是把自己耗干。
+          en: Not this time. Contribution is what I choose to give, not running myself dry.
+        next: notnow_1
+
+  # take_it
+  take_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 愿意为别人出力，这份心是好的，而且你已经出了一整个学期。
+          en: Being willing to pitch in for others is a good impulse, and you’ve been doing it all term.
+      - speaker: guide
+        text:
+          zh: 只问一句，请老实回答。
+          en: Just one question, and please answer it honestly.
+    next: take_q
+
+  take_q:
+    type: choice
+    prompt:
+      zh: 发着烧还接下来，是因为什么？
+      en: Taking the shift with a fever. What’s the reason?
+    options:
+      - id: want_to
+        stance: open
+        text:
+          zh: 是我真的想帮这个忙，发烧也想。
+          en: I truly want to help out, fever or no fever.
+        next: take_a1
+      - id: afraid_no
+        stance: open
+        text:
+          zh: 是我不敢说不，怕她觉得我不靠谱了。
+          en: I don’t dare say no. She might stop thinking I’m reliable.
+        next: take_a2
+
+  take_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果是真想帮，这份心我相信。
+          en: If you truly want to help, I believe that.
+      - speaker: guide
+        text:
+          zh: 只是书说得很明确：贡献不是牺牲自己。把自己耗干的人，下一次就什么也给不出来了。而且留意她那句“你最靠谱了”：这是上一课讲的表扬，它在把你往“一直答应”的方向推。想帮是真的，周六躺着也是真的。这两件事不冲突。
+          en: But the book is explicit. Contribution is not self-sacrifice. A person who runs themselves dry has nothing left to give next time. And look at her line, “you’re the reliable one.” That’s the praise from last lesson, and it’s nudging you toward always saying yes. Wanting to help is real. Being flat on your back on Saturday is real too. The two don’t conflict.
+    next: reveal_pillars
+
+  take_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 谢谢你答得这么老实。
+          en: Thank you for the honest answer.
+      - speaker: guide
+        text:
+          zh: 那这一次就不是贡献，是第四课说的那件事：为了不被讨厌而答应。外表一模一样，都是替人值班，里面完全不同：贡献是“我想给”，讨好是“我不敢不给”。书说得很明确：贡献不是牺牲自己，更不是用来买别人的好评价。
+          en: Then this time it isn’t contribution. It’s the thing from lesson four. Saying yes so as not to be disliked. From outside they look identical, covering a shift for someone, and inside they’re entirely different. Contribution is “I want to give.” Pleasing is “I don’t dare not to.” The book is explicit. Contribution is not self-sacrifice, and it certainly isn’t a way of buying a good opinion.
+    next: reveal_pillars
+
+  # reject_idea
+  reject_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一条值班你完全可以不接，你发着烧。这一点没有任何问题。
+          en: You’re fully entitled to refuse this shift. You have a fever. No problem with that at all.
+      - speaker: guide
+        text:
+          zh: 而且你的警惕有道理：“要为别人付出”这种话，确实常常被用来压人。所以我们得把两件事分清楚。
+          en: And your wariness is fair. “You ought to give to others” really is often used to lean on people. So we need to tell two things apart.
+    next: reject_q
+
+  reject_q:
+    type: choice
+    prompt:
+      zh: 讨好和贡献，外表都是替人做事。区别在哪？
+      en: Pleasing and contributing both look like doing things for people. Where’s the difference?
+    options:
+      - id: trade_or_gift
+        stance: open
+        text:
+          zh: 讨好是想换对方的喜欢。贡献是我自己想给。
+          en: Pleasing is trying to buy their liking. Contribution is me wanting to give.
+        next: reject_a1
+      - id: no_difference
+        stance: open
+        text:
+          zh: 没什么区别，说到底都是被人用。
+          en: None, really. Either way you’re being used.
+        next: reject_a2
+
+  reject_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，你自己把线画出来了。
+          en: Right. You drew the line yourself.
+      - speaker: guide
+        text:
+          zh: 讨好的方向盘在别人手里：他不满意，你就白做了。贡献的方向盘在你手里：给不给、给多少，你来定；对方谢不谢，是他的课题。所以它不是道德绑架。能被绑架的，只有“你必须给”。书说的是“你可以给，而且给了以后，你会知道自己在这里有用”。
+          en: In pleasing, the wheel is in someone else’s hands. If they’re not satisfied, you did it for nothing. In contributing, the wheel is in yours. Whether to give and how much is your decision, and whether they thank you is their task. So it isn’t a guilt trip. Only “you must give” can be used that way. What the book says is “you may give, and when you have, you’ll know you’re of use here.”
+    next: reveal_pillars
+
+  reject_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果你最近一直被人理所当然地使唤，会这样想很正常。
+          en: If you’ve been taken for granted lately, thinking this way makes sense.
+      - speaker: guide
+        text:
+          zh: 只是留意“被人用”的主语：是别人在用你。那说的是讨好，方向盘在别人手里。贡献的主语是你：给不给、给多少，你来定；对方谢不谢，是他的课题。所以这周你发着烧说“不”，和下个月你自己想去帮忙，一点也不矛盾。书说的贡献里，明确不包括牺牲自己。
+          en: But notice the subject of “being used.” Other people are using you. That describes pleasing, with the wheel in someone else’s hands. The subject of contribution is you. Whether to give and how much is your decision, and whether they thank you is their task. So saying no this week with a fever, and choosing to help next month because you want to, don’t contradict each other in the least. Contribution as the book means it explicitly excludes sacrificing yourself.
+    next: reveal_pillars
+
+  # not_this_time (closest to the book -> one layer deeper, into self-acceptance)
+  notnow_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的立场：贡献不是牺牲自己。你这学期出的力是真的，这次说“不”也是真的。
+          en: That’s the book’s position exactly. Contribution is not self-sacrifice. What you’ve put in this term is real, and so is this no.
+      - speaker: narrator
+        text:
+          zh: 你回了“这次不行，我发烧了”。放下手机，心里冒出一句话：这点事都撑不住，我真没用。
+          en: You reply, “Can’t this time, I’ve got a fever.” You put the phone down and a sentence surfaces. Can’t even manage this much. I’m useless.
+    next: notnow_q
+
+  notnow_q:
+    type: choice
+    prompt:
+      zh: 这句“我真没用”，你怎么回它？
+      en: That “I’m useless.” How do you answer it?
+    options:
+      - id: pep_talk
+        stance: detour
+        text:
+          zh: 给自己打气：我很棒，我什么都做得到！
+          en: Give myself a pep talk. I’m great. I can do anything!
+        next: notnow_a1
+      - id: accept
+        stance: book
+        text:
+          zh: 我现在发烧，做不了。这是事实，不是罪。好了再做。
+          en: I have a fever and I can’t right now. That’s a fact, not a crime. I’ll do it when I’m well.
+        next: notnow_a2
+
+  notnow_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想把自己从那句话里拉出来，这个方向是对的。
+          en: Wanting to pull yourself out of that sentence is the right instinct.
+      - speaker: guide
+        text:
+          zh: 只是“我什么都做得到”不是真的：你此刻发着烧，值不了班。书把这种做法叫“自我肯定”，认为它是在对自己撒一点谎，撑不久。书主张的是另一样东西，叫“自我接纳”：不说“我能”，也不说“我没用”，只是如实地看，现在做不了的就是做不了，然后去做做得了的。
+          en: But “I can do anything” isn’t true. Right now you have a fever and can’t cover a shift. The book calls this approach “self-affirmation” and regards it as telling yourself a small lie, one that won’t hold for long. What the book argues for is something else, called “self-acceptance.” You don’t say “I can” and you don’t say “I’m useless.” You just look at things as they are. What can’t be done now can’t be done now. Then you do what can.
+    next: reveal_pillars
+
+  notnow_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有夸自己，也没有骂自己。你只是把事实说了出来。
+          en: You didn’t praise yourself and you didn’t berate yourself. You only stated the fact.
+      - speaker: guide
+        text:
+          zh: 书里把这叫“自我接纳”，并且特意把它和“自我肯定”分开：自我肯定是明明做不到，还对自己说“我能行”。自我接纳是如实接受现在做不到，分清哪些能改、哪些不能，然后去做能做的。它是共同体感觉的第一根柱子：一个受不了自己的人，很难放心地走到别人中间去。
+          en: The book calls this “self-acceptance,” and takes care to separate it from “self-affirmation.” Self-affirmation is telling yourself “I can do it” when you can’t. Self-acceptance is taking it as it is that you can’t right now, sorting what can be changed from what can’t, and then doing what you can. It’s the first pillar of community feeling. A person who can’t stand themselves finds it hard to walk easily in among others.
+    next: reveal_pillars
+
+  reveal_pillars:
+    type: reveal
+    source: book
+    title:
+      zh: 三根柱子
+      en: Three pillars
+    body:
+      zh: |-
+        作者说，共同体感觉由三件事撑起来，它们互相连着：
+
+        - 自我接纳：不是对自己说“我能行”，而是如实接受现在的自己，分清能改变的和不能改变的。
+        - 他者信赖：不附加条件地相信别人。对方会不会辜负你，是对方的课题。
+        - 他者贡献：为伙伴做点什么。它不是牺牲自己，而是为了体会到“我在这里有用”。
+
+        作者还下了一个很大的结论：
+
+        > 幸福，就是贡献感。
+
+        而且这份贡献不需要被看见。重要的是你自己感到“我对别人有用”。所以它不需要认可，这就是它和讨好的区别。
+      en: |-
+        The authors say three things hold community feeling up, and they lean on one another:
+
+        - Self-acceptance: not telling yourself “I can do it,” but accepting yourself as you are now, and telling apart what can be changed from what can’t.
+        - Confidence in others: believing in people without attaching conditions. Whether they let you down is their task.
+        - Contribution to others: doing something for your comrades. It isn’t self-sacrifice. Its point is to feel that “I am of use here.”
+
+        And they draw one very large conclusion:
+
+        > Happiness is the feeling of contribution.
+
+        This contribution needn’t be seen. What matters is that you feel, for yourself, “I am of use to someone.” So it needs no recognition, and that is what separates it from pleasing.
+    next: scene_wren
+
+  # ───────────────────────── Choice point 4: worth when you can do nothing ─────────────────────────
+  scene_wren:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “有用”这个词有危险的一面。如果有用才有价值，那一个什么都做不了的人呢？
+          en: “Useful” has a dangerous side. If you’re worth something only when you’re useful, what about someone who can’t do anything?
+      - speaker: narrator
+        text:
+          zh: 你的朋友一苇生病休学，在家已经半年了。深夜她发来一条消息。
+          en: Your friend Wren has been ill and out of school for half a year now, at home. Late one night she sends a message.
+      - speaker: wei
+        text:
+          zh: “我现在什么都没在做，对谁都没用。我就是个累赘。”
+          en: “I’m not doing anything right now. I’m no use to anyone. I’m just a burden.”
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: 你想怎么回她？
+      en: What do you want to say back?
+    options:
+      - id: when_better
+        stance: detour
+        text:
+          zh: “别这么说。等你好了，一定能做很多事的。”
+          en: “Don’t say that. Once you’re better you’ll do so much.”
+        next: better_1
+      - id: do_small
+        stance: detour
+        text:
+          zh: “那就找点小事做，哪怕一点点，也就有价值了。”
+          en: “Then find some small thing to do. Even a little, and you’ll be worth something.”
+        next: small_1
+      - id: you_exist
+        stance: book
+        text:
+          zh: “你在，对我来说就已经有分量了。”
+          en: “You being here already matters to me.”
+        next: exist_1
+
+  # when_better
+  better_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话是在给她希望，是好意。
+          en: That sentence is offering her hope, and it’s kindly meant.
+      - speaker: guide
+        text:
+          zh: 我们从她那边听一遍：“等你好了，一定能做很多事。”
+          en: Let’s hear it from her side. “Once you’re better you’ll do so much.”
+    next: better_q
+
+  better_q:
+    type: choice
+    prompt:
+      zh: 那么，还没好的这半年里的她呢？
+      en: And the Wren of these six months, who isn’t better yet?
+    options:
+      - id: on_hold
+        stance: open
+        text:
+          zh: ……这句话等于说，现在的她还不算数。
+          en: …The sentence amounts to saying she doesn’t count yet.
+        next: better_a1
+      - id: just_comfort
+        stance: open
+        text:
+          zh: 我没那个意思，只是想让她往前看。
+          en: I didn’t mean that. I only wanted her to look ahead.
+        next: better_a2
+
+  better_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。你一下就听出来了。
+          en: Yes. You heard it straight away.
+      - speaker: guide
+        text:
+          zh: 她说“我没用”，这句回话没有反驳，只是把“有用”推迟到了以后。书在这里的主张是：一个人的价值不只在“做了什么”，也在“存在”本身。她此刻躺在家里，什么也没做，她在，这对在乎她的人就已经是分量了。
+          en: She said “I’m no use,” and this reply doesn’t dispute it. It only postpones “use” until later. The book’s claim here is that a person’s worth lies not only in what they do but in their being here at all. Right now she’s at home, doing nothing, and she’s here. To the people who care about her, that already has weight.
+    next: reveal_being
+
+  better_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 我相信你没有那个意思。想让她往前看，是心疼她。
+          en: I believe you didn’t mean it. Wanting her to look ahead comes from feeling for her.
+      - speaker: guide
+        text:
+          zh: 只是她刚说的是“我现在没用”，而“等你好了就能做很多事”正好默认了这一点：现在确实没用，以后才有。书在这里的主张是：一个人的价值不只在“做了什么”，也在“存在”本身。她此刻什么也没做，她在，这对在乎她的人就已经是分量了。
+          en: But what she just said was “I’m no use now,” and “once you’re better you’ll do so much” quietly grants exactly that. No use at present, use to come later. The book’s claim here is that a person’s worth lies not only in what they do but in their being here at all. Right now she’s doing nothing, and she’s here. To the people who care about her, that already has weight.
+    next: reveal_being
+
+  # do_small
+  small_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个建议很实在，而且做一点小事，确实常常能让人好受一些。
+          en: Practical advice, and doing some small thing often does make a person feel a bit better.
+      - speaker: guide
+        text:
+          zh: 只是它有一个前提：做了事，才有价值。
+          en: It rests on a premise, though. Do something, and then you have worth.
+    next: small_q
+
+  small_q:
+    type: choice
+    prompt:
+      zh: 那她连小事都做不动的那些天呢？
+      en: And the days she can’t manage even a small thing?
+    options:
+      - id: no_worth
+        stance: open
+        text:
+          zh: 按这个说法，那些天她就没有价值了。
+          en: By that logic, on those days she has no worth.
+        next: small_a1
+      - id: try_harder
+        stance: open
+        text:
+          zh: 总能做一点的吧，哪怕回一条消息。
+          en: There’s always something. Even answering one message.
+        next: small_a2
+
+  small_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。这句安慰的地基，和让她难受的那句话是同一块：有用才有价值。
+          en: Right. This comfort is built on the same ground as the sentence that’s hurting her. You’re worth something only if you’re useful.
+      - speaker: guide
+        text:
+          zh: 书在这里换了一块地基：一个人的价值不只在“做了什么”，也在“存在”本身。她什么也做不动的那些天，她在，这对在乎她的人就已经是分量了。小事可以做，但它不是她值不值的条件。
+          en: Here the book changes the ground. A person’s worth lies not only in what they do but in their being here at all. On the days she can’t manage anything, she’s here, and to the people who care about her that already has weight. She can do small things. They just aren’t the condition of her worth.
+    next: reveal_being
+
+  small_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 很多时候是这样。可生病的人有些日子，连回一条消息的力气都没有。
+          en: Often that’s so. But someone who’s ill has days without the strength to answer even one message.
+      - speaker: guide
+        text:
+          zh: 如果价值要靠“总能做一点”来挣，那些日子她就又成了“累赘”。书在这里换了一块地基：一个人的价值不只在“做了什么”，也在“存在”本身。她什么也做不动的那些天，她在，这对在乎她的人就已经是分量了。
+          en: If worth has to be earned by “always managing something,” then on those days she’s a “burden” again. Here the book changes the ground. A person’s worth lies not only in what they do but in their being here at all. On the days she can’t manage anything, she’s here, and to the people who care about her that already has weight.
+    next: reveal_being
+
+  # you_exist (closest to the book -> one layer deeper, into the wider community)
+  exist_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有去证明她“其实有用”，也没有把价值推到以后。你只说了一件事：她在，这就有分量。这正是书说的“存在”层面的价值。
+          en: You didn’t set about proving she’s “useful really,” and you didn’t postpone her worth. You said one thing. She’s here, and that has weight. This is exactly the book’s worth at the level of being.
+      - speaker: wei
+        text:
+          zh: “可我在学校本来就没什么朋友。就算回去，那里也没有我的位置。”
+          en: “But I barely had any friends at school anyway. Even if I go back, there’s no place for me there.”
+    next: exist_q
+
+  exist_q:
+    type: choice
+    prompt:
+      zh: 你怎么回这一句？
+      en: How do you answer that?
+    options:
+      - id: fit_in
+        stance: detour
+        text:
+          zh: “回去以后主动一点，慢慢就融进去了。”
+          en: “Just put yourself out there when you’re back. You’ll fit in before long.”
+        next: exist_a1
+      - id: wider
+        stance: book
+        text:
+          zh: “学校只是一个地方。你的位置不止在那里。”
+          en: “School is one place. It isn’t the only place you have.”
+        next: exist_a2
+
+  exist_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 主动参与确实是书的建议，这一课开头就是这么说的。
+          en: Taking part of your own accord really is the book’s advice. This lesson opened with it.
+      - speaker: guide
+        text:
+          zh: 只是对一个病着的人来说，“你再主动一点”很容易听成“你没有位置，是因为你不够努力”。书还有另一半话：共同体不止眼前这一个。学校只是其中一个，而且是很小的一个。在那里没有位置，不等于在世界上没有位置。此刻和你发消息的这段关系，就已经是一个。
+          en: But to someone who’s ill, “put yourself out there more” easily comes across as “you have no place because you’re not trying hard enough.” The book has another half to say. The community in front of you is not the only one. School is one among them, and a very small one. Having no place there doesn’t mean having no place in the world. This exchange of messages with you, right now, is already one.
+    next: reveal_being
+
+  exist_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。书说，共同体不止眼前这一个。
+          en: Yes. The book says the community in front of you is not the only one.
+      - speaker: guide
+        text:
+          zh: 在一个圈子里实在待不下去的时候，书的建议是去听“更大的共同体”的声音：学校之外有城市，有别的人群，有此刻和她发消息的你。一个地方没有位置，不是世界没有位置。
+          en: When a circle truly can’t be borne, the book’s advice is to listen to the voice of “the larger community.” Beyond school there’s a city, there are other groups of people, there’s you, messaging her right now. No place in one spot doesn’t mean no place in the world.
+    next: reveal_being
+
+  reveal_being:
+    type: reveal
+    source: book
+    title:
+      zh: 你在，就有分量
+      en: Being here already counts
+    body:
+      zh: |-
+        作者担心“有用才有价值”会被读歪，所以特意补了一层：
+
+        > 人的价值，不只在“做了什么”，也在“存在”本身。
+
+        用作者的话说，不要只在“行为”的层面看人，也要在“存在”的层面看人：他在这里，这件事本身就值得感谢。
+
+        另外，作者说共同体不止眼前这一个。家、学校、公司只是其中很小的几个。在一个小圈子里痛苦到待不下去的时候，要记得外面还有更大的世界。
+      en: |-
+        The authors worry that “you’re worth something when you’re useful” will be misread, so they add a further layer on purpose:
+
+        > A person’s worth lies not only in what they do, but in their being here at all.
+
+        In their terms, don’t look at people only at the level of “acts.” Look at them at the level of “being” too. That they are here is itself something to be thankful for.
+
+        They also say the community in front of you is not the only one. Home, school and the workplace are only a few very small ones. When a small circle hurts too much to stay in, remember there is a larger world outside it.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。下面是我们整理的质疑和边界：
+
+        - “幸福就是贡献感”是作者下的定义，不是公认的结论。很多人认为，幸福里也有休息、玩、被爱，这些和有没有用无关。
+        - “不附加条件地相信别人”有实际的风险。面对反复伤害你的人，离开是正当的。书也承认，关系要不要继续，是你自己的课题。
+        - “只要自己觉得有贡献就行”可能变成自我感动：自己觉得在帮忙，对方其实并不需要。贡献感是主观的，但有没有帮到，还是得看一眼对方。
+        - 集体也会压人。“为了大家”常被用来要求个人闭嘴。书说的不是服从眼前这个集体，它明确说不必屈从于一个小圈子。
+        - 如果你或你的朋友常常觉得“自己是累赘”“不在了也没关系”，这不是这一课能解决的。请马上告诉你信任的大人，或者联系专业的心理援助。
+      en: |-
+        That was the book’s position. Here are the objections and limits, as we’ve gathered them:
+
+        - “Happiness is the feeling of contribution” is a definition the authors lay down, not an accepted finding. Many would say happiness also includes rest, play and being loved, none of which depend on being useful.
+        - “Believing in others without conditions” carries real risk. With someone who keeps hurting you, leaving is legitimate. The book grants as much. Whether a relationship continues is your own task.
+        - “As long as you feel you’re contributing” can turn into self-congratulation. You think you’re helping and the other person doesn’t actually need it. The feeling is subjective, but whether you helped still takes a look at them.
+        - Groups can crush people too. “For everyone’s sake” is often used to make an individual shut up. The book is not talking about obeying the group in front of you. It says plainly that you needn’t submit to a small circle.
+        - If you or a friend often feel like “a burden,” or that “it wouldn’t matter if I weren’t here,” this lesson can’t fix that. Please tell an adult you trust right away, or contact a professional crisis or mental-health service.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。还记得第四课的小满吗？她问你：“你们不是说别管别人怎么想吗？怎么现在又要‘为别人贡献’了？这不矛盾？”用你自己的话回答她，两三句就够。
+      en: Your turn. Remember Jess from lesson four? She asks you, “Didn’t you all say not to care what anyone thinks? And now it’s ‘contribute to others’? Isn’t that a contradiction?” Answer her in your own words. Two or three sentences will do.
+    checkpoints:
+      - id: belong
+        label:
+          zh: 我讲了归属感是自己参与、出力得来的，不是等别人给
+          en: I said belonging is gained by taking part and pitching in, not waited for
+        hint:
+          zh: 目标是感到“这里有我的位置”。这个位置不是别人发的，是自己走进去、做了点什么之后才有的。
+          en: The aim is to feel “there’s a place for me here.” That place isn’t issued by others. It comes after you’ve walked in and done something.
+        cues:
+          zh: [归属, 位置, 参与, 出力, 主动, 伙伴, 自己走, 不是等]
+          en: [belong, place, take part, taking part, pitch, join, comrade, of my own, not wait]
+      - id: not_pleasing
+        label:
+          zh: 我讲了贡献不是讨好：不为换认可，自己知道有用就够
+          en: "I said contributing isn’t pleasing: no trading for approval, knowing you were of use is enough"
+        hint:
+          zh: 讨好是为了换别人的喜欢，方向盘在别人手里。贡献是自己想给，不需要被看见，也不是牺牲自己。
+          en: Pleasing is done to buy someone’s liking, with the wheel in their hands. Contribution is something you want to give. It needn’t be seen, and it isn’t self-sacrifice.
+        cues:
+          zh: [讨好, 认可, 换, 牺牲, 贡献感, 自己知道, 不需要被看见, 想给, 有用]
+          en: [pleas, approv, recogni, trade, buy, sacrific, feeling of contribution, of use, useful, want to give, needn’t be seen, doesn’t need]
+      - id: attention
+        label:
+          zh: 我讲了要把注意力从“别人怎么看我”挪到别人身上
+          en: I said to move attention from “how do they see me” onto other people
+        hint:
+          zh: 在意别人怎么看自己，关心的其实还是自己。书的方向是从关心自己，转向关心别人。
+          en: Minding how others see you is still concern for yourself. The book’s direction is from concern for self to concern for others.
+        cues:
+          zh: [怎么看我, 关心别人, 关心自己, 注意力, 自我中心, 别人身上, 看见别人, 他人]
+          en: [how they see me, how others see, attention, concern for others, self-centered, self-centred, about myself, on them, other people]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。前面几课教你放手，这一课教你伸手。放手放的是“别人怎么看我”，伸手伸向的是别人本身。
+          en: That’s this lesson. The earlier lessons taught you to let go. This one teaches you to reach out. What you let go of is “how others see me.” What you reach toward is other people themselves.
+      - speaker: guide
+        text:
+          zh: 还剩最后一个问题：这些事，从什么时候开始做？书的回答只有四个字。下一课从这里开始。
+          en: One question is left. When do you start doing any of this? The book’s answer is three words long. The next lesson starts there.

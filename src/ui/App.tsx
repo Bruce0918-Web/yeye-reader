@@ -42,6 +42,8 @@ export function App() {
   }, [saved.theme]);
 
   const concept = concepts[route];
+  // The next lesson on the book's path that has been written.
+  const after = concept ? book.path.slice(book.path.findIndex((p) => p.id === concept.id) + 1).find((p) => concepts[p.id]) : undefined;
   const setProgress = (p: Progress) => update({ progress: { ...saved.progress, [concept.id]: p } });
   const nextLang = book.languages[(book.languages.indexOf(lang) + 1) % book.languages.length];
   const isDark = saved.theme ? saved.theme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -79,6 +81,8 @@ export function App() {
           lang={lang}
           onProgress={setProgress}
           onHome={() => (location.hash = '#/')}
+          onNext={after ? () => (location.hash = `#/${after.id}`) : undefined}
+          key={concept.id}
         />
       ) : (
         <Home book={book} concepts={concepts} progress={saved.progress} lang={lang} onOpen={(id) => (location.hash = `#/${id}`)} />

@@ -27,6 +27,7 @@ const strings = {
   retellEmpty: { zh: '（跳过了）', 'zh-Hant': '（跳過了）', en: '(skipped)' },
   coreTitle: { zh: '这一课的核心', 'zh-Hant': '這一課的核心', en: 'The core of this lesson' },
   coreNote: { zh: '书的观点，用我们的话转述。欢迎对照原书。', 'zh-Hant': '書的觀點，用我們的話轉述。歡迎對照原書。', en: 'The book’s view, in our words. Check it against the book.' },
+  nextLesson: { zh: '下一课', 'zh-Hant': '下一課', en: 'Next lesson' },
   restart: { zh: '重走一遍', 'zh-Hant': '重走一遍', en: 'Walk it again' },
   toContents: { zh: '回到目录', 'zh-Hant': '回到目錄', en: 'Back to contents' },
   start: { zh: '开始', 'zh-Hant': '開始', en: 'Begin' },

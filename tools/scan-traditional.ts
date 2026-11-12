@@ -8,7 +8,7 @@ import { loadAll } from './content';
  */
 const risky = /幹|麵|髮|瞭|鬥|隻|闆|薑|捲|穀|鬱|颳|籤|噁|齣|鹹|佈|檯|纔|併|餘|遊|癒|嚮|鬍|鬚|儘|甦|註|弔|傢|夥|颱|衝|製|係/g;
 // Combinations already read and known to be right, so they are not listed again.
-const fine = /關係|衝動|衝突|合併|沒關係/g;
+const fine = /關係|衝動|衝突|合併|沒關係|夥伴|遊戲|能幹|幹活|幹什麼|宣佈/g;
 
 const seen = new Set<string>();
 const collect = (value: unknown) => {

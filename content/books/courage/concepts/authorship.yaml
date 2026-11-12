@@ -1,0 +1,1037 @@
+# 承认“我”的主体性 / You are the author
+#
+# The owner's definition of this concept: we live in a subjective world we give meaning to; life
+# is not decided by the past or by other people but by what I choose and the meaning I give.
+# I am the owner of my actions and meanings, not a guest pushed along by circumstance.
+# (This is distinct from self-acceptance, which belongs to the community-feeling lesson.)
+#
+# Shape of the lesson: it opens with how the reader introduces themselves (who is holding the
+# pen in that sentence), then three choice points: what you were given, waiting for others to
+# change, and who decides whether a life counts.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: authorship
+
+title:
+  zh: 承认“我”的主体性
+  en: You are the author
+
+question:
+  zh: 决定我怎么看世界、怎么活的，到底是谁？
+  en: Who actually decides how I see the world and how I live?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 我们不是活在一个客观的世界里，而是活在各自赋予了意义的主观世界里。
+    en: We do not live in an objective world, but in a subjective world to which each of us has given meaning.
+  - zh: 重要的不是被给予了什么，而是怎样使用被给予的东西。
+    en: What matters is not what you were given, but how you use what you were given.
+  - zh: 能改变我的只有我自己。别人不会为我而改变，我也改变不了别人。
+    en: The only one who can change me is me. Others will not change for my sake, and I cannot change them.
+  - zh: 人生没有一个对所有人都通用的意义。人生的意义，是自己赋予自己的。
+    en: Life has no meaning that holds for everyone. The meaning of your life is something you give it yourself.
+  - zh: 所以，决定我怎么看世界、怎么活的是我自己，不是过去，也不是别人。（这一句是我们对以上几点的归纳。）
+    en: So the one who decides how I see the world and how I live is me, not my past and not other people. (This sentence is our own summary of the points above.)
+
+cast:
+  roommate:
+    name: { zh: 室友, en: Roommate }
+
+start: open
+
+nodes:
+  # ───────────────────────── Opening: who holds the pen ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 上一课结束时留了一个问题：如果不靠别人的认可，那由谁来说“我是谁”？
+          en: The last lesson ended on a question. If not other people’s approval, then who gets to say who I am?
+      - speaker: guide
+        text:
+          zh: 先看看你平时是怎么说的。新学期第一天，每个人要用一句话介绍自己。
+          en: Let’s first see how you usually say it. First day of a new term, and everyone has to introduce themselves in one sentence.
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 下面哪一句，最像你会说的？
+      en: Which of these sounds most like what you’d say?
+    options:
+      - id: given
+        stance: open
+        text:
+          zh: “我是小地方来的，家里很普通。”
+          en: “I’m from a small town, nothing special about my family.”
+        next: given_1
+      - id: others
+        stance: open
+        text:
+          zh: “大家都说我是个比较安静的人。”
+          en: “People always say I’m the quiet type.”
+        next: others_1
+      - id: past
+        stance: open
+        text:
+          zh: “我是复读了一年才考上来的。”
+          en: “I’m the one who had to take the entrance exam twice.”
+        next: past_1
+      - id: doing
+        stance: open
+        text:
+          zh: “我最近在学做播客，还做得不太好。”
+          en: “I’ve started making a podcast. It’s not very good yet.”
+        next: doing_1
+
+  given_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话是真的，说出来也需要一点坦然。
+          en: The sentence is true, and it takes a certain ease to say it out loud.
+      - speaker: guide
+        text:
+          zh: 留意它的主语是什么：出身。你拿到手的那副牌在替你做自我介绍，你自己还没出场。这一课想问的就是：牌是发下来的，那打牌的人在哪里？
+          en: Notice what its subject is. Where you come from. The hand you were dealt is doing the introducing, and you haven’t come on stage yet. That’s what this lesson asks. The cards were dealt. Where’s the person playing them?
+    next: reveal_world
+
+  others_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话很谦虚，听的人也容易接受。
+          en: It’s a modest sentence, and easy for listeners to accept.
+      - speaker: guide
+        text:
+          zh: 留意它是谁写的：“大家都说”。关于你的这一句，笔在别人手里，你只是在转述。这一课想问的就是：别人的描述放一边，你自己会怎么写这一句？
+          en: Notice who wrote it. “People always say.” For this sentence about you, the pen is in other people’s hands, and you’re only passing it on. That’s what this lesson asks. Setting their description aside, how would you write the line yourself?
+    next: reveal_world
+
+  past_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 能把这件事平静地说出来，本身就不容易。
+          en: Being able to say that calmly is no small thing in itself.
+      - speaker: guide
+        text:
+          zh: 留意它指向哪里：一件已经结束的事。那一年成了你的名字。这一课想问的就是：那件事是真的，可它凭什么来替现在的你做介绍？
+          en: Notice where it points. At something already over. That year has become your name. That’s what this lesson asks. The thing happened. But what gives it the right to introduce the person you are now?
+    next: reveal_world
+
+  doing_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 留意这句话和另外三句的差别：它的主语是“我”，动词是你自己选的事，连“还做得不太好”都是你自己下的判断。
+          en: Notice how this sentence differs from the other three. Its subject is “I,” its verb is something you chose, and even “not very good yet” is a judgment you made yourself.
+      - speaker: guide
+        text:
+          zh: 出身、别人的评价、过去的经历，都没有出场。不是它们不存在，是你没有让它们替你开口。这一课要讲的就是这个位置。
+          en: Where you’re from, what others say about you, what happened to you. None of them appear. Not because they don’t exist. You just didn’t let them speak for you. That position is what this lesson is about.
+    next: reveal_world
+
+  reveal_world:
+    type: reveal
+    source: book
+    title:
+      zh: 你住在自己给了意义的世界里
+      en: You live in a world you’ve given meaning to
+    body:
+      zh: |-
+        作者的出发点是：没有人活在一个纯粹客观的世界里。同一间教室、同一段经历，每个人看到的并不一样，因为每个人都给了它自己的意义。
+
+        > 我们活在各自赋予了意义的主观世界里。
+
+        这不是说事实可以随便改。出身、别人说过的话、发生过的事，都是真的。作者的意思是：它们是材料。拿这些材料来说明什么，是那个拿笔的人定的。
+      en: |-
+        The authors begin here: nobody lives in a purely objective world. The same classroom, the same experience, look different to each person, because each has given it a meaning of their own.
+
+        > We live in a subjective world to which each of us has given meaning.
+
+        This doesn’t mean facts can be rewritten at will. Where you come from, what people have said about you, what happened to you, are all real. The authors’ point is that they’re material. What the material is taken to show is decided by the person holding the pen.
+    next: scene_phone
+
+  # ───────────────────────── Choice point 2: what you were given ─────────────────────────
+  scene_phone:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “笔在自己手里”听着很轻巧。我们马上给它加一点重量。
+          en: “The pen is in your own hand” sounds weightless. Let’s put some weight on it.
+      - speaker: narrator
+        text:
+          zh: 你想做音乐。你没有电脑，没有声卡，没有麦克风。你有的是一部用了三年、屏幕裂了一道的旧手机。
+          en: You want to make music. You have no laptop, no audio interface, no microphone. What you have is a three-year-old phone with a crack across the screen.
+    next: cp2
+
+  cp2:
+    type: choice
+    prompt:
+      zh: 这部旧手机，是什么？
+      en: That old phone. What is it?
+    options:
+      - id: reason
+        stance: detour
+        text:
+          zh: 是我做不了音乐的原因。条件摆在这儿。
+          en: The reason I can’t make music. Those are just my circumstances.
+        next: reason_1
+      - id: later
+        stance: detour
+        text:
+          zh: 是暂时的。等我攒够钱买了设备，再正式开始。
+          en: Temporary. Once I’ve saved up for real gear, I’ll start properly.
+        next: later_1
+      - id: instrument
+        stance: book
+        text:
+          zh: 是我现在手里全部的乐器。
+          en: Every instrument I own, as of now.
+        next: instrument_1
+
+  # reason
+  reason_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 条件差是真的，有设备的人起步确实容易得多。这不是你在找借口。
+          en: The circumstances really are poor, and people with gear really do have an easier start. You’re not making that up.
+      - speaker: guide
+        text:
+          zh: 我只看这句话里的两样东西：“没有设备”和“做不了音乐”。
+          en: I’m only looking at two things in the sentence. “No gear” and “can’t make music.”
+    next: reason_q
+
+  reason_q:
+    type: choice
+    prompt:
+      zh: 没有设备，挡住的到底是哪一件？
+      en: What exactly does having no gear stop?
+    options:
+      - id: good_sound
+        stance: open
+        text:
+          zh: 挡住的是做出音质好的音乐。
+          en: Making music that sounds polished.
+        next: reason_a1
+      - id: everything
+        stance: open
+        text:
+          zh: 挡住的是做音乐这件事本身。
+          en: Making music at all.
+        next: reason_a2
+
+  reason_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。它挡住的是“音质好”，没挡住“写一段旋律、录下来”。
+          en: Right. It blocks “polished.” It doesn’t block “write a melody and record it.”
+      - speaker: guide
+        text:
+          zh: 这就是书里那句话的意思：重要的不是被给予了什么，而是怎样使用被给予的东西。手机是发给你的。拿它录不录，是你定的。
+          en: That’s the meaning of the book’s line. What matters isn’t what you were given but how you use it. The phone was handed to you. Whether you record on it is yours to decide.
+    next: reveal_given
+
+  reason_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 感觉上是这样：没有像样的东西，就像连门都进不去。
+          en: It feels that way. Without proper kit, it’s as if you can’t even get through the door.
+      - speaker: guide
+        text:
+          zh: 可手机能录音，能哼一段旋律存下来，能把两段声音叠在一起。设备挡住的是“做得像样”，不是“做”。书里那句话说的就是这个差别：重要的不是被给予了什么，而是怎样使用被给予的东西。
+          en: But a phone can record. It can keep a hummed melody. It can layer one sound over another. What the missing gear blocks is “making it sound proper,” not “making it.” The book’s line is about exactly that gap. What matters isn’t what you were given but how you use it.
+    next: reveal_given
+
+  # later
+  later_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想用好的工具把事情做好，这是认真的态度，不是偷懒。
+          en: Wanting to do it well with good tools is a serious attitude, not laziness.
+      - speaker: narrator
+        text:
+          zh: 一年后你攒够了钱，买了电脑和麦克风。你把它们摆好，打开软件，对着空白的工程文件坐了很久。
+          en: A year later you’ve saved enough. You buy the laptop and the microphone, set them up, open the software, and sit for a long time in front of an empty project.
+    next: later_q
+
+  later_q:
+    type: choice
+    prompt:
+      zh: 这时你最可能冒出的下一句是？
+      en: What’s the next thought most likely to turn up?
+    options:
+      - id: need_more
+        stance: open
+        text:
+          zh: “我还得先上个课，学会了再写。”
+          en: “I should take a course first, and write once I know how.”
+        next: later_a1
+      - id: should_have
+        stance: open
+        text:
+          zh: “这一年我要是先用手机写着就好了。”
+          en: “I wish I’d been writing on my phone this whole year.”
+        next: later_a2
+
+  later_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 设备到了，“等”还在，只是换了一个要等的东西。
+          en: The gear arrived and the waiting stayed. It just found a new thing to wait for.
+      - speaker: guide
+        text:
+          zh: 这说明当初挡着你的不是手机。“等条件齐了再开始”有一个好处：在那之前，不用面对自己写出来的东西可能不好听。书的说法是，重要的不是手里有什么，而是怎么用手里现有的。
+          en: Which shows the phone was never what stood in your way. “I’ll start once everything’s in place” has a benefit. Until then, you never have to face the chance that what you write isn’t good. The book’s way of saying it is that what matters isn’t what you have, but how you use what’s already in your hand.
+    next: reveal_given
+
+  later_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。那一年里，手机一直在口袋里。
+          en: Yes. For that whole year, the phone was in your pocket.
+      - speaker: guide
+        text:
+          zh: 设备能买来音质，买不来那一年里本可以写下的五十段旋律。书的说法是：重要的不是被给予了什么，而是怎样使用被给予的东西。“等条件齐了”听着像计划，其实是把笔先放下了。
+          en: Gear can buy sound quality. It can’t buy the fifty melodies you might have written that year. The book’s way of saying it is that what matters isn’t what you were given but how you use it. “Once everything’s in place” sounds like a plan. In fact it’s putting the pen down.
+    next: reveal_given
+
+  # instrument (closest to the book -> one layer deeper)
+  instrument_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有说它好，也没有嫌它差。你只是把它算作了“我有的”。这正是书的方向。
+          en: You didn’t call it good and you didn’t complain it was bad. You simply counted it as what you have. That’s exactly the book’s direction.
+      - speaker: narrator
+        text:
+          zh: 你用手机录了三个月，发了第一首歌。底下有一条评论：“旋律还行，但这音质也太差了吧。”
+          en: You record on the phone for three months and post your first song. Underneath, one comment. “Tune’s okay, but that sound quality is terrible.”
+    next: instrument_q
+
+  instrument_q:
+    type: choice
+    prompt:
+      zh: 这条评论，你怎么放？
+      en: Where do you put that comment?
+    options:
+      - id: proved
+        stance: detour
+        text:
+          zh: 他说得对。没有设备，果然还是不行。
+          en: They’re right. Without gear it just doesn’t work after all.
+        next: instrument_a1
+      - id: two_parts
+        stance: book
+        text:
+          zh: 音质差是手机的事。旋律怎么样，那部分归我。
+          en: The sound quality is the phone’s. How the tune turned out is the part that’s mine.
+        next: instrument_a2
+
+  instrument_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 被人当面说差，很难不往心里去。
+          en: Being told to your face that something’s bad is hard not to take in.
+      - speaker: guide
+        text:
+          zh: 只是看看这条评论分了两半：“旋律还行”和“音质太差”。音质那一半说的是手机。旋律那一半说的是你，而他说的是“还行”。你一把抓住了说手机的那一半，把说你的那一半放掉了。发下来的东西，又一次替你做了总结。
+          en: But look, the comment came in two halves. “Tune’s okay” and “sound quality is terrible.” The sound half is about the phone. The tune half is about you, and what it says is “okay.” You grabbed the half about the phone and let go of the half about you. Once again the thing you were handed got to write your summary.
+    next: reveal_given
+
+  instrument_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你把这条评论拆对了：一半在说发给你的东西，一半在说你拿它做了什么。
+          en: You split the comment correctly. One half is about what you were handed. The other is about what you did with it.
+      - speaker: guide
+        text:
+          zh: 而且你没有拿“我只有手机”去挡旋律那一半。条件差不能替你写歌，也不能替你挨批评。归你的那部分，你认领了。
+          en: And you didn’t use “all I had was a phone” to shield the tune half. Poor circumstances can’t write your songs for you, and they can’t take your criticism for you either. The part that’s yours, you claimed.
+    next: reveal_given
+
+  reveal_given:
+    type: reveal
+    source: book
+    title:
+      zh: 发下来的，和拿它做的
+      en: What you’re handed, and what you do with it
+    body:
+      zh: |-
+        作者引用阿德勒的话，大意是：
+
+        > 重要的不是被给予了什么，而是怎样使用被给予的东西。
+
+        出身、身体、天赋、家里的条件，是发下来的，不由你选。作者不否认这些差别。他主张的是：盯着“为什么我只拿到这些”，什么也改变不了；能动的只有“拿这些做什么”。
+      en: |-
+        The authors cite Adler to this effect:
+
+        > What matters is not what you were given, but how you use what you were given.
+
+        Where you were born, your body, your talents, your family’s means, were handed to you. You didn’t choose them. The authors don’t deny those differences. What they hold is that staring at “why was I only given this” changes nothing. The only part that can move is “what do I do with it.”
+    next: scene_roommate
+
+  # ───────────────────────── Choice point 3: waiting for someone else to change ─────────────────────────
+  scene_roommate:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 发下来的不只有东西，还有人。
+          en: It isn’t only things that get handed to you. People do too.
+      - speaker: narrator
+        text:
+          zh: 你的室友每天凌晨一点开着麦打游戏。你提过两次。她说“好好好”，然后第二天照旧。你已经连着两周没睡好了。
+          en: Your roommate is on voice chat gaming at 1 a.m. every night. You’ve brought it up twice. She says “sure, sure,” and the next night it’s the same. You haven’t slept properly in two weeks.
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 接下来，你打算怎么办？
+      en: What do you do next?
+    options:
+      - id: wait
+        stance: detour
+        text:
+          zh: 等她自觉。不能每次都是我让步。
+          en: Wait for her to see sense. I can’t always be the one who gives way.
+        next: wait_1
+      - id: pressure
+        stance: detour
+        text:
+          zh: 冷着脸、关门重一点，让她知道我很不爽。
+          en: Go cold, shut doors a bit harder, let her see I’m not happy.
+        next: pressure_1
+      - id: my_side
+        stance: book
+        text:
+          zh: 她改不改我定不了。我来定我这边能做的。
+          en: Whether she changes isn’t up to me. I’ll decide what I can do on my side.
+        next: myside_1
+
+  # wait
+  wait_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “凭什么总是我让步”，这份不平是有道理的。吵的人是她，不是你。
+          en: “Why is it always me who gives way?” That sense of unfairness is reasonable. She’s the one making the noise, not you.
+      - speaker: guide
+        text:
+          zh: 我们只算一下，等的这段时间里发生了什么。
+          en: Let’s just count up what happens during the waiting.
+    next: wait_q
+
+  wait_q:
+    type: choice
+    prompt:
+      zh: 你今晚几点能睡，现在由谁决定？
+      en: What time you get to sleep tonight. Who decides that right now?
+    options:
+      - id: her
+        stance: open
+        text:
+          zh: 由她。她几点下线，我几点睡。
+          en: She does. I sleep when she logs off.
+        next: wait_a1
+      - id: should_be_her
+        stance: open
+        text:
+          zh: 本来就该她负责，是她在吵。
+          en: She’s the one responsible. She’s making the noise.
+        next: wait_a2
+
+  wait_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。你的睡眠，现在握在一个凌晨一点打游戏的人手里。
+          en: Right. Your sleep is currently in the hands of someone who games at 1 a.m.
+      - speaker: guide
+        text:
+          zh: “等她自觉”听着是在坚持原则，实际是把自己晚上的遥控器递了出去。书的说法是：别人不会为了你而改变，能改变你处境的只有你自己。这不是说她没错，是说等她，等不来觉。
+          en: “Waiting for her to see sense” sounds like standing on principle. In practice you’ve handed over the remote control for your nights. The book’s way of putting it is that other people won’t change for your sake, and the only one who can change your situation is you. That doesn’t mean she’s in the right. It means waiting on her won’t bring you any sleep.
+    next: reveal_change
+
+  wait_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 论对错，你是对的。该改的人是她。
+          en: On right and wrong, you’re correct. She’s the one who ought to change.
+      - speaker: guide
+        text:
+          zh: 只是“谁该负责”和“谁能让我今晚睡着”是两个问题。前一个的答案是她。后一个，如果你也答“她”，那你的睡眠就握在她手里了。书的说法是：别人不会为了你而改变，能改变你处境的只有你自己。你可以一边认定她不对，一边不把自己的晚上押在她身上。
+          en: But “who’s responsible” and “who can get me to sleep tonight” are two different questions. The answer to the first is her. If you answer “her” to the second as well, your sleep is in her hands. The book’s way of putting it is that other people won’t change for your sake, and the only one who can change your situation is you. You can hold that she’s wrong and still not stake your nights on her.
+    next: reveal_change
+
+  # pressure
+  pressure_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 两周没睡好，脸色想好也好不起来。这很自然。
+          en: Two weeks without proper sleep, and your face won’t stay pleasant even if you want it to. Natural enough.
+      - speaker: guide
+        text:
+          zh: 我们只看这个办法想达到什么。
+          en: Let’s just look at what this approach is trying to achieve.
+    next: pressure_q
+
+  pressure_q:
+    type: choice
+    prompt:
+      zh: 冷脸和摔门，是想让谁做出改变？
+      en: The cold face and the doors. Who are they meant to change?
+    options:
+      - id: change_her
+        stance: open
+        text:
+          zh: 让她。让她难受了，自己去改。
+          en: Her. Make her uncomfortable enough that she changes.
+        next: pressure_a1
+      - id: vent
+        stance: open
+        text:
+          zh: 也没想让谁改，就是想出口气。
+          en: Nobody, really. I just want to let it out.
+        next: pressure_a2
+
+  pressure_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，目标是她。你在试着从外面拧动另一个人。
+          en: Right, the target is her. You’re trying to turn another person from the outside.
+      - speaker: guide
+        text:
+          zh: 这和“等她自觉”其实是同一个办法，只是更用力：两种都把结果押在她会不会改上。书的说法是，你改变不了别人。她可能会改，也可能戴上耳机当没看见。而你这边能定的事，一件还没有动。
+          en: It’s really the same approach as waiting for her to see sense, only with more force. Both stake the outcome on whether she changes. The book’s way of putting it is that you can’t change other people. She may change. She may put on headphones and act as if she didn’t notice. Meanwhile, of the things you can decide on your side, not one has moved.
+    next: reveal_change
+
+  pressure_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 很老实。有时候摔一下门，确实就是为了不憋着。
+          en: That’s honest. Sometimes a slammed door really is just so you don’t bottle it up.
+      - speaker: guide
+        text:
+          zh: 只是气出完了，今晚一点她还是会上线。出气处理的是你的情绪，没有处理你的睡眠。书的说法是，别人不会为了你而改变，能改变你处境的只有你自己。所以值得问的是：我这边有什么是我说了算、而且真能让我睡着的？
+          en: But once it’s out, she’ll still be online at one tonight. Letting it out deals with your mood. It doesn’t deal with your sleep. The book’s way of putting it is that other people won’t change for your sake, and the only one who can change your situation is you. So the question worth asking is what’s on my side, mine to decide, that would actually get me to sleep?
+    next: reveal_change
+
+  # my_side (closest to the book -> one layer deeper)
+  myside_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你把“她该不该改”和“我能做什么”分开了。前一个你可以有看法，后一个才是你说了算的。
+          en: You’ve separated “should she change” from “what can I do.” On the first you can have a view. Only the second is yours to decide.
+      - speaker: narrator
+        text:
+          zh: 你认真地跟她谈了一次，说清了你的情况和你需要什么。她听完，说：“我就这个时间有空，你戴耳塞吧。”
+          en: You have one serious talk with her. You lay out your situation and what you need. She hears you out and says, “This is the only time I’m free. Just wear earplugs.”
+    next: myside_q
+
+  myside_q:
+    type: choice
+    prompt:
+      zh: 她没有改。现在呢？
+      en: She hasn’t changed. And now?
+    options:
+      - id: gave_up
+        stance: detour
+        text:
+          zh: 那就没办法了。该说的说了，只能忍。
+          en: Then there’s nothing to be done. I’ve said my piece. I’ll have to put up with it.
+        next: myside_a1
+      - id: still_mine
+        stance: book
+        text:
+          zh: 她定了她的。耳塞、换作息、申请换寝，还归我定。
+          en: She’s decided hers. Earplugs, a new schedule, asking to switch rooms are still mine to decide.
+        next: myside_a2
+
+  myside_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 认真谈了还被挡回来，会泄气的。
+          en: A serious talk that gets brushed aside does take the wind out of you.
+      - speaker: guide
+        text:
+          zh: 只是留意“没办法了”这四个字：它的意思是，办法只有“她改”这一个。她拒绝了，办法就没了。可她拒绝的只是她那一半。耳塞、换作息、找宿管、申请换寝，这些都还在桌上，而且都不需要她点头。“只能忍”也是一个选择，只是别把它当成唯一剩下的。
+          en: But notice “nothing to be done.” It means the only solution there ever was is “she changes.” She said no, so the solutions are gone. But she only said no to her half. Earplugs, a different schedule, talking to the dorm supervisor, asking to switch rooms are all still on the table, and none of them needs her agreement. “Put up with it” is a choice too. Just don’t take it for the only one left.
+    next: reveal_change
+
+  myside_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 她说了“不”，你没有把这个“不”当成自己的死路。
+          en: She said no, and you didn’t take her no as your dead end.
+      - speaker: guide
+        text:
+          zh: 这些办法没有一个是公平的：吵的是她，折腾的是你。书不假装这公平。它只说，在不公平里，你仍然是那个能动的人。
+          en: None of those options is fair. She makes the noise and you do the adjusting. The book doesn’t pretend that’s fair. It says only that inside the unfairness, you are still the one who can move.
+    next: reveal_change
+
+  reveal_change:
+    type: reveal
+    source: book
+    title:
+      zh: 能改变你的，只有你
+      en: The only one who can change you is you
+    body:
+      zh: |-
+        作者的主张很干脆：别人不是为了满足你的期待而活的，所以别人不会因为你希望，就为你改变。
+
+        > 能改变我的，只有我自己。
+
+        反过来，等别人先变、等环境先变，就等于把自己的处境交给了别人。作者认为，世界不会因为别人改变而对你改变，只会因为你自己动了而改变。
+      en: |-
+        The authors are flat about it. Other people aren’t living to meet your expectations, so they won’t change for you just because you’d like them to.
+
+        > The only one who can change me is me.
+
+        Turn that around, and waiting for others to change first, or for circumstances to change first, means handing your situation to someone else. The authors hold that the world doesn’t change for you because others change. It changes when you move.
+    next: reveal_three
+
+  reveal_three:
+    type: reveal
+    source: ours
+    title:
+      zh: 一件事，分三堆
+      en: One matter, three piles
+    body:
+      zh: |-
+        这不是书里的内容，是我们把前面几课串起来的一个小办法。被一件事卡住的时候，把它分成三堆：
+
+        - 发下来的：出身、已经发生的事、现在的条件。这一堆只能认。
+        - 别人的：别人怎么想、怎么做、改不改。这一堆只能放。
+        - 我的：拿发下来的做什么，我这边怎么选。这一堆才动得了。
+
+        卡住，常常是因为把力气花在了前两堆上。
+      en: |-
+        This isn’t from the book. It’s a small method we made by stringing the earlier lessons together. When something has you stuck, sort it into three piles:
+
+        - Handed to me: where I come from, what’s already happened, the conditions I have now. This pile can only be acknowledged.
+        - Other people’s: what they think, what they do, whether they change. This pile can only be let go.
+        - Mine: what I do with what I was handed, and how I choose on my side. This is the only pile that moves.
+
+        Being stuck often means the effort is going into the first two piles.
+    next: scene_zine
+
+  # ───────────────────────── Choice point 4: who says it counts ─────────────────────────
+  scene_zine:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 现在回到开头那个问题：不靠别人的认可，谁来说我这样活算不算数？
+          en: Now back to the question we began with. Without other people’s approval, who gets to say whether the way I live counts?
+      - speaker: narrator
+        text:
+          zh: 你花了整整一个周末，做完了那期播客。发出去一个星期，后台显示：播放 11 次。其中有 3 次是你自己点的。
+          en: You spend an entire weekend finishing that podcast episode. A week after posting, the stats say 11 plays. Three of them were you.
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: 那个周末，有意义吗？
+      en: That weekend. Did it mean anything?
+    options:
+      - id: no_audience
+        stance: detour
+        text:
+          zh: 没有。没人听的东西，跟没做一样。
+          en: No. Something nobody listens to might as well not exist.
+        next: audience_1
+      - id: depends_later
+        stance: detour
+        text:
+          zh: 现在说不好。要看它以后能不能带来点什么。
+          en: Too early to say. It depends whether it leads to anything later.
+        next: depends_1
+      - id: nothing_matters
+        stance: detour
+        text:
+          zh: 没有。说到底，做什么都没有意义。
+          en: No. When you get down to it, nothing means anything.
+        next: nothing_1
+      - id: i_say
+        stance: book
+        text:
+          zh: 有。它算不算数，是我来定的。
+          en: Yes. Whether it counts is mine to decide.
+        next: isay_1
+
+  # no_audience
+  audience_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 十一次，其中三次是自己。这个数字是会让人心凉的。
+          en: Eleven, three of them your own. A number like that does go cold in the chest.
+      - speaker: guide
+        text:
+          zh: 我们换一个数字试试。假设后台显示的是：播放十万次。
+          en: Let’s try a different number. Suppose the stats said a hundred thousand plays.
+    next: audience_q
+
+  audience_q:
+    type: choice
+    prompt:
+      zh: 那个周末你做的事，和现在这个周末，有什么不同？
+      en: What you did that weekend, compared with what you actually did. What’s different?
+    options:
+      - id: same_work
+        stance: open
+        text:
+          zh: 做的事一模一样，不同的只是后来的数字。
+          en: The work is identical. Only the number afterwards is different.
+        next: audience_a1
+      - id: that_one_matters
+        stance: open
+        text:
+          zh: 那个版本才算有意义，这个不算。
+          en: That version would mean something. This one doesn’t.
+        next: audience_a2
+
+  audience_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。同一个周末，同样的熬夜和剪辑。
+          en: Right. The same weekend, the same late nights and editing.
+      - speaker: guide
+        text:
+          zh: 如果意义是由播放量定的，那它就不在你做的事里，而在陌生人的手指上。上一课我们刚放下“别人的认可”，它换了一身叫“播放量”的衣服又回来了。作者的主张是：人生的意义不是别人发的，是自己给的。
+          en: If meaning is set by the play count, then it isn’t in what you did. It’s in strangers’ fingertips. Last lesson we put down other people’s approval, and here it is again, dressed as a play count. The authors’ claim is that the meaning of your life isn’t issued by others. You give it yourself.
+    next: reveal_meaning
+
+  audience_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个感觉很真实，谁都想被听见。
+          en: That feeling is entirely real. Everyone wants to be heard.
+      - speaker: guide
+        text:
+          zh: 只是留意，两个版本里你做的事一个字都没变，变的只是别人点没点。如果只有十万那个版本算数，那你周末两天值不值，就完全由陌生人的手指决定。上一课刚放下的“别人的认可”，换了个名字又回来了。作者的主张是：人生的意义不是别人发的，是自己给的。
+          en: But notice that across the two versions not one thing you did has changed. What changed is whether other people tapped. If only the hundred-thousand version counts, then whether your two days were worth it is decided entirely by strangers’ fingertips. The approval we put down last lesson is back under another name. The authors’ claim is that the meaning of your life isn’t issued by others. You give it yourself.
+    next: reveal_meaning
+
+  # depends_later
+  depends_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个回答很稳重，没有急着下结论。
+          en: A level-headed answer. You’re not rushing to a verdict.
+      - speaker: guide
+        text:
+          zh: 我们顺着它往后走。
+          en: Let’s follow it forward.
+    next: depends_q
+
+  depends_q:
+    type: choice
+    prompt:
+      zh: 如果它最后什么也没带来，那个周末算什么？
+      en: If in the end it leads to nothing, what was that weekend?
+    options:
+      - id: wasted
+        stance: open
+        text:
+          zh: 那就算白费了。
+          en: Then it was wasted.
+        next: depends_a1
+      - id: still_did
+        stance: open
+        text:
+          zh: 至少我做了一件自己想做的事。
+          en: At least I did something I wanted to do.
+        next: depends_a2
+
+  depends_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 按这个算法是这样：有回报才算数，没回报就白费。
+          en: By that accounting, yes. It counts if it pays off and it’s wasted if it doesn’t.
+      - speaker: guide
+        text:
+          zh: 这样一来，你今天做的每一件事，都要等到很久以后才知道值不值，而且判决权在一个你还没见过的“以后”手里。作者的主张更直接：意义不用等谁来批，是自己给的。那个周末算不算数，你现在就可以定。
+          en: Which means everything you do today has to wait a long time to learn whether it was worth it, and the verdict belongs to a “later” you’ve never met. The authors’ claim is more direct. Meaning doesn’t wait for anyone’s sign-off. You give it yourself. Whether that weekend counts is something you can settle now.
+    next: reveal_meaning
+
+  depends_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你看，你自己已经给出了一个不用等“以后”的答案。
+          en: See, you’ve just given an answer that doesn’t need to wait for “later.”
+      - speaker: guide
+        text:
+          zh: “做了一件自己想做的事”，这个意义是你定的，现在就成立，以后带不带来什么都拿不走它。这正是作者的主张：意义不是等来的，是自己给的。
+          en: “I did something I wanted to do.” That meaning is one you set. It holds now, and nothing that does or doesn’t follow can take it away. This is exactly the authors’ claim. Meaning isn’t something you wait for. You give it yourself.
+    next: reveal_meaning
+
+  # nothing_matters
+  nothing_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话有一半和书是一致的。作者也说，人生没有一个现成的、对谁都适用的意义。
+          en: Half of that sentence agrees with the book. The authors also say life has no ready-made meaning that applies to everyone.
+      - speaker: guide
+        text:
+          zh: 分歧在后一半。
+          en: The disagreement is over the other half.
+    next: nothing_q
+
+  nothing_q:
+    type: choice
+    prompt:
+      zh: “没有现成的意义”和“不可能有意义”，是同一句话吗？
+      en: “There’s no ready-made meaning” and “there can’t be any meaning.” Same sentence?
+    options:
+      - id: same
+        stance: open
+        text:
+          zh: 差不多。没有就是没有。
+          en: Near enough. None is none.
+        next: nothing_a1
+      - id: different
+        stance: open
+        text:
+          zh: 不是。没有现成的，可以自己做一个。
+          en: No. If none comes ready-made, I can make one.
+        next: nothing_a2
+
+  nothing_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果你等的是一个从外面发下来的意义，那确实没有，等多久都没有。
+          en: If what you’re waiting for is a meaning handed down from outside, then indeed there’s none, however long you wait.
+      - speaker: guide
+        text:
+          zh: 可是一张白纸上没有字，不等于不能写字。作者正是从“没有现成的”推到了另一头：既然没有人替你规定，那它就归你来给。“做什么都没意义”听着很彻底，其实还是在等别人发答案，只是等不到，生气了。
+          en: But a blank page having no words on it doesn’t mean words can’t be written. From “nothing ready-made” the authors go the other way. Since nobody has laid it down for you, it’s yours to give. “Nothing means anything” sounds thoroughgoing. Really it’s still waiting for someone else to issue the answer, and getting angry that nobody does.
+    next: reveal_meaning
+
+  nothing_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。这正是作者走的那一步。
+          en: Yes. That’s exactly the step the authors take.
+      - speaker: guide
+        text:
+          zh: 没有现成的意义，不是坏消息，是一张白纸。既然没有人替你规定这个周末算不算数，那它就归你来说。
+          en: No ready-made meaning isn’t bad news. It’s a blank page. Since nobody has laid down whether that weekend counts, it’s yours to say.
+    next: reveal_meaning
+
+  # i_say (closest to the book -> one layer deeper)
+  isay_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的回答：意义不是找到的，也不是别人发的，是自己给的。
+          en: That is the book’s answer. Meaning isn’t found and it isn’t issued by others. You give it yourself.
+      - speaker: guide
+        text:
+          zh: 不过这句话很容易被质疑，我替质疑的人问一句。
+          en: The sentence is easy to challenge, though, so let me ask on the challenger’s behalf.
+    next: isay_q
+
+  isay_q:
+    type: choice
+    prompt:
+      zh: “我说算数就算数”，这和自己骗自己有什么区别？
+      en: “It counts because I say so.” How is that different from fooling yourself?
+    options:
+      - id: no_difference
+        stance: detour
+        text:
+          zh: 没什么区别。反正自己开心就好。
+          en: It isn’t, really. As long as I’m happy, who cares.
+        next: isay_a1
+      - id: live_by_it
+        stance: book
+        text:
+          zh: 区别在于我得照着它去活，不能只是说说。
+          en: The difference is I have to live by it, not just say it.
+        next: isay_a2
+
+  isay_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “自己开心就好”确实比“看播放量”自由得多。
+          en: “As long as I’m happy” is certainly a lot freer than watching the play count.
+      - speaker: guide
+        text:
+          zh: 只是如果只停在嘴上，它确实和自欺分不开：嘴上说这期播客对我有意义，然后再也不做下一期。这是我们的理解：自己给的意义，要靠自己的行动来兑现。你说它算数，然后下个周末又坐下来做了一期，它才真的算数。
+          en: But left as words only, it really can’t be told apart from self-deception. You say the episode meant something to you, and then never make another. This is our own reading. A meaning you give yourself has to be made good by what you do. You say it counts, and then next weekend you sit down and make another one. That’s when it truly counts.
+    next: reveal_meaning
+
+  isay_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。自欺是给完意义就不管了。当作者的人，是给了意义，然后照着它去写下一行。
+          en: Yes. Fooling yourself is giving a meaning and then leaving it there. Being the author is giving a meaning and then writing the next line by it.
+      - speaker: guide
+        text:
+          zh: 这是我们的理解，书里没有这样说，但方向是一致的：你说这个周末算数，兑现它的方式是下个周末再做一期。主体性不是一句宣言，是一连串自己认领的选择。
+          en: This is our own reading. The book doesn’t put it this way, though it points the same direction. You say the weekend counted, and you make that good by doing another episode next weekend. Being the author isn’t a declaration. It’s a run of choices you’ve claimed as your own.
+    next: reveal_meaning
+
+  reveal_meaning:
+    type: reveal
+    source: book
+    title:
+      zh: 意义是你给的
+      en: The meaning is yours to give
+    body:
+      zh: |-
+        作者在全书最后谈到人生的意义。他引用阿德勒的回答，大意是：人生没有一个对所有人都通用的意义。
+
+        > 人生的意义，是你自己赋予自己的。
+
+        把这一课的几点放在一起：世界是你给了意义的世界，条件是你来用的条件，能动的只有你自己，意义也由你来给。所以我们把这一课叫作主体性：决定你怎么看世界、怎么活的是你自己，不是过去，也不是别人。
+      en: |-
+        At the very end of the book the authors come to the meaning of life. They cite Adler’s answer, to the effect that life has no meaning that holds for everyone.
+
+        > The meaning of your life is something you give it yourself.
+
+        Put this lesson’s points side by side. The world is one you’ve given meaning to. Your circumstances are yours to use. The only one who can move is you. And the meaning is yours to give. That’s why we call this lesson authorship. The one who decides how you see the world and how you live is you, not your past and not other people.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。下面是我们整理的质疑和边界：
+
+        - “怎么用”的空间，对每个人并不一样大。贫穷、疾病、歧视会实实在在地缩小一个人能选的范围。只谈个人选择，容易变成“都怪你自己不努力”。
+        - 你是自己人生的作者，不等于发生在你身上的事都是你的错。认领选择，和责怪自己，是两回事。
+        - 十几岁的时候，很多事确实由大人决定：住哪里、读哪所学校、钱怎么花。这时候能认领的那一堆比较小，这是事实，不是你不够有主见。
+        - “意义自己给”并不是共识。很多哲学和信仰传统认为，意义来自关系、传统，或者比个人更大的东西。
+        - “主观世界”不等于事实可以随便解释。把明明伤害了别人的事说成“我的世界里没问题”，不是主体性，是推卸。
+      en: |-
+        That was the book’s position. Here are the objections and limits, as we’ve gathered them:
+
+        - The room for “how you use it” is not the same size for everyone. Poverty, illness and discrimination shrink, in solid ways, what a person can choose from. Talk only of personal choice slides easily into “it’s your own fault for not trying.”
+        - Being the author of your life doesn’t make everything that happens to you your fault. Claiming your choices and blaming yourself are two different things.
+        - In your teens a great deal really is decided by adults: where you live, which school, how money is spent. The pile you can claim is smaller then. That’s a fact, not a sign you lack a mind of your own.
+        - “You give the meaning yourself” is not a consensus. Many philosophical and religious traditions hold that meaning comes from relationships, from tradition, or from something larger than the individual.
+        - A “subjective world” doesn’t make facts open to any reading you like. Calling something that plainly hurt another person “fine in my world” isn’t authorship. It’s dodging.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。一个朋友对你说：“我就是这种出身、这种命，还能怎么样？”用你自己的话回答他，两三句就够。别让他觉得你在说“都怪你自己”。
+      en: Your turn. A friend says to you, “This is my background, this is my lot. What am I supposed to do about it?” Answer in your own words. Two or three sentences will do. Try not to make it sound like “it’s all your own fault.”
+    checkpoints:
+      - id: use
+        label:
+          zh: 我讲了重要的不是拿到什么，而是怎么用
+          en: I said what matters isn’t what you were given but how you use it
+        hint:
+          zh: 出身和条件是发下来的，这是真的。但能动的不是“拿到了什么”，而是“拿它做什么”。
+          en: Background and circumstances are handed to you, and that’s real. But the part that can move isn’t “what I got.” It’s “what I do with it.”
+        cues:
+          zh: [怎么用, 使用, 拿它, 手里, 条件, 发下来, 被给予, 牌, 材料]
+          en: [how you use, what you do with, given, handed, dealt, cards, circumstances, material]
+      - id: only_me
+        label:
+          zh: 我讲了能改变我的只有我，等别人和环境先变等不来
+          en: I said only I can change me, and waiting on others or circumstances doesn’t work
+        hint:
+          zh: 别人不会为了你而改变。等别人先变，就是把自己的处境交到别人手里。
+          en: Other people won’t change for your sake. Waiting for them to change first means handing your situation to them.
+        cues:
+          zh: [只有自己, 改变自己, 等别人, 别人不会, 我这边, 自己动, 交给别人, 遥控器]
+          en: [only you, only i, change yourself, change myself, waiting for, won’t change, my side, your side, up to me, up to you]
+      - id: meaning
+        label:
+          zh: 我讲了意义是自己给的，不是过去或别人定的
+          en: I said the meaning is yours to give, not set by the past or by other people
+        hint:
+          zh: 没有现成的意义，也没有人能替你规定“这样活算不算数”。这一句归你自己来写。
+          en: There’s no ready-made meaning, and nobody can lay down for you whether your life counts. That line is yours to write.
+        cues:
+          zh: [意义, 自己给, 赋予, 算数, 自己定, 作者, 主人, 笔, 自己写]
+          en: [meaning, give it, counts, decide, author, pen, write, your own, my own]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。它没有说你拿到的牌很好，也没有说一切都怪你。它只是指给你看：笔一直在你手里。
+          en: That’s this lesson. It never said the hand you were dealt was a good one, and it never said everything is your fault. It only pointed out that the pen has been in your hand all along.
+      - speaker: guide
+        text:
+          zh: 那么，一个自己拿着笔的人，该怎么对待别的也拿着笔的人？下一课从这里开始。
+          en: So how should someone holding their own pen treat other people who are holding theirs? The next lesson starts there.

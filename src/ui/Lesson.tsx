@@ -12,13 +12,15 @@ interface Props {
   lang: Lang;
   onProgress: (p: Progress) => void;
   onHome: () => void;
+  /** Opens the lesson that follows this one, when there is one ready. */
+  onNext?: () => void;
 }
 
 /**
  * One lesson, drawn as a stream: everything already passed stays above, dimmed,
  * and the step the reader is on sits at the top of the screen.
  */
-export function Lesson({ book, concept, progress, lang, onProgress, onHome }: Props) {
+export function Lesson({ book, concept, progress, lang, onProgress, onHome, onNext }: Props) {
   const active = currentStep(progress);
   const activeNode = nodeOf(concept, active);
   const activeRef = useRef<HTMLDivElement>(null);
@@ -107,7 +109,12 @@ export function Lesson({ book, concept, progress, lang, onProgress, onHome }: Pr
                 <p class="note">{t('coreNote', lang)}</p>
               </section>
               <div class="end-actions rise">
-                <button class="btn" data-action="home" onClick={onHome}>
+                {onNext && (
+                  <button class="btn" data-action="next-lesson" onClick={onNext}>
+                    {t('nextLesson', lang)}
+                  </button>
+                )}
+                <button class={onNext ? 'btn-quiet' : 'btn'} data-action="home" onClick={onHome}>
                   {t('toContents', lang)}
                 </button>
                 <button class="btn-quiet" data-action="restart" onClick={() => onProgress(start(concept))}>

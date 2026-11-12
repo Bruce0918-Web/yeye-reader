@@ -1,0 +1,1003 @@
+# 此时此刻 / Here and now
+#
+# The last lesson. It opens on the reader's own "once X is over, then..." and brings back
+# Noah from the first lesson, so the book closes where it began. After the fourth choice point
+# there is one card of ours that strings the eight lessons together.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: here-and-now
+
+title:
+  zh: 此时此刻
+  en: Here and now
+
+question:
+  zh: 我是不是一直在为“以后”过现在？
+  en: Have I been living the present for the sake of “later”?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 人生不是一条通往某个终点的线，而是一连串的“此刻”。
+    en: Life is not a line leading to some endpoint. It is a series of moments, each one a “now.”
+  - zh: 如果把人生看成登山，只有登顶才算数，那么到达之前的日子都只是“路上”。作者主张把它看成跳舞：跳的过程本身就是目的。
+    en: If life is a climb and only the summit counts, every day before arriving is merely “on the way.” The authors propose seeing it as a dance, where the dancing itself is the point.
+  - zh: 过去怎样、未来会怎样，都不是此时此刻要解决的问题。认真过好此刻，不是及时行乐，而是认真做此刻该做、能做的事。
+    en: How the past was and how the future will be are not problems for the here and now. Living this moment earnestly is not seizing pleasure. It is doing, earnestly, what this moment calls for and allows.
+  - zh: 认真不等于沉重。
+    en: Earnest does not mean heavy.
+  - zh: 作者认为，人生最大的谎言，就是不活在此时此刻：盯着过去和未来，给自己找不行动的理由。
+    en: The authors hold that the greatest lie in life is not living here and now, which means fixing on the past and the future and finding in them reasons not to act.
+  - zh: 人生没有通用的意义，意义由自己赋予。迷路时的方向（书里叫“引导之星”）是：对别人有所贡献。
+    en: Life has no general meaning. You give it meaning yourself. The direction when you are lost (the book calls it the “guiding star”) is contribution to others.
+  - zh: 不必成为特别的人。接受普通的自己，需要勇气。
+    en: You don’t have to be special. Accepting your ordinary self takes courage.
+
+cast:
+  mo:
+    name: { zh: 陈默, en: Noah }
+  friend:
+    name: { zh: 朋友, en: Your friend }
+
+start: open
+
+nodes:
+  # ───────────────────────── Opening: what are you waiting to be over ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 最后一课。上一课结尾说，书的回答只有四个字。就是这一课的名字。
+          en: The last lesson. The previous one ended by saying the book’s answer is three words long. They’re the name of this lesson.
+      - speaker: guide
+        text:
+          zh: 先从你常说的一句话开始：“等……就好了。”
+          en: Let’s start from a sentence you say a lot. “Once … then things will be fine.”
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 你现在最常等的，是哪一个“之后”？
+      en: Which “after” are you waiting for most these days?
+    options:
+      - id: after_exam
+        stance: open
+        text:
+          zh: 等考完、等毕业，就能过自己想过的日子了。
+          en: Once exams are over and I’ve graduated, I can live the way I want.
+        next: exam_1
+      - id: after_better
+        stance: open
+        text:
+          zh: 等我变得更好一点，再去做想做的事。
+          en: Once I’m a better version of myself, I’ll do what I want to do.
+        next: better_1
+      - id: after_clear
+        stance: open
+        text:
+          zh: 等我想清楚这辈子要干什么，再认真开始。
+          en: Once I’ve worked out what to do with my life, I’ll start in earnest.
+        next: clear_1
+      - id: not_waiting
+        stance: open
+        text:
+          zh: 我没在等。我每天都排得很满。
+          en: I’m not waiting. Every day is packed.
+        next: busy_1
+
+  exam_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个等很实在，考试确实会结束。
+          en: That’s a solid thing to wait for. Exams do end.
+      - speaker: guide
+        text:
+          zh: 只是回头数一数：小学时等的是上初中，初中等的是中考完，高中等的是高考完。每一个“之后”到了，前面都立着下一个。那么这些年里，哪一段算是在“过日子”，而不是在“等日子”？
+          en: But count back. In primary school you were waiting for middle school. In middle school, for those exams to be over. In high school, for the big one. Each “after” arrived with another standing in front of it. So across those years, which stretch counted as living, and not as waiting to live?
+    next: reveal_dance
+
+  better_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想变得更好，是好事。第二课说过，这是人人都有的心情。
+          en: Wanting to be better is a good thing. Lesson two called it something everyone feels.
+      - speaker: guide
+        text:
+          zh: 只是留意这句话的结构：现在的我还不够格，先不算。要到多好，才算开始？这条线如果一直往后挪，“想做的事”就永远排在一个还没出现的人后面。
+          en: But look at how the sentence is built. The me of now doesn’t qualify yet, so doesn’t count yet. How good is good enough to begin? If that line keeps moving back, “what I want to do” stays forever in the queue behind a person who hasn’t shown up.
+    next: reveal_dance
+
+  clear_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 不想糊里糊涂地过，这是认真的态度。
+          en: Not wanting to drift through life is a serious attitude.
+      - speaker: guide
+        text:
+          zh: 只是“想清楚”很少是坐着想出来的。多数人是做了一阵子某件事，才知道喜不喜欢。如果必须先有答案才动，那想清楚之前的这几年，在你的人生里算什么？
+          en: But “working it out” is rarely done sitting still. Most people only learn whether they like something after doing it for a while. If you have to have the answer before you move, what do these years before the answer count as, in your life?
+    next: reveal_dance
+
+  busy_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那你至少没有站在原地等。
+          en: Then at least you’re not standing still and waiting.
+      - speaker: guide
+        text:
+          zh: 我只多问一句：排得满的这些事，是你今天想做的，还是为了某个“以后”不得不先熬过去的？如果是后一种，那忙和等其实是同一件事，只是等的时候在跑步。
+          en: One more question only. The things your day is packed with. Are they what you want to be doing today, or what has to be got through first for the sake of some “later”? If it’s the second, being busy and waiting are the same thing. You’re just running while you wait.
+    next: reveal_dance
+
+  reveal_dance:
+    type: reveal
+    source: book
+    title:
+      zh: 登山，还是跳舞
+      en: A climb, or a dance
+    body:
+      zh: |-
+        作者说，很多人把人生想成一条线：从出生开始，朝某个山顶爬。如果是这样，只有登顶才算数，到达之前的日子都只是“路上”。要是中途没爬到，那一生就都是“路上”。
+
+        作者提出另一种看法：
+
+        > 人生不是一条线，而是一连串的“此刻”。
+
+        它更像跳舞。跳舞的人不是为了到达舞池的另一头才跳的；跳的过程本身就是目的。跳着跳着，也会到达某个地方，但那是结果，不是为了它才跳。
+      en: |-
+        The authors say many people picture life as a line. You start at birth and climb toward some summit. If so, only reaching the top counts, and every day before arriving is merely “on the way.” And if you never reach it, the whole of your life was “on the way.”
+
+        They offer another picture:
+
+        > Life is not a line. It is a series of moments, each one a “now.”
+
+        It’s more like dancing. A dancer isn’t dancing in order to get to the far side of the floor. The dancing itself is the point. You may well end up somewhere as you dance, but that’s an outcome. It isn’t what you danced for.
+    next: scene_exam
+
+  # ───────────────────────── Choice point 2: what "live now" means tonight ─────────────────────────
+  scene_exam:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “活在当下”这四个字很容易被拿去用。我们试一个具体的晚上。
+          en: “Live in the moment” is a phrase that gets borrowed for all sorts of things. Let’s try it on one particular evening.
+      - speaker: narrator
+        text:
+          zh: 明天上午有一门重要的考试，你还有两章没看完。晚上七点，朋友发来消息。
+          en: Tomorrow morning there’s an important exam and you still have two chapters to go. At 7 p.m. a friend texts.
+      - speaker: friend
+        text:
+          zh: “今晚有个超棒的演出，一起去吧！活在当下嘛！”
+          en: “There’s an amazing gig tonight, come with! Live in the moment, right?”
+    next: cp2
+
+  cp2:
+    type: choice
+    prompt:
+      zh: 按这本书的意思，今晚“活在此刻”是什么？
+      en: As this book means it, what is “living here and now” tonight?
+    options:
+      - id: go_out
+        stance: detour
+        text:
+          zh: 去看演出。此刻开心最重要，考试是明天的事。
+          en: Going to the gig. Being happy now matters most, and the exam is tomorrow’s business.
+        next: goout_1
+      - id: grit
+        stance: detour
+        text:
+          zh: 咬牙复习。今晚不算数，熬过去考完就解放了。
+          en: Grinding through revision. Tonight doesn’t count. Get through it and I’m free after the exam.
+        next: grit_1
+      - id: earnest
+        stance: book
+        text:
+          zh: 认真复习。而且今晚本身就算数，不只是为了明天。
+          en: Revising, properly. And tonight counts as itself, not only for tomorrow’s sake.
+        next: earnest_1
+
+  # go_out
+  goout_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是“活在当下”最常见的读法，演出也确实可能很棒。
+          en: That’s the commonest reading of “live in the moment,” and the gig may well be brilliant.
+      - speaker: guide
+        text:
+          zh: 我们往后走十三个小时。明天早上八点，你坐在考场里，翻开卷子。
+          en: Let’s move forward thirteen hours. Tomorrow at 8 a.m. you’re sitting in the exam hall, turning over the paper.
+    next: goout_q
+
+  goout_q:
+    type: choice
+    prompt:
+      zh: 明早八点的那个“此刻”，是谁的？
+      en: That “now” at eight tomorrow. Whose is it?
+    options:
+      - id: also_mine
+        stance: open
+        text:
+          zh: 也是我的，躲不掉。
+          en: Mine too. There’s no getting out of it.
+        next: goout_a1
+      - id: tomorrows
+        stance: open
+        text:
+          zh: 那是明天的我的事，到时候再说。
+          en: That’s tomorrow-me’s problem. I’ll deal with it then.
+        next: goout_a2
+
+  goout_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。明早八点也是一个“此刻”，而且也是你的。
+          en: Right. Eight tomorrow is a “now” too, and it’s yours as well.
+      - speaker: guide
+        text:
+          zh: 书说的“活在此时此刻”，不是哪件事最快乐就做哪件。它说的是：认真做此刻该做、能做的事。今晚该做的是那两章。去看演出不是罪，只是别把它叫作这本书说的“活在当下”。
+          en: When the book says “live here and now,” it doesn’t mean do whichever thing is most fun. It means earnestly doing what this moment calls for and allows. What tonight calls for is those two chapters. Going to the gig isn’t a crime. Just don’t call it what this book means by living in the moment.
+    next: reveal_earnest
+
+  goout_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话把“明天的我”说得像另一个人。
+          en: That sentence talks about “tomorrow-me” as if they were somebody else.
+      - speaker: guide
+        text:
+          zh: 可坐在考场里的还是你。把难处推给他，其实是今晚的你在躲今晚的事。书说的“活在此时此刻”，不是哪件事最快乐就做哪件，而是认真做此刻该做、能做的事。今晚该做的是那两章。去看演出不是罪，只是别把它叫作这本书说的“活在当下”。
+          en: But the one sitting in that hall will still be you. Handing them the hard part is really tonight’s you dodging tonight’s business. When the book says “live here and now,” it doesn’t mean do whichever thing is most fun. It means earnestly doing what this moment calls for and allows. What tonight calls for is those two chapters. Going to the gig isn’t a crime. Just don’t call it what this book means by living in the moment.
+    next: reveal_earnest
+
+  # grit
+  grit_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 留下来复习，这一半和书是一致的。
+          en: Staying in to revise. That half matches the book.
+      - speaker: guide
+        text:
+          zh: 我想停在“今晚不算数”这几个字上。
+          en: It’s “tonight doesn’t count” I want to stop on.
+    next: grit_q
+
+  grit_q:
+    type: choice
+    prompt:
+      zh: 一个“熬过去”的晚上，在你的人生里算什么？
+      en: An evening you “get through.” What is it, in your life?
+    options:
+      - id: a_price
+        stance: open
+        text:
+          zh: 算代价。为了以后，现在得先付出去。
+          en: A price. Something paid now for the sake of later.
+        next: grit_a1
+      - id: also_lived
+        stance: open
+        text:
+          zh: 也算我活过的一个晚上。
+          en: Also an evening I lived.
+        next: grit_a2
+
+  grit_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是登山的算法：到山顶之前的每一步都是代价。
+          en: That’s the climbing arithmetic exactly. Every step before the summit is a cost.
+      - speaker: guide
+        text:
+          zh: 按这个算法，你的初中、高中，大部分晚上都是代价。书的看法是，今晚也是你人生里实打实的一个晚上，不是垫在明天下面的一块砖。同样是复习，可以是“熬”，也可以是认真地把这两章看懂。书还特意说：认真不等于沉重。泡一杯喜欢的茶再看，也是认真。
+          en: By that arithmetic, most of the evenings of your school years were a cost. The book’s view is that tonight, too, is a solid evening of your life, not a brick laid under tomorrow. The same revision can be “getting through,” or it can be actually coming to understand those two chapters. The book makes a point of adding that earnest doesn’t mean heavy. Making a cup of tea you like before you start is earnest too.
+    next: reveal_earnest
+
+  grit_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。它不会因为你在复习，就不算你的人生。
+          en: Yes. It doesn’t stop being part of your life because you spent it revising.
+      - speaker: guide
+        text:
+          zh: 那“熬过去”这个词就可以换掉了。同样是这两章，可以咬着牙等它结束，也可以认真地把它看懂。书还特意说：认真不等于沉重。泡一杯喜欢的茶再看，看懂一个地方时高兴一下，这些都不耽误认真。
+          en: So “getting through” is a phrase you can replace. Those same two chapters can be endured with your teeth gritted until they’re over, or they can be properly understood. The book makes a point of adding that earnest doesn’t mean heavy. Making a cup of tea you like before you start, being pleased when something clicks. None of that gets in the way of being earnest.
+    next: reveal_earnest
+
+  # earnest (closest to the book -> one layer deeper: what about plans)
+  earnest_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的意思：不是享乐，也不是熬，而是认真做此刻该做的事，并且这一刻本身就算数。
+          en: That’s what the book means. Not pleasure-seeking and not grinding, but earnestly doing what this moment calls for. And the moment counts as itself.
+      - speaker: guide
+        text:
+          zh: 那就有一个很自然的疑问。
+          en: Which raises a natural doubt.
+    next: earnest_q
+
+  earnest_q:
+    type: choice
+    prompt:
+      zh: 既然只看此刻，还要不要定目标、做计划？
+      en: If only the present counts, should I still set goals and make plans?
+    options:
+      - id: no_plans
+        stance: detour
+        text:
+          zh: 不用了。计划就是活在未来，不符合这一课。
+          en: No. Planning is living in the future, which goes against this lesson.
+        next: earnest_a1
+      - id: plans_ok
+        stance: book
+        text:
+          zh: 要。计划也是此刻做的事，只是别把到达前的日子当成不算。
+          en: Yes. Planning is something done now. Just don’t treat the days before arriving as not counting.
+        next: earnest_a2
+
+  earnest_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 照字面读，是会读出这个结论。书里确实说过，人生没法照着计划走。
+          en: Read literally, it does lead there. And the book does say life can’t be made to follow a plan.
+      - speaker: guide
+        text:
+          zh: 不过这是我们的理解：书反对的不是计划，而是“只有到了才算数”。今晚坐下来排一排这周怎么复习，是今晚认真做的一件事。它和“等考完才算开始生活”是两回事。计划可以有，只是别把计划里到达之前的每一天，都标成“还没开始”。
+          en: This is our own reading, though. What the book opposes isn’t planning. It’s “only arriving counts.” Sitting down tonight to map out the week’s revision is one thing done earnestly tonight. That’s different from “life starts once the exams are over.” Have the plan. Just don’t label every day before the arrival “not started yet.”
+    next: reveal_earnest
+
+  earnest_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。做计划的那一刻，也是一个此刻。
+          en: Yes. The moment you’re planning in is a “now” as well.
+      - speaker: guide
+        text:
+          zh: 这是我们的理解，书里没有这样明说：它反对的不是目标，而是把到达之前的日子都当成“路上”。用跳舞来说：可以知道自己大概往哪边跳，但每一步都是在跳，不是在赶路。
+          en: This is our own reading. The book doesn’t say it in so many words. What it opposes isn’t goals. It’s treating all the days before arriving as merely “on the way.” In dancing terms, you can know roughly which way you’re heading across the floor. Every step is still dancing, not hurrying to get somewhere.
+    next: reveal_earnest
+
+  reveal_earnest:
+    type: reveal
+    source: book
+    title:
+      zh: 认真，但不沉重
+      en: Earnest, but not heavy
+    body:
+      zh: |-
+        作者说的“活在此时此刻”，常被误读成两种样子。它不是及时行乐，也不是苦熬。
+
+        > 认真地过好此时此刻。
+
+        意思是：过去怎样、未来会怎样，都不是此刻要解决的问题。此刻能做的，只有此刻该做的那件事。把它认真做了，这一刻就是完整的，不需要等到某个结果出来才算数。
+
+        作者还特意补了一句：认真不等于沉重。
+      en: |-
+        What the authors mean by “living here and now” is often misread in two ways. It is not seizing pleasure, and it is not grim endurance.
+
+        > Live this moment, here and now, earnestly.
+
+        Meaning that how the past was and how the future will be are not problems for this moment. All that can be done now is the thing this moment calls for. Do it earnestly and the moment is complete. It doesn’t need to wait for some result before it counts.
+
+        They take care to add one thing. Earnest does not mean heavy.
+    next: scene_noah
+
+  # ───────────────────────── Choice point 3: "too late" ─────────────────────────
+  scene_noah:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 未来说完了，还有过去。请回一个你认识的人。
+          en: That was the future. There’s still the past. Let’s bring back someone you know.
+      - speaker: narrator
+        text:
+          zh: 还记得第一课的陈默吗？那个周四，他上台讲了，讲得磕磕绊绊。这个学期他又讲了四次。今天下课，他忽然对你说了一句话。
+          en: Remember Noah, from the first lesson? That Thursday he stood up and stumbled through it. He’s spoken four more times this term. After class today he suddenly says something to you.
+      - speaker: mo
+        text:
+          zh: “我浪费了整整十年不敢说话。现在才开始，太晚了。”
+          en: “I wasted ten whole years being too scared to talk. Starting now is too late.”
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 你怎么看“太晚了”这三个字？
+      en: What do you make of “too late”?
+    options:
+      - id: better_late
+        stance: detour
+        text:
+          zh: 是晚了一点。不过晚开始，总比一直不开始好。
+          en: It’s on the late side. Still, late is better than never.
+        next: late_1
+      - id: forget_it
+        stance: detour
+        text:
+          zh: 别再想那十年了。过去的事，都已经过去了。
+          en: Stop thinking about those ten years. What’s past is past.
+        next: forget_1
+      - id: which_line
+        stance: book
+        text:
+          zh: “晚”得有条线才量得出。他此刻就在讲。
+          en: “Late” is measured along a line. He’s speaking now, and nothing’s missing from that.
+        next: line_1
+
+  # better_late
+  late_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话是在安慰他，而且比“你确实晚了”温和得多。
+          en: You’re comforting him, and it’s far gentler than “yes, you are late.”
+      - speaker: guide
+        text:
+          zh: 只是留意它先同意了什么。
+          en: But notice what it agrees to first.
+    next: late_q
+
+  late_q:
+    type: choice
+    prompt:
+      zh: “是晚了点”，是跟什么比出来的晚？
+      en: “On the late side.” Late compared with what?
+    options:
+      - id: timetable
+        stance: open
+        text:
+          zh: 跟“人应该在几岁学会什么”的那张时间表比。
+          en: With the timetable of what a person should have learned by what age.
+        next: late_a1
+      - id: others
+        stance: open
+        text:
+          zh: 跟别人比。别人早就敢说了。
+          en: With other people. They got over this ages ago.
+        next: late_a2
+
+  late_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，一张时间表。它是谁发的？没有人发过。
+          en: Right, a timetable. Who issued it? Nobody ever did.
+      - speaker: guide
+        text:
+          zh: “晚”这个字只有在一条线上才有意思：前面有个该到的点，你迟到了。书把人生看成一连串的此刻，不是一条线。在这种看法里，陈默今天站起来讲了三分钟，这三分钟是完整的，没有“迟到”可言。那十年是真的，只是它不欠今天什么。
+          en: “Late” only means something on a line. There’s a point you were due at, and you’re behind. The book sees life as a series of moments, not a line. Seen that way, Noah stood up today and spoke for three minutes, and those three minutes are whole. There’s nothing for them to be late for. The ten years were real. They just aren’t owed anything by today.
+    next: reveal_lie
+
+  late_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是第二课的那把尺子，又出现了。
+          en: That’s the ruler from lesson two, back again.
+      - speaker: guide
+        text:
+          zh: 把所有人排在一条跑道上，才有谁早谁晚。书把人生看成一连串的此刻，不是一条跑道。在这种看法里，陈默今天站起来讲了三分钟，这三分钟是完整的，不因为别人早讲过就打折。那十年是真的，只是它不欠今天什么。
+          en: Early and late only exist once everyone’s lined up on the same track. The book sees life as a series of moments, not a track. Seen that way, Noah stood up today and spoke for three minutes, and those three minutes are whole. They aren’t marked down because other people spoke sooner. The ten years were real. They just aren’t owed anything by today.
+    next: reveal_lie
+
+  # forget_it
+  forget_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你想让他别被那十年压着，方向和书是一致的。
+          en: You want him out from under those ten years, and that’s the book’s direction too.
+      - speaker: guide
+        text:
+          zh: 我们从陈默那边听一遍：“别想了，过去的都过去了。”
+          en: Let’s hear it from Noah’s side. “Stop thinking about it. What’s past is past.”
+    next: forget_q
+
+  forget_q:
+    type: choice
+    prompt:
+      zh: 他听到的是什么？
+      en: What does he hear?
+    options:
+      - id: dismissed
+        stance: open
+        text:
+          zh: 听到的是：你的十年不值一提。
+          en: “Your ten years aren’t worth mentioning.”
+        next: forget_a1
+      - id: relief
+        stance: open
+        text:
+          zh: 听到的是：我不用再背着它了。
+          en: “I don’t have to carry it any more.”
+        next: forget_a2
+
+  forget_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。那十年他是一天一天过来的，“别想了”等于让他假装没有。
+          en: Right. He lived those ten years one day at a time, and “stop thinking about it” asks him to pretend he didn’t.
+      - speaker: guide
+        text:
+          zh: 书的意思不是过去不存在。它说的是：过去怎样，不是此时此刻要解决的问题。那十年可以是真的、可以是疼的，同时今天这三分钟也可以是完整的。不需要先把十年抹掉，今天才能算数。
+          en: The book isn’t saying the past doesn’t exist. It says that how the past was is not a problem for the here and now. Those ten years can be real and can hurt, and today’s three minutes can be whole all the same. The ten years don’t have to be wiped out before today is allowed to count.
+    next: reveal_lie
+
+  forget_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果他听到的是这个，那很好。
+          en: If that’s what reaches him, good.
+      - speaker: guide
+        text:
+          zh: 只是“别想了”很少能让人真的不想，它更容易被听成“你的十年不值一提”。书的说法更准一点：过去怎样，不是此时此刻要解决的问题。那十年可以是真的，同时今天这三分钟也可以是完整的。不需要先放下十年，今天才能算数。
+          en: But “stop thinking about it” rarely gets anyone to stop. It’s more easily heard as “your ten years aren’t worth mentioning.” The book puts it more exactly. How the past was is not a problem for the here and now. The ten years can be real, and today’s three minutes can be whole all the same. He doesn’t have to set the ten years down before today is allowed to count.
+    next: reveal_lie
+
+  # which_line (closest to the book -> one layer deeper)
+  line_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。只有在一条线上，才有早和晚。书把人生看成一连串的此刻，此刻没有迟到的。
+          en: Yes. Early and late only exist on a line. The book sees life as a series of moments, and a moment is never late.
+      - speaker: mo
+        text:
+          zh: “可我今天讲得还是很烂啊。卡了两次，声音还抖。”
+          en: “But I was still terrible today. I froze twice and my voice was shaking.”
+    next: line_q
+
+  line_q:
+    type: choice
+    prompt:
+      zh: 你怎么回他？
+      en: What do you tell him?
+    options:
+      - id: someday
+        stance: detour
+        text:
+          zh: “多练练，总有一天会讲好的。”
+          en: “Keep practising. You’ll be good at it one day.”
+        next: line_a1
+      - id: today_counts
+        stance: book
+        text:
+          zh: “烂也是真讲了。今天这三分钟，不用等‘有一天’才算。”
+          en: “Terrible or not, you spoke. Today’s three minutes don’t wait on ‘one day’ to count.”
+        next: line_a2
+
+  line_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话是鼓励，而且多半也是真的：练多了会好。
+          en: That’s encouraging, and most likely true. Practice does help.
+      - speaker: guide
+        text:
+          zh: 只是留意它把“算数”又放到了哪里：有一天。今天这三分钟成了通往“讲好”的路上的一步。这又是登山的算法，山顶换成了“讲得好”。书的看法是：今天他站起来了，声音抖着讲完了，这一刻已经是完整的，不是哪一天的预付款。
+          en: But notice where it has put “counting” again. One day. Today’s three minutes become a step on the road to “good.” That’s the climbing arithmetic once more, with “speaking well” as the summit. The book’s view is that today he stood up and got to the end with his voice shaking, and that moment is already whole. It isn’t a down payment on some other day.
+    next: reveal_lie
+
+  line_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有说他讲得好，他知道自己讲得不好。你说的是另一件事：讲了，就已经算数。
+          en: You didn’t tell him he was good. He knows he wasn’t. You said something else. He spoke, and that already counts.
+      - speaker: guide
+        text:
+          zh: 这也是第六课的那种话：没有打分，只说了发生的事。而且它正是这一课的意思：这三分钟不是通往“讲得好”的路上的一步，它自己就是一支舞。
+          en: That’s also the kind of sentence lesson six was about. No mark given, only what happened. And it’s precisely this lesson’s meaning. Those three minutes aren’t a step on the road to “good.” They’re a dance in their own right.
+    next: reveal_lie
+
+  reveal_lie:
+    type: reveal
+    source: book
+    title:
+      zh: 最大的谎言
+      en: The greatest lie
+    body:
+      zh: |-
+        作者在这里说了一句很重的话：
+
+        > 人生最大的谎言，就是不活在此时此刻。
+
+        意思是：盯着过去说“因为那时候……所以我现在不行”，盯着未来说“等到……我再开始”，都是在给此刻不行动找理由。这和第一课是同一件事的两头：过去不替你决定，未来也不用你先等到。
+
+        作者打了一个比方：站在舞台上，强光打在自己身上的时候，是看不见后面和前面的。认真过此刻，就像把光打在此刻。
+      en: |-
+        Here the authors say something heavy:
+
+        > The greatest lie in life is to not live here and now.
+
+        Meaning that fixing on the past to say “because of what happened then, I can’t now,” and fixing on the future to say “once such-and-such, I’ll begin,” are both ways of finding reasons not to act in this moment. It’s the two ends of what lesson one was about. The past doesn’t decide for you, and the future doesn’t have to be waited for first.
+
+        They offer an image. When you stand on a stage with a strong light on you, you can’t see what’s behind or what’s ahead. Living this moment earnestly is like turning the light onto now.
+    next: scene_night
+
+  # ───────────────────────── Choice point 4: an ordinary life ─────────────────────────
+  scene_night:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 最后一个问题，也是最大的一个。
+          en: The last question, and the biggest.
+      - speaker: narrator
+        text:
+          zh: 深夜，你躺在床上，忽然冒出一个念头：我大概会普普通通地过完这一辈子。上学，工作，吃饭，睡觉。这样有什么意义？
+          en: Late at night, lying in bed, a thought turns up. I’ll probably live an ordinary life to the end. School, work, meals, sleep. What’s the meaning in that?
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: 你怎么回答自己？
+      en: How do you answer yourself?
+    options:
+      - id: must_be_special
+        stance: detour
+        text:
+          zh: 所以得做成一件大事。不然这辈子就白过了。
+          en: So I have to pull off something big. Otherwise the whole thing was for nothing.
+        next: special_1
+      - id: dont_think
+        stance: detour
+        text:
+          zh: 没什么意义。想这个只会难受，不如不想。
+          en: None. Thinking about it only hurts, so better not to.
+        next: dontthink_1
+      - id: give_it
+        stance: book
+        text:
+          zh: 意义是我来给的。认真地普通着，也可以是我的答案。
+          en: The meaning is mine to give. Being ordinary, earnestly, can be my answer.
+        next: giveit_1
+
+  # must_be_special
+  special_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想做成点什么，是很好的心气。书没有叫人不要有志向。
+          en: Wanting to accomplish something is a fine spirit. The book doesn’t tell anyone to give up ambition.
+      - speaker: guide
+        text:
+          zh: 我们只看“不然就白过了”这半句。
+          en: Let’s look only at the second half. “Otherwise it was for nothing.”
+    next: special_q
+
+  special_q:
+    type: choice
+    prompt:
+      zh: 如果那件大事最后没做成，之前的几十年算什么？
+      en: If the big thing never comes off, what were the decades before it?
+    options:
+      - id: wasted_then
+        stance: open
+        text:
+          zh: 那就真的白过了，什么也没留下。
+          en: Then they really were for nothing.
+        next: special_a1
+      - id: not_wasted
+        stance: open
+        text:
+          zh: 也不能说白过。那些日子我是真的活过的。
+          en: I wouldn’t say for nothing. I did actually live those days.
+        next: special_a2
+
+  special_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是把全部人生押在一个山顶上：到了，就都算数；没到，就都作废。
+          en: That stakes the whole of a life on one summit. Reach it and everything counts. Miss it and everything is void.
+      - speaker: guide
+        text:
+          zh: 而能不能到，有一大半不由你定。书的看法是另一种：每一个认真过的此刻，当场就算数，不用等结局来追认。它还说了一句很多人不爱听的话：不必成为特别的人。“我必须特别”的底下，常常是受不了普通的自己。接受普通的自己，书认为这需要勇气。
+          en: And whether you reach it is, for the most part, not up to you. The book sees it differently. Every moment lived earnestly counts then and there, and doesn’t wait for the ending to ratify it. It also says something many people don’t like to hear. You don’t have to be special. Under “I must be special” there’s often an inability to bear one’s ordinary self. Accepting your ordinary self, the book holds, takes courage.
+    next: reveal_star
+
+  special_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。你自己已经不同意“白过”了。
+          en: Yes. You’ve already disagreed with “for nothing” yourself.
+      - speaker: guide
+        text:
+          zh: 那么“得做成一件大事”就不再是人生算不算数的条件，只是你想做的一件事。书的看法正是这样：每一个认真过的此刻，当场就算数。它还说：不必成为特别的人。大事可以去做，但你不靠它来证明自己没有白活。
+          en: Then “I have to pull off something big” is no longer the condition for your life counting. It’s just one thing you want to do. That’s the book’s view exactly. Every moment lived earnestly counts then and there. It adds that you don’t have to be special. Go after the big thing. You simply don’t depend on it to prove you didn’t live in vain.
+    next: reveal_star
+
+  # dont_think
+  dontthink_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个问题半夜想起来确实难受，不想它是一种自我保护。
+          en: This question really does hurt at midnight, and not thinking about it is a way of protecting yourself.
+      - speaker: guide
+        text:
+          zh: 而且你有一半和书是一致的：作者也说，人生没有一个现成的、人人通用的意义。
+          en: And half of you agrees with the book. The authors also say life has no ready-made meaning that applies to everyone.
+    next: dontthink_q
+
+  dontthink_q:
+    type: choice
+    prompt:
+      zh: 没有现成的意义。那接下来是？
+      en: No ready-made meaning. So what follows?
+    options:
+      - id: so_nothing
+        stance: open
+        text:
+          zh: 那就是没有。怎么过都一样。
+          en: Then there’s none. It’s all the same however I live.
+        next: dontthink_a1
+      - id: so_mine
+        stance: open
+        text:
+          zh: 那它就空着，等我自己来填。
+          en: Then it’s blank, waiting for me to fill it in.
+        next: dontthink_a2
+
+  dontthink_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果真的怎么过都一样，这个问题就不会让你难受了。难受，说明你并不觉得都一样。
+          en: If it truly were all the same, this question wouldn’t hurt. That it hurts shows you don’t think it’s all the same.
+      - speaker: guide
+        text:
+          zh: 书从“没有现成的”走到了另一头：既然没有人替你规定，那它就归你来给。这在第五课说过。而这一课加了一句：你不用先想出一个伟大的答案。认真过完今天，今天就已经有了意义。
+          en: From “nothing ready-made” the book goes the other way. Since nobody has laid it down for you, it’s yours to give. Lesson five said so. This lesson adds one thing. You don’t need to come up with a grand answer first. Live today through earnestly, and today already has its meaning.
+    next: reveal_star
+
+  dontthink_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。这正是书走的那一步，第五课也说过：没有人替你规定，所以归你来给。
+          en: Yes. That’s the very step the book takes, and lesson five said it too. Nobody has laid it down for you, so it’s yours to give.
+      - speaker: guide
+        text:
+          zh: 这一课加了一句：你不用先想出一个伟大的答案再开始填。认真过完今天，今天这一格就已经填上了。
+          en: This lesson adds one thing. You don’t need to come up with a grand answer before you start filling it in. Live today through earnestly, and today’s square is already filled.
+    next: reveal_star
+
+  # give_it (closest to the book -> one layer deeper: the guiding star)
+  giveit_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的两句话合在一起：意义由自己赋予；不必成为特别的人。
+          en: That’s two of the book’s sentences put together. You give the meaning yourself. You don’t have to be special.
+      - speaker: guide
+        text:
+          zh: 不过“我来给”有一个漏洞，我替你问出来。
+          en: “Mine to give” has a hole in it, though, and I’ll ask about it for you.
+    next: giveit_q
+
+  giveit_q:
+    type: choice
+    prompt:
+      zh: 意义随便给什么都行吗？迷路了怎么办？
+      en: Can the meaning be anything at all? And what if I lose my way?
+    options:
+      - id: anything
+        stance: detour
+        text:
+          zh: 都行。我说它是什么，它就是什么。
+          en: Anything at all. Whatever I say it is, that’s what it is.
+        next: giveit_a1
+      - id: star
+        stance: book
+        text:
+          zh: 得有个方向。只要是朝着“对别人有点用”，就不算迷路。
+          en: It needs a direction. Toward being of some use to others, say.
+        next: giveit_a2
+
+  giveit_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是把“自己给”读到了最自由的程度。
+          en: That’s reading “you give it yourself” as freely as it can be read.
+      - speaker: guide
+        text:
+          zh: 书没有走到那么远。它担心一个只围着自己转的意义，会把人带回第七课说的那种孤单。所以它给了一个方向，叫“引导之星”：对别人有所贡献。不是规定你做什么，而是说，只要大体朝着这颗星，怎么走都不算迷路。
+          en: "The book doesn’t go that far. It worries that a meaning circling only yourself leads back to the loneliness lesson seven described. So it gives a direction, which it calls the “guiding star”: contribution to others. It doesn’t lay down what you must do. It says that as long as you’re heading roughly toward that star, no route counts as lost."
+    next: reveal_star
+
+  giveit_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书给的那颗“引导之星”：对别人有所贡献。
+          en: That is exactly the “guiding star” the book offers. Contribution to others.
+      - speaker: guide
+        text:
+          zh: 它不规定你做什么。写歌、做饭、修车、带孩子，都可以。它只是说，只要大体朝着这颗星，怎么走都不算迷路，而且不需要走到哪里才算数。这样，“自由”和“不孤单”就在最后一课合在了一起。
+          en: It doesn’t lay down what you do. Writing songs, cooking, fixing cars, raising children, any of it. It says only that as long as you’re heading roughly toward that star, no route counts as lost, and you don’t have to get anywhere in particular for it to count. And so, in the last lesson, “free” and “not alone” come together.
+    next: reveal_star
+
+  reveal_star:
+    type: reveal
+    source: book
+    title:
+      zh: 一颗星，和普通的勇气
+      en: One star, and the courage to be ordinary
+    body:
+      zh: |-
+        全书的最后，作者回答了“人生的意义是什么”。
+
+        > 人生没有通用的意义。意义由你自己赋予。
+
+        那迷路了怎么办？作者给了一个方向，叫“引导之星”：对别人有所贡献。只要不丢掉这颗星，怎么活都可以，也不会迷路。
+
+        作者还说，不必成为特别的人。想靠“特别好”或“特别坏”来引人注意，都是没有接受普通的自己。接受它，需要的是“普通的勇气”。
+      en: |-
+        At the very end of the book the authors answer “what is the meaning of life.”
+
+        > Life has no general meaning. You give it meaning yourself.
+
+        And if you lose your way? They give a direction, which they call the “guiding star”: contribution to others. As long as you don’t lose sight of that star, you can live however you like and you won’t be lost.
+
+        They also say you don’t have to be special. Trying to draw attention by being especially good or especially bad both come from not accepting your ordinary self. Accepting it takes “the courage to be ordinary.”
+    next: reveal_thread
+
+  reveal_thread:
+    type: reveal
+    source: ours
+    title:
+      zh: 八课，一条线
+      en: Eight lessons, one thread
+    body:
+      zh: |-
+        这一页是我们的归纳，不是书里的原文。把八课连起来读，是这样一条线：
+
+        - 我现在这样，不是过去定的，是为了什么而选的。
+        - 我想躲开的东西，几乎都和别人有关。
+        - 所以先分清：哪些事是我的，哪些不是。
+        - 别人喜不喜欢我，是别人的事。我不为它放弃自己的路。
+        - 决定我怎么看世界、怎么活的，是我自己。
+        - 我和别人并排，不在上面，也不在下面。
+        - 位置不是别人给的，是我伸手参与得来的。
+        - 而这一切，都从此时此刻开始。
+      en: |-
+        This page is our own summary, not the book’s text. Read as one line, the eight lessons run like this:
+
+        - The way I am now wasn’t set by my past. I chose it for the sake of something.
+        - Nearly everything I’m trying to avoid has to do with other people.
+        - So first, sort out which matters are mine and which aren’t.
+        - Whether others like me is their business. I don’t give up my road for it.
+        - The one who decides how I see the world and how I live is me.
+        - I stand side by side with others, not above and not below.
+        - My place isn’t handed to me. I gain it by reaching out and taking part.
+        - And all of it starts here and now.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。下面是我们整理的质疑和边界：
+
+        - “只看此刻”可能被拿来回避长远的责任。存钱、保护身体、照顾环境，这些事的意义就在以后。
+        - 过去的影响是真实的，这和第一课是同一个争议。说“过去不是此刻的问题”，对正在被过去折磨的人可能太轻了。
+        - “不必特别”和很多人追求卓越的价值观是冲突的。它也可能被读成安于现状。书的本意是不靠“特别”来证明自己，不是不许做得好。
+        - “认真过好今天”对处在真实困境里的人是不够的。有些处境需要被改变，需要别人的帮助，不只是换一种过法。
+        - 这本书是一位哲学家对阿德勒思想的解读，再加上作者自己的发挥。它是一种看法。读完觉得有的地方不同意，这很正常，也说明你在认真读。
+      en: |-
+        That was the book’s position. Here are the objections and limits, as we’ve gathered them:
+
+        - “Only the present” can be used to dodge long-range responsibilities. Saving money, looking after your body, caring for the environment all have their meaning in the later.
+        - The influence of the past is real, which is the same dispute as in lesson one. “The past is not this moment’s problem” may be too light a thing to say to someone the past is tormenting.
+        - “You don’t have to be special” clashes with the value many people place on excellence. It can also be read as settling. What the book intends is not proving yourself by being special. It isn’t forbidding you to do things well.
+        - “Live today earnestly” is not enough for someone in real hardship. Some situations need to be changed and need other people’s help, not just a different way of living through them.
+        - This book is a philosopher’s reading of Adler’s thought, with the authors’ own elaboration on top. It is one view. Finishing it and disagreeing with parts is normal, and a sign you read it seriously.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 最后一次，换你讲。一个朋友对你说：“我现在过的都不算数，等考上了、等有钱了，才是真正的生活。”用你自己的话回答他，两三句就够。
+      en: One last time, your turn. A friend says to you, “None of what I’m living now counts. Real life starts once I’ve got in, once I’ve got money.” Answer in your own words. Two or three sentences will do.
+    checkpoints:
+      - id: moments
+        label:
+          zh: 我讲了人生是一连串的此刻，不是到了终点才算数
+          en: I said life is a series of moments and doesn’t wait for an endpoint to count
+        hint:
+          zh: 如果只有到了才算，那到达之前的日子都成了“路上”。书的看法是，像跳舞一样，过程本身就算数。
+          en: If only arriving counts, every day before it becomes “on the way.” The book’s view is that, as in dancing, the going itself counts.
+        cues:
+          zh: [此刻, 现在, 当下, 终点, 路上, 过程, 跳舞, 登山, 算数, 今天]
+          en: [now, moment, present, today, endpoint, on the way, process, danc, climb, summit, counts]
+      - id: earnest
+        label:
+          zh: 我讲了“活在此刻”是认真做该做的事，不是享乐，也不是苦熬
+          en: I said living now means earnestly doing what’s called for, neither pleasure-seeking nor grim endurance
+        hint:
+          zh: 它不是及时行乐，也不是把今天当代价熬过去。是认真做此刻该做、能做的事，而且认真不等于沉重。
+          en: It isn’t seizing pleasure, and it isn’t enduring today as a price. It’s earnestly doing what this moment calls for and allows, and earnest doesn’t mean heavy.
+        cues:
+          zh: [认真, 享乐, 及时行乐, 该做, 熬, 沉重, 代价, 计划]
+          en: [earnest, serious, properly, pleasure, fun, called for, endur, grind, heavy, price, plan]
+      - id: meaning
+        label:
+          zh: 我讲了意义是自己给的，方向是对别人有用，不必特别
+          en: I said the meaning is yours to give, the direction is being of use to others, and special isn’t required
+        hint:
+          zh: 人生没有通用的意义，由自己赋予。迷路时的方向是对别人有所贡献。不必成为特别的人。
+          en: Life has no general meaning. You give it yourself. The direction when lost is contribution to others. You don’t have to be special.
+        cues:
+          zh: [意义, 自己给, 赋予, 贡献, 有用, 普通, 特别, 引导之星, 方向]
+          en: [meaning, give it, contribut, of use, useful, ordinary, special, guiding star, direction]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这本书到这儿。开头它说“世界很简单”，现在你知道这句话是什么意思了：不是容易，而是要做的事并不复杂。分清课题，不求认可，伸手参与，然后从今天开始。
+          en: That’s the book. It opened by saying the world is simple, and now you know what that meant. Not easy. Only that what there is to do isn’t complicated. Sort out the tasks, don’t chase approval, reach out and take part, and start today.
+      - speaker: guide
+        text:
+          zh: 这些是作者的回答，不是唯一的回答。如果有哪一课让你想了很久，去读一读原书吧，那里有我没能带给你的东西。谢谢你走到这里。
+          en: These are the authors’ answers, not the only ones. If any lesson stayed with you, go and read the book itself. There are things in it I couldn’t bring you. Thank you for walking this far.

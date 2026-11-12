@@ -1,0 +1,888 @@
+# 横向关系与纵向关系 / Horizontal and vertical relationships
+#
+# Shape of the lesson: three choice points, each from a different seat. First the reader is
+# the one being praised (below), then the one doing the praising (above), then the one who
+# has to speak up to someone senior (below again, but refusing the seat).
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: horizontal
+
+title:
+  zh: 横向关系与纵向关系
+  en: Horizontal and vertical relationships
+
+question:
+  zh: 我和别人之间，是上下，还是并排？
+  en: Between me and other people, is it above and below, or side by side?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 阿德勒心理学反对批评，也反对表扬。作者认为，表扬是“有能力的人对没能力的人”下的评价，背后是上下关系。
+    en: Adlerian psychology is against rebuke and against praise. The authors hold that praise is a judgment passed by a capable person on a less capable one, and that an above-and-below relationship lies behind it.
+  - zh: 表扬和批评的目的常常是操纵对方。被表扬惯了的人，容易变成为了被表扬而做事。
+    en: The aim of praise and rebuke is often to manipulate. A person used to praise tends to end up acting in order to be praised.
+  - zh: 作者主张把一切人际关系看成“横向关系”：人与人不同，但平等。
+    en: The authors propose seeing all relationships as “horizontal.” People are different, but equal.
+  - zh: 代替表扬的是“鼓励”：不做评价，而是表达感谢、喜悦和尊重，比如“谢谢”“帮了大忙”。
+    en: What replaces praise is “encouragement”, which passes no judgment and instead expresses thanks, gladness and respect, as in “thank you” or “that was a big help.”
+  - zh: 人在感到“我对别人有用”的时候，才觉得自己有价值，也才有勇气面对自己的课题。
+    en: A person feels they have worth when they feel useful to someone, and only then has the courage to face their own tasks.
+  - zh: 看待关系的方式是连在一起的：只要和某一个人是上下关系，就很难和其他人真正平等。
+    en: Ways of seeing relationships are linked. As long as you are in an above-and-below relationship with even one person, it is hard to be truly equal with anyone else.
+
+cast:
+  senior:
+    name: { zh: 学长, en: Club president }
+  cousin:
+    name: { zh: 表妹, en: Your cousin }
+  teacher:
+    name: { zh: 指导老师, en: Supervisor }
+
+start: open
+
+nodes:
+  # ───────────────────────── Choice point 1: being praised ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课要说一件听起来很奇怪的事：这本书反对表扬。先别急着反驳，看看被表扬的时候到底发生了什么。
+          en: This lesson says something that sounds strange. This book is against praise. Hold off on objecting, and look at what actually happens when you’re praised.
+    next: scene_poster
+
+  scene_poster:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 你熬了两个晚上，做完了社团招新的海报。学长走过来看了一眼，拍了拍你的肩。
+          en: You stayed up two nights finishing the club’s recruitment poster. The club president walks over, glances at it, and pats you on the shoulder.
+      - speaker: senior
+        text:
+          zh: “不错嘛，挺能干的。”
+          en: “Not bad. You’re pretty capable.”
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 听到这句话，你心里是？
+      en: Hearing that, what goes on inside you?
+    options:
+      - id: happy
+        stance: detour
+        text:
+          zh: 很开心。两个晚上没白熬，被认可了。
+          en: Happy. Two late nights paid off. I’ve been recognized.
+        next: happy_1
+      - id: hooked
+        stance: detour
+        text:
+          zh: 开心。同时在想，下一张也得让他满意。
+          en: Happy. And already thinking the next one has to satisfy him too.
+        next: hooked_1
+      - id: graded
+        stance: book
+        text:
+          zh: 有点开心，又有点怪，像被人打了个分。
+          en: A bit pleased, and a bit odd, like I’ve just been given a mark.
+        next: graded_1
+
+  # happy
+  happy_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 开心是真的，谁被夸了都会开心。这本书没有说这种开心是假的。
+          en: The happiness is real. Anyone praised feels it. The book doesn’t call that happiness fake.
+      - speaker: narrator
+        text:
+          zh: 两周后是第二张海报。你做得比上次更用心。学长走过来看了一眼，什么也没说，走了。
+          en: Two weeks later comes the second poster. You put even more into it than last time. The club president walks over, glances at it, says nothing, and walks off.
+    next: happy_q
+
+  happy_q:
+    type: choice
+    prompt:
+      zh: 第二张海报，做得好不好？
+      en: The second poster. Is it any good?
+    options:
+      - id: dont_know
+        stance: open
+        text:
+          zh: 不知道。他没说，我心里就没底了。
+          en: No idea. He said nothing, so now I’m not sure.
+        next: happy_a1
+      - id: i_think_so
+        stance: open
+        text:
+          zh: 我自己觉得比上一张好。
+          en: I think it’s better than the last one.
+        next: happy_a2
+
+  happy_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你看，海报是你做的，用了多少心也只有你知道。可它好不好，你现在得等他开口。
+          en: See what happened. You made the poster, and only you know how much went into it. Yet whether it’s good is something you now have to wait for him to say.
+      - speaker: guide
+        text:
+          zh: 这就是书担心的地方：上一句“不错嘛”悄悄做了一件事，把判断好坏的位置交到了他手里。有夸的时候看不出来，没夸的那天就露出来了。
+          en: This is what worries the book. That earlier “not bad” quietly did something. It put the seat of judgment in his hands. You can’t see it on the days there’s praise. It shows on the day there isn’t.
+    next: reveal_praise
+
+  happy_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那你其实并不需要那句“不错嘛”。你自己有尺子。
+          en: Then you didn’t actually need that “not bad.” You have a ruler of your own.
+      - speaker: guide
+        text:
+          zh: 这样的话，夸不夸对你只是锦上添花。书担心的是另一种情况：一个人被夸惯了，慢慢地自己就不量了，只等别人报数。那时候没被夸的一天，就成了白做的一天。
+          en: In that case praise is only icing for you. What worries the book is the other case. A person gets used to praise, gradually stops measuring for themselves, and just waits for the reading to be called out. Then a day without praise becomes a day done for nothing.
+    next: reveal_praise
+
+  # hooked
+  hooked_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你答得很细，连开心后面跟着的那个念头都抓到了。
+          en: That’s a fine-grained answer. You even caught the thought that followed the happiness.
+      - speaker: guide
+        text:
+          zh: 我们就看那个念头：“下一张也得让他满意。”
+          en: Let’s look at just that thought. “The next one has to satisfy him too.”
+    next: hooked_q
+
+  hooked_q:
+    type: choice
+    prompt:
+      zh: 从这个念头冒出来起，海报是为谁做的？
+      en: From the moment that thought appears, who is the poster for?
+    options:
+      - id: for_him
+        stance: open
+        text:
+          zh: 为他。先想的是他会怎么看。
+          en: For him. What he’ll think comes first.
+        next: hooked_a1
+      - id: for_club
+        stance: open
+        text:
+          zh: 还是为了社团，只是顺便想被夸。
+          en: Still for the club. Being praised would just be a bonus.
+        next: hooked_a2
+
+  hooked_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。一句夸奖，把海报的读者从“路过的新生”换成了“学长”。
+          en: Right. One line of praise swapped the poster’s audience from “new students walking past” to “the club president.”
+      - speaker: guide
+        text:
+          zh: 书里说的就是这个：被表扬惯了的人，会变成为了被表扬而做事。夸的人未必有这个意思，但效果是一样的，你的方向被他的一句话拧动了。
+          en: This is what the book describes. A person used to praise ends up acting in order to be praised. The one praising may not intend it, but the effect is the same. One sentence from him has turned your direction.
+    next: reveal_praise
+
+  hooked_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 现在多半还是这样，顺便而已。
+          en: For now that’s most likely true. Just a bonus.
+      - speaker: guide
+        text:
+          zh: 只是留意“顺便”会长大。哪天新生喜欢的风格和学长喜欢的风格不一样了，你会听谁的？书担心的就是这一点：被表扬惯了的人，会不知不觉变成为了被表扬而做事。
+          en: But keep an eye on that bonus, because it grows. The day the style new students like and the style the president likes come apart, whose will you follow? That’s what worries the book. A person used to praise slides, without noticing, into acting in order to be praised.
+    next: reveal_praise
+
+  # graded (closest to the book -> one layer deeper)
+  graded_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “像被打了个分。”你感觉到了这句话里的位置：一个人在看，一个人在被看；一个人在评，一个人在被评。
+          en: “Like I’ve been given a mark.” You felt the positions inside that sentence. One person looking, one looked at. One judging, one judged.
+      - speaker: guide
+        text:
+          zh: 那换一句话试试。同样是学长，同样是这张海报。
+          en: So try a different sentence. Same president, same poster.
+      - speaker: senior
+        text:
+          zh: “谢谢。这张海报帮了我们大忙，摊位前多了好多人。”
+          en: “Thank you. This poster was a big help. We’ve had far more people at the stall.”
+    next: graded_q
+
+  graded_q:
+    type: choice
+    prompt:
+      zh: 这一句和“不错嘛，挺能干的”，差在哪里？
+      en: How is this different from “Not bad, you’re pretty capable”?
+    options:
+      - id: same
+        stance: detour
+        text:
+          zh: 差不多，都是好话，听了都高兴。
+          en: Not much. They’re both nice things to hear.
+        next: graded_a1
+      - id: useful
+        stance: book
+        text:
+          zh: 一句在给我打分，一句在告诉我这件事有用。
+          en: One gives me a mark. The other tells me the thing was useful.
+        next: graded_a2
+
+  graded_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 都是好话，这没错，听了也都高兴。
+          en: Both are nice to hear, true, and both feel good.
+      - speaker: guide
+        text:
+          zh: 只是看它们各自在说谁。“挺能干的”说的是你这个人，而且是他在给你下结论。“帮了大忙”说的是那张海报做成了什么，没有人被放在秤上。前一句听多了，你会想再被称一次。后一句听完，你知道的是自己出的力落在了哪里。
+          en: But look at who each one is about. “Pretty capable” is about you as a person, and it’s him handing down a conclusion on you. “A big help” is about what the poster accomplished, and nobody’s on the scales. Hear the first often enough and you’ll want to be weighed again. After the second, what you know is where your effort landed.
+    next: reveal_praise
+
+  graded_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。前一句里他站在你上面，后一句里他站在你旁边。
+          en: Yes. In the first he’s standing above you. In the second he’s standing beside you.
+      - speaker: guide
+        text:
+          zh: 而且后一句给了你一样前一句给不了的东西：你知道了自己出的力对别人有用。书认为，人是在这种时候觉得自己有价值的，不是在被打了高分的时候。
+          en: And the second gives you something the first can’t. You learn that your effort was of use to other people. The book holds that this is when a person feels they have worth. Not when they’ve been given a high mark.
+    next: reveal_praise
+
+  reveal_praise:
+    type: reveal
+    source: book
+    title:
+      zh: 表扬是从上往下的
+      en: Praise comes from above
+    body:
+      zh: |-
+        作者的主张听起来很反常：阿德勒心理学反对批评，也反对表扬。
+
+        理由是，表扬这个动作本身带着一个位置。
+
+        > 表扬，是有能力的人对没能力的人下的评价。
+
+        作者把这种上下的位置叫“纵向关系”。他认为，表扬和批评的目的常常是操纵对方，而被表扬惯了的人，会变成为了被表扬而做事。
+      en: |-
+        The authors’ position sounds perverse. Adlerian psychology is against rebuke, and against praise too.
+
+        Their reason is that the act of praising carries a position inside it.
+
+        > Praise is a judgment passed by a capable person on a less capable one.
+
+        They call that above-and-below arrangement a “vertical relationship.” In their view, the aim of praise and rebuke is often to manipulate, and a person used to praise ends up acting in order to be praised.
+    next: scene_cousin
+
+  # ───────────────────────── Choice point 2: being the one above ─────────────────────────
+  scene_cousin:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 刚才你是被评的那个。现在换个位置。
+          en: A moment ago you were the one being judged. Now change seats.
+      - speaker: narrator
+        text:
+          zh: 周末，你给九岁的表妹辅导数学。有一道题她卡了很久，咬着笔想了五分钟，自己做出来了。她抬起头看你。
+          en: Weekend. You’re helping your nine-year-old cousin with maths. One problem has her stuck for a long while. She chews her pencil for five minutes and gets it by herself. She looks up at you.
+    next: cp2
+
+  cp2:
+    type: choice
+    prompt:
+      zh: 你说什么？
+      en: What do you say?
+    options:
+      - id: clever
+        stance: detour
+        text:
+          zh: “真聪明！我就知道你一定做得出来。”
+          en: “So clever! I knew you’d get there in the end.”
+        next: clever_1
+      - id: silence
+        stance: detour
+        text:
+          zh: 什么都不说。书上说不表扬，那就直接讲下一题。
+          en: Nothing. The book says no praise, so it’s straight on to the next one.
+        next: silence_1
+      - id: glad
+        stance: book
+        text:
+          zh: “这题是你自己想出来的，我看着高兴。”
+          en: “You worked that out yourself. I liked watching.”
+        next: glad_1
+
+  # clever
+  clever_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话是真心的，她听了眼睛也会亮。几乎所有人都是这样被带大的。
+          en: You’d mean it, and her eyes would light up. Nearly all of us were raised this way.
+      - speaker: narrator
+        text:
+          zh: 下一题更难。她做错了。她没有先看题，而是先抬头看了一眼你的脸。
+          en: The next problem is harder. She gets it wrong. Before she looks back at the problem, she looks up at your face.
+    next: clever_q
+
+  clever_q:
+    type: choice
+    prompt:
+      zh: 她在你脸上找什么？
+      en: What is she looking for in your face?
+    options:
+      - id: the_answer
+        stance: open
+        text:
+          zh: 找提示。看我会不会告诉她哪里错了。
+          en: A hint. Whether I’ll tell her where she went wrong.
+        next: clever_a1
+      - id: still_clever
+        stance: open
+        text:
+          zh: 找我还觉不觉得她聪明。
+          en: Whether I still think she’s clever.
+        next: clever_a2
+
+  clever_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 有可能是在找提示。九岁的孩子卡住了，看大人是很自然的。
+          en: She may well be looking for a hint. A stuck nine-year-old looking to the grown-up is natural.
+      - speaker: guide
+        text:
+          zh: 只是想想上一题你给她的是什么：不是“这题做对了”，而是“你聪明”。聪明是一个头衔，头衔是会被收回的。做错的这一刻，她先确认的多半不是题，而是头衔还在不在。书担心的就是这个：夸奖让人去守那个评价，而不是去做那件事。
+          en: But think about what you gave her on the last problem. Not “you got this right” but “you’re clever.” Clever is a title, and titles can be taken away. In the moment of getting one wrong, what she most likely checks first isn’t the problem. It’s whether the title still stands. This is what worries the book. Praise sets a person guarding the verdict rather than doing the thing.
+    next: reveal_encourage
+
+  clever_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。上一题你给了她一个头衔：聪明。这一题她做错了，头衔悬了。
+          en: Yes. On the last problem you gave her a title. Clever. Now she’s got one wrong and the title is hanging by a thread.
+      - speaker: guide
+        text:
+          zh: 所以她先看的不是题，是你。下一次遇到难题，她可能会绕开，因为难题会威胁到“聪明”。书担心的就是这个：夸奖让人去守那个评价，而不是去做那件事。
+          en: So the first thing she looks at isn’t the problem. It’s you. Next time a hard problem comes along she may steer round it, because hard problems threaten “clever.” This is what worries the book. Praise sets a person guarding the verdict rather than doing the thing.
+    next: reveal_encourage
+
+  # silence
+  silence_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你把“不表扬”听进去了，而且照做了。
+          en: You took “no praise” on board and acted on it.
+      - speaker: guide
+        text:
+          zh: 只是看看从表妹那边是什么样子：她自己想出了一道难题，抬头看你，你面无表情地翻到了下一页。
+          en: Now look at it from your cousin’s side. She’s cracked a hard problem by herself, she looks up at you, and you turn the page with no expression.
+    next: silence_q
+
+  silence_q:
+    type: choice
+    prompt:
+      zh: 她会从中学到什么？
+      en: What does she take from that?
+    options:
+      - id: nobody_cares
+        stance: open
+        text:
+          zh: 学到的是：我做成了，也没人在乎。
+          en: “I did it, and nobody cares.”
+        next: silence_a1
+      - id: self_reliant
+        stance: open
+        text:
+          zh: 学到的是：做题不是为了让谁夸。
+          en: “I don’t do maths to get praised.”
+        next: silence_a2
+
+  silence_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。不评价，和不回应，是两回事。
+          en: Right. Not judging and not responding are two different things.
+      - speaker: guide
+        text:
+          zh: 书反对的是“打分”，不是“有人在场”。它给的替代办法叫鼓励：不说你聪明不聪明，而是说出你看到了什么、你自己的感受是什么。比如“这题你是自己想出来的，我看着也高兴”。没有分数，但有人。
+          en: What the book opposes is marking, not being present. Its alternative is called encouragement. You don’t say whether she’s clever. You say what you saw and what you felt. For instance, “You worked that one out by yourself. I enjoyed watching it.” No score. But somebody’s there.
+    next: reveal_encourage
+
+  silence_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是你希望她学到的，方向也是对的。
+          en: That’s what you hope she’ll learn, and the direction is right.
+      - speaker: guide
+        text:
+          zh: 只是一个九岁的孩子抬头看你、你没有反应的时候，她更可能读到的是“没人在乎”。不评价，和不回应，是两回事。书给的替代办法叫鼓励：不打分，但说出你看到了什么、你的感受是什么。比如“这题你是自己想出来的，我看着也高兴”。
+          en: But when a nine-year-old looks up at you and gets no reaction, what she’s more likely to read is “nobody cares.” Not judging and not responding are two different things. The book’s alternative is called encouragement. No score, but you say what you saw and what you felt. For instance, “You worked that one out by yourself. I enjoyed watching it.”
+    next: reveal_encourage
+
+  # glad (closest to the book -> one layer deeper)
+  glad_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话里没有分数。你说了你看到的事实，和你自己的感受。书里把这叫鼓励。
+          en: There’s no score in that sentence. You stated what you saw, and what you felt. The book calls this encouragement.
+      - speaker: guide
+        text:
+          zh: 夸奖好做，批评那一头才难。
+          en: Praise is the easy half to give up. Rebuke is the hard one.
+      - speaker: narrator
+        text:
+          zh: 后面三道题，她连着错了。她把铅笔一摔，开始撕作业本：“我不做了！我就是笨！”
+          en: She gets the next three wrong in a row. She throws her pencil down and starts tearing at the workbook. “I’m not doing it! I’m just stupid!”
+    next: glad_q
+
+  glad_q:
+    type: choice
+    prompt:
+      zh: 这时候你怎么做？
+      en: What do you do now?
+    options:
+      - id: scold
+        stance: detour
+        text:
+          zh: 严肃地说她：“错了可以，撕本子不行，态度要端正。”
+          en: Be firm with her. “Getting it wrong is fine. Tearing the book isn’t. Fix your attitude.”
+        next: glad_a1
+      - id: beside
+        stance: book
+        text:
+          zh: “这三题确实难。要不要我陪你再看一遍？”
+          en: “Those three really are hard. Want me to go through them with you again?”
+        next: glad_a2
+
+  glad_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 撕本子确实不对，想管住这个行为也没有错。
+          en: Tearing the workbook isn’t okay, and wanting to stop the behaviour isn’t wrong.
+      - speaker: guide
+        text:
+          zh: 只是她刚说了“我就是笨”，下一秒听到的是“态度要端正”。她会觉得你也站到了给她打分的那一边，只是这次打的是低分。书认为批评和表扬是同一个动作的两面：都是从上面往下评。她此刻缺的不是评语，是面对那三道题的勇气。
+          en: But she’s just said “I’m stupid,” and the next thing she hears is “fix your attitude.” To her, you’ve joined the side that hands out marks, and this time it’s a low one. The book holds that rebuke and praise are two faces of one act. Both judge from above. What she lacks right now isn’t a comment. It’s the courage to face those three problems.
+    next: reveal_encourage
+
+  glad_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有评她，也没有替她做。你承认了题难，然后问她要不要帮忙。
+          en: You didn’t judge her and you didn’t do it for her. You granted that the problems are hard, and asked whether she’d like help.
+      - speaker: guide
+        text:
+          zh: 这是把“课题分离”和这一课放在一起用：题是她的，做不做由她；你站在旁边，不站在上面。她说“不要”也可以。
+          en: This is the task-separation lesson and this lesson used together. The problems are hers, and whether she does them is up to her. You’re standing beside her, not above. She’s allowed to say no.
+    next: reveal_encourage
+
+  reveal_encourage:
+    type: reveal
+    source: book
+    title:
+      zh: 不评价，但在场
+      en: No verdict, but present
+    body:
+      zh: |-
+        作者给出的替代办法叫“鼓励”。它和表扬的区别是：不给对方下评语，而是表达自己的感谢、喜悦和尊重。
+
+        > 不是“你真棒”，而是“谢谢，帮了大忙”。
+
+        作者的理由是：人在感到“我对别人有用”的时候，才觉得自己有价值。觉得自己有价值，才有勇气去面对自己的课题。夸奖给的是一个分数，感谢给的是这份“有用”。
+      en: |-
+        The alternative the authors offer is called “encouragement.” It differs from praise in that it hands down no verdict on the other person. It expresses your own thanks, gladness and respect.
+
+        > Not “good job,” but “thank you, that was a big help.”
+
+        Their reasoning is that a person feels they have worth when they feel useful to someone. And only someone who feels they have worth has the courage to face their own tasks. Praise gives a score. Thanks gives that sense of being useful.
+    next: reveal_phrases
+
+  reveal_phrases:
+    type: reveal
+    source: ours
+    title:
+      zh: 把评语换成这三种话
+      en: Three things to say instead of a verdict
+    body:
+      zh: |-
+        这不是书里的内容，是我们顺着它的逻辑整理的。想夸人或者想说人的时候，试着换成：
+
+        - 说你看到的：“这一段你改了三遍。”
+        - 说它带来了什么：“有了这张表，我们省了一整天。”
+        - 说你自己的感受：“我读的时候笑出来了。”
+
+        三种话的共同点是，主语都不是“你这个人怎么样”。
+      en: |-
+        This isn’t from the book. We worked it out by following its logic. When you’re about to praise someone or criticize them, try one of these:
+
+        - Say what you saw: “You rewrote that section three times.”
+        - Say what it made possible: “That spreadsheet saved us a whole day.”
+        - Say what you felt: “I laughed out loud reading it.”
+
+        What the three share is that none of them is about what kind of person you are.
+    next: scene_meeting
+
+  # ───────────────────────── Choice point 3: speaking upward ─────────────────────────
+  scene_meeting:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对比自己小的人不居高临下，还算容易。难的是另一头：对比自己“高”的人不仰着头。
+          en: Not talking down to someone younger is the easier part. The hard part is the other end. Not looking up at someone “higher.”
+      - speaker: narrator
+        text:
+          zh: 项目组开会。指导老师讲完了下一步的方案。你发现其中一步的数据算错了，照这样做下去，后面两周都要返工。
+          en: Project meeting. The supervisor has just laid out the next stage of the plan. You notice that one step rests on a miscalculation. Carry on like this and the next two weeks will have to be redone.
+      - speaker: teacher
+        text:
+          zh: “大家有什么意见吗？”
+          en: “Any comments?”
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 你怎么办？
+      en: What do you do?
+    options:
+      - id: stay_quiet
+        stance: detour
+        text:
+          zh: 不说。他是老师，方案轮不到我来质疑。
+          en: Say nothing. He’s the supervisor. It’s not my place to question the plan.
+        next: quiet_1
+      - id: blunt
+        stance: detour
+        text:
+          zh: 既然人人平等，就直说：“老师，你这里算错了。”
+          en: Everyone’s equal, so say it straight. “You’ve got this bit wrong.”
+        next: blunt_1
+      - id: offer_view
+        stance: book
+        text:
+          zh: “第三步的数据我算出来不太一样，可以对一下吗？”
+          en: “I got a different figure for step three. Could we check it together?”
+        next: view_1
+
+  # stay_quiet
+  quiet_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 在很多场合，不当众质疑长辈和老师被看作礼貌。你的顾虑有来处。
+          en: In plenty of settings, not questioning elders and teachers in public counts as good manners. Your hesitation has roots.
+      - speaker: guide
+        text:
+          zh: 我们只看“不说”之后会发生什么。两周后大家发现要返工。
+          en: Let’s just look at what follows from saying nothing. Two weeks on, everyone discovers the work has to be redone.
+    next: quiet_q
+
+  quiet_q:
+    type: choice
+    prompt:
+      zh: 那时候你心里会怎么想？
+      en: What will you be thinking then?
+    options:
+      - id: not_my_fault
+        stance: open
+        text:
+          zh: 这是他定的方案，不是我的责任。
+          en: It was his plan. It’s not my responsibility.
+        next: quiet_a1
+      - id: should_have_said
+        stance: open
+        text:
+          zh: 我当时要是开口就好了。
+          en: I wish I’d spoken up.
+        next: quiet_a2
+
+  quiet_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话点出了“不说”的一个好处：错是上面的人的，我不用负责。
+          en: That sentence names one of the benefits of saying nothing. The mistake belongs to the person above, and I don’t have to answer for it.
+      - speaker: guide
+        text:
+          zh: 书正是这样看纵向关系里“下面”那个位置的：听话的同时，也把责任交了出去。它看着像谦虚，其实也是一种省事。而两周的返工，你也要跟着一起做。
+          en: This is exactly how the book sees the lower seat in a vertical relationship. Along with obedience, you hand over responsibility. It looks like modesty. It’s also a way of saving yourself trouble. And you’ll be doing those two weeks of rework along with everyone else.
+    next: reveal_equal
+
+  quiet_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这份后悔说明，你心里知道那是你看见的东西，也是你该说的话。
+          en: That regret shows you know it was something you saw, and something that was yours to say.
+      - speaker: guide
+        text:
+          zh: 让你闭嘴的不是“我没看出来”，而是“他在上面，我在下面”。书认为，在纵向关系里待在下面的人，交出去的不只是发言权，还有责任。它看着像谦虚，其实代价是整个组的两周。
+          en: What kept you quiet wasn’t “I didn’t notice.” It was “he’s above and I’m below.” The book holds that the person in the lower seat of a vertical relationship gives up more than a voice. They give up responsibility too. It looks like modesty. The price is two weeks of the whole team’s time.
+    next: reveal_equal
+
+  # blunt
+  blunt_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有因为他是老师就闭嘴，这一半和书是一致的。
+          en: You didn’t go quiet because he’s the supervisor. That half matches the book.
+      - speaker: guide
+        text:
+          zh: 我想问的是“人人平等”这四个字。
+          en: What I want to ask about is “everyone’s equal.”
+    next: blunt_q
+
+  blunt_q:
+    type: choice
+    prompt:
+      zh: 你和这位老师，平等的是什么？
+      en: You and this supervisor. In what are you equal?
+    options:
+      - id: status
+        stance: open
+        text:
+          zh: 地位。他不比我高，我不用对他客气。
+          en: Standing. He’s no higher than me, so I don’t owe him politeness.
+        next: blunt_a1
+      - id: as_people
+        stance: open
+        text:
+          zh: 作为人的分量。职责和经验还是不一样。
+          en: Our weight as people. Our duties and experience are still different.
+        next: blunt_a2
+
+  blunt_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是“平等”最常见的一种读法，也是书特意区分开的一种。
+          en: That’s the commonest reading of “equal,” and the one the book takes care to set aside.
+      - speaker: guide
+        text:
+          zh: 书的原话是“不同，但平等”。不同的是角色、经验和职责：这个项目的方向由他负责，这是真的。平等的是作为人的分量。所以你可以对他说出不同的看法，但没有理由对他比对同学更不客气。“你这里算错了”不是平等，是把上下关系倒了过来，换你来评他。
+          en: The book’s phrase is “different, but equal.” What differs is role, experience and duty. He’s responsible for the direction of this project, and that’s real. What’s equal is your weight as people. So you can put a different view to him, but there’s no reason to be ruder to him than to a classmate. “You’ve got this wrong” isn’t equality. It’s the vertical relationship turned upside down, with you now judging him.
+    next: reveal_equal
+
+  blunt_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，这正是书说的“不同，但平等”。
+          en: Yes, that’s precisely the book’s “different, but equal.”
+      - speaker: guide
+        text:
+          zh: 那么回头看那句“老师，你这里算错了”。它没有把他当成比你低的人，但它是一句评语：你错了。同样的内容，可以说成“这一步我算出来不一样，可以对一下吗”。前一句在给他打分，后一句在和他一起看数据。
+          en: Then look back at “You’ve got this bit wrong.” It doesn’t treat him as beneath you, but it is a verdict. You’re wrong. The same content can be put as “I got a different figure for this step. Could we check it together?” The first hands him a mark. The second looks at the data alongside him.
+    next: reveal_equal
+
+  # offer_view (closest to the book -> one layer deeper)
+  view_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有闭嘴，也没有给他下评语。你说了自己算出来的结果，然后请他一起看。
+          en: You didn’t stay quiet and you didn’t hand him a verdict. You said what you’d worked out, and invited him to look at it with you.
+      - speaker: guide
+        text:
+          zh: 可是对方不一定领情。
+          en: The other person may not thank you for it, though.
+      - speaker: teacher
+        text:
+          zh: “你才进组多久？先把自己手上的事做好。”
+          en: “How long have you been on this team? Get your own work right first.”
+    next: view_q
+
+  view_q:
+    type: choice
+    prompt:
+      zh: 你怎么放这句话？
+      en: Where do you put that?
+    options:
+      - id: never_again
+        stance: detour
+        text:
+          zh: 是我多嘴了。以后这种场合不开口了。
+          en: I spoke out of turn. I won’t open my mouth in these meetings again.
+        next: view_a1
+      - id: his_reaction
+        stance: book
+        text:
+          zh: 他怎么回应是他的事。数据我提过了，方式也没失礼。
+          en: How he responds is his business. I raised the figure, and I was civil about it.
+        next: view_a2
+
+  view_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 当着一屋子人被这样顶回来，会很难堪。
+          en: Being slapped down like that in front of a room is humiliating.
+      - speaker: guide
+        text:
+          zh: 只是留意这个结论：因为他把你按回了下面，你就同意待在下面。数据错没错，并没有因为他这句话而改变。他要不要听，是他的课题；你看见了问题、客气地说了出来，这部分是你的，而且你已经做完了。书认为，对方是不是把关系看成上下，你定不了。你定得了的是自己不跟着仰头。
+          en: But notice the conclusion you drew. He pushed you back down, so you agree to stay down. Whether the figure is wrong hasn’t changed because of what he said. Whether he listens is his task. You saw a problem and raised it civilly. That part is yours, and you’ve done it. In the book’s view you can’t decide whether the other person sees the relationship as vertical. What you can decide is not to tilt your own head back.
+    next: reveal_equal
+
+  view_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是把前几课都用上了：他的反应是他的课题，你没有因为一句难听的话就收回自己。
+          en: That’s the earlier lessons all in use at once. His reaction is his task, and you didn’t take yourself back because of one harsh sentence.
+      - speaker: guide
+        text:
+          zh: 而且注意，你也没有反过来在心里给他打一个低分。他仍然是那个负责项目方向的人，只是这一次没有听。平等不是要他认可你，是你自己不仰头，也不俯视。
+          en: And notice that you didn’t turn round and give him a low mark in your head either. He’s still the person responsible for where the project goes. He just didn’t listen this time. Equality doesn’t require him to acknowledge you. It’s you neither looking up nor looking down.
+    next: reveal_equal
+
+  reveal_equal:
+    type: reveal
+    source: book
+    title:
+      zh: 不同，但平等
+      en: Different, but equal
+    body:
+      zh: |-
+        作者主张，把所有的人际关系都看成“横向关系”。
+
+        > 人与人不同，但平等。
+
+        年龄、经验、职责可以不同，作为人的分量是一样的。所以对年纪小的人不必居高临下，对年纪大、位置高的人也不必仰视，可以坦率地说出自己的看法。
+
+        作者还有一个很强的说法：看关系的方式是连在一起的。只要你和某一个人是上下关系，你就会不自觉地用上下去看所有人。
+      en: |-
+        The authors propose seeing every relationship as “horizontal.”
+
+        > People are different, but equal.
+
+        Age, experience and duty may differ. Your weight as people is the same. So there’s no need to talk down to someone younger, and no need to look up at someone older or more senior. You can say plainly what you think.
+
+        They also make a strong claim. Ways of seeing relationships are linked. As long as you’re in an above-and-below relationship with even one person, you’ll find yourself seeing everyone in terms of above and below.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。“不表扬”是全书在教育上争议最大的一点，下面是我们整理的质疑和边界：
+
+        - 很多教育研究的结论不是“别夸”，而是“夸什么”：夸努力和方法，通常比夸聪明更有帮助。完全不给反馈，对孩子未必更好。
+        - 现实里的学校、公司、家庭都有层级。有人负责做决定、负责打分，这是分工，不一定是看不起人。
+        - 在讲究长幼有序的环境里，对长辈“坦率直言”可能要付出实际的代价。什么时候说、怎么说，仍然需要判断。
+        - “谢谢”也可以被用来操纵人。句式换了，如果目的还是让对方照自己的意思做，它就还是从上往下的。
+        - 平等不等于不问责。有人做错了事，指出来并要求改正，可以是平等的；羞辱和贬低才是从上往下的。
+      en: |-
+        That was the book’s position. “No praise” is its most disputed point on education, and here are the objections and limits as we’ve gathered them:
+
+        - Much education research concludes not “don’t praise” but “mind what you praise.” Praising effort and method usually helps more than praising cleverness. Giving no feedback at all isn’t necessarily better for a child.
+        - Real schools, companies and families have hierarchies. Someone is in charge of deciding and of grading. That’s a division of work, and not necessarily contempt.
+        - In settings that put weight on seniority, speaking plainly to an elder can carry a real cost. When to speak and how still take judgment.
+        - “Thank you” can be used to manipulate too. If the wording changes but the aim is still to get the other person to do what you want, it’s still coming from above.
+        - Equal doesn’t mean unaccountable. When someone has done wrong, pointing it out and asking for it to be put right can be done as equals. What comes from above is humiliation and belittling.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。一个朋友问你：“不表扬也不批评？那我弟弟考好了，我该说什么？”用你自己的话回答他，两三句就够。
+      en: Your turn. A friend asks you, “No praise and no criticism? So when my little brother does well on a test, what am I supposed to say?” Answer in your own words. Two or three sentences will do.
+    checkpoints:
+      - id: verdict
+        label:
+          zh: 我讲了表扬是从上往下的评价，会让人为了被夸而做
+          en: I said praise is a verdict from above, and gets people acting in order to be praised
+        hint:
+          zh: 书反对的是“打分”这个动作：它带着上下的位置，被夸惯了的人会变成为了评价而做事。
+          en: What the book opposes is the act of marking. It carries an above-and-below position, and a person used to praise ends up acting for the verdict.
+        cues:
+          zh: [评价, 打分, 上下, 从上, 为了被夸, 操纵, 依赖, 评语, 头衔]
+          en: [verdict, judg, mark, score, grade, from above, in order to be praised, manipulat, depend, label]
+      - id: thanks
+        label:
+          zh: 我讲了用感谢和自己的感受来代替：鼓励
+          en: "I said what to use instead: thanks and your own feelings, which is encouragement"
+        hint:
+          zh: 替代的办法是鼓励：不说对方怎么样，而是说谢谢、说它带来了什么、说自己的感受。
+          en: The alternative is encouragement. Not what the other person is like, but thanks, what it made possible, and what you felt.
+        cues:
+          zh: [谢谢, 感谢, 鼓励, 帮了, 高兴, 有用, 我看到, 感受]
+          en: [thank, encourag, help, glad, useful, i saw, i noticed, i feel, i felt]
+      - id: equal
+        label:
+          zh: 我讲了人与人不同但平等，是并排的关系
+          en: I said people are different but equal, side by side
+        hint:
+          zh: 年龄和角色不同，作为人的分量相同。不居高临下，也不仰视。
+          en: Ages and roles differ. Weight as people is the same. No looking down, and no looking up.
+        cues:
+          zh: [平等, 横向, 并排, 不同, 旁边, 居高临下, 仰视, 上下]
+          en: [equal, horizontal, side by side, beside, different, look down, look up, above]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。它没有叫你再也不夸人。它只是让你留意，每一句话里你站在对方的上面，还是旁边。
+          en: That’s this lesson. It never told you to stop saying kind things. It only asked you to notice, sentence by sentence, whether you’re standing above the other person or beside them.
+      - speaker: guide
+        text:
+          zh: 这一课里反复出现一个词：有用。“我对别人有用”这种感觉到底是什么？它和讨好有什么不同？下一课从这里开始。
+          en: One word kept coming up in this lesson. Useful. What is the feeling of being useful to others, really? And how is it different from people-pleasing? The next lesson starts there.

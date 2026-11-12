@@ -152,14 +152,19 @@ async function goTo(page: Page, concept: Concept, route: Route, target: string) 
 
 async function main() {
   mkdirSync(OUT, { recursive: true });
-  await build({ logLevel: 'error' });
-  const server = await preview({ preview: { port: 4317, strictPort: true }, logLevel: 'error' });
-  const base = 'http://localhost:4317/';
+  // Concept ids given after "npm run walk --" limit the walk to those concepts.
+  // WALK_PORT and WALK_SKIP_BUILD let several walks run side by side on one build.
+  const only = process.argv.slice(2);
+  const port = Number(process.env.WALK_PORT ?? 4317);
+  if (!process.env.WALK_SKIP_BUILD) await build({ logLevel: 'error' });
+  const server = await preview({ preview: { port, strictPort: true }, logLevel: 'error' });
+  const base = `http://localhost:${port}/`;
   const browser = await chromium.launch({ channel: 'msedge', headless: true });
 
   try {
     for (const { book, concepts } of loadAll()) {
       for (const { concept } of concepts) {
+        if (only.length && !only.includes(concept.id)) continue;
         const url = `${base}#/${concept.id}`;
         const routes = coveringRoutes(concept);
         const optionCount = Object.values(concept.nodes).flatMap((n) => (n.type === 'choice' ? n.options : [])).length;
@@ -232,7 +237,7 @@ async function main() {
           for (const c of retell.checkpoints.slice(1)) check(text.includes(squash(c.hint[lang])), `[retell ${lang}] hint for unticked "${c.id}" not shown`);
           await page.click(`[data-check="${firstPoint.id}"]`);
           check((await page.getAttribute(`[data-check="${firstPoint.id}"]`, 'aria-checked')) === 'false', `[retell ${lang}] reader cannot untick`);
-          await page.screenshot({ path: join(OUT, `retell-${lang}.png`) });
+          await page.screenshot({ path: join(OUT, `${concept.id}-retell-${lang}.png`) });
           await context.close();
         }
         console.log('  retell guess, overrule and empty-answer guard: checked');
@@ -254,7 +259,7 @@ async function main() {
             const { context, page } = await freshPage(browser, base, lang, { colorScheme: scheme });
             const shot = async (name: string) => {
               await page.waitForTimeout(900);
-              await page.screenshot({ path: join(OUT, `${name}-${lang}-${scheme}.png`) });
+              await page.screenshot({ path: join(OUT, `${concept.id}-${name}-${lang}-${scheme}.png`) });
             };
             await page.evaluate(() => document.fonts.ready);
             await shot('home');
@@ -274,7 +279,7 @@ async function main() {
           const { context, page } = await freshPage(browser, url, book.languages[0], { viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1 });
           await goTo(page, concept, routes[0], firstChoiceId);
           await page.waitForTimeout(900);
-          await page.screenshot({ path: join(OUT, 'choice-desktop.png') });
+          await page.screenshot({ path: join(OUT, `${concept.id}-choice-desktop.png`) });
           await context.close();
         }
         console.log(`  screenshots saved to ${OUT}`);

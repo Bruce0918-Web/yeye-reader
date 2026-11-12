@@ -1,0 +1,962 @@
+# 一切烦恼都来自人际关系 / All problems are interpersonal
+#
+# Shape of the lesson: it opens on the reader's own worry rather than a scene (four answers,
+# none better than another, each shown the other people hidden inside it). Then three choice
+# points: comparison, the two disguises of inferiority, and competition.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: interpersonal
+
+title:
+  zh: 一切烦恼都来自人际关系
+  en: All problems are interpersonal
+
+question:
+  zh: 我觉得自己不够好，这个“不够”是跟谁比出来的？
+  en: When I feel I’m not enough, who is the “enough” being measured against?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 阿德勒主张：人的一切烦恼，都是人际关系的烦恼。
+    en: Adler held that all human problems are problems of interpersonal relationships.
+  - zh: 自卑感不是客观事实，而是主观的解释：是拿自己和别人比较之后给出的意思。既然是解释，就可以换。
+    en: A feeling of inferiority is not an objective fact but a subjective interpretation, a meaning arrived at by comparing yourself with others. Being an interpretation, it can be changed.
+  - zh: 自卑感本身不是坏事。想变得更好的心情人人都有（书里叫“追求优越性”），自卑感可以是努力的动力。
+    en: The feeling of inferiority is not bad in itself. Everyone wants to become better (the book calls it the “pursuit of superiority”), and the feeling can drive effort.
+  - zh: 有害的是两种用法：把自卑当作不行动的理由（自卑情结），或者靠炫耀和借来的光环掩盖它（优越情结）。
+    en: "What does harm is two ways of using it: as a reason not to act (the inferiority complex), or hidden under boasting and borrowed glory (the superiority complex)."
+  - zh: 健康的比较对象是“理想的自己”，不是别人。人与人不同，但平等。
+    en: The healthy comparison is with your ideal self, not with other people. People are different but equal.
+  - zh: 人生不是和别人的比赛。把关系看成竞争，别人就成了对手；放下竞争，别人才可能成为伙伴。
+    en: Life is not a competition with others. See relationships as a contest and other people become rivals. Drop the contest and they can become comrades.
+
+cast:
+  ran:
+    name: { zh: 周然, en: Priya }
+  kai:
+    name: { zh: 阿凯, en: Marcus }
+  lu:
+    name: { zh: 小鹿, en: Dana }
+
+start: open
+
+nodes:
+  # ───────────────────────── Opening: the reader's own worry ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课不从别人的故事开始。从你开始。
+          en: This lesson doesn’t start with someone else’s story. It starts with you.
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 最近最常让你心里发堵的，是哪一类事？
+      en: Lately, what kind of thing most often sits heavy on you?
+    options:
+      - id: grades
+        stance: open
+        text:
+          zh: 成绩和排名。怎么努力都不够好。
+          en: Grades and rankings. However hard I try, it’s not good enough.
+        next: grades_1
+      - id: looks
+        stance: open
+        text:
+          zh: 长相或身材。总觉得自己拿不出手。
+          en: How I look. I never feel presentable.
+        next: looks_1
+      - id: money
+        stance: open
+        text:
+          zh: 钱。别人有的，我家没有。
+          en: Money. Other people have things my family doesn’t.
+        next: money_1
+      - id: future
+        stance: open
+        text:
+          zh: 以后。不知道自己要做什么，怕选错。
+          en: The future. I don’t know what I want to do and I’m scared of choosing wrong.
+        next: future_1
+
+  grades_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个堵是真的。我只请你做一个想象：全世界只有你一个人在考这场试。没有排名，没有人看成绩单，也没有人问你考得怎样。
+          en: That weight is real. I’d just like you to imagine something. You’re the only person in the world taking this exam. No ranking, nobody reading the results, nobody asking how you did.
+      - speaker: guide
+        text:
+          zh: 同一个分数，还堵吗？如果轻了很多，那压着你的就不是那个数字，而是数字旁边站着的人。
+          en: Same score. Does it still sit as heavy? If it’s a lot lighter, then what’s pressing on you isn’t the number. It’s the people standing next to the number.
+    next: reveal_all
+
+  looks_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个堵是真的。我只请你做一个想象：一座没有别人的岛，也没有镜头，没有照片。只有你。
+          en: That weight is real. I’d just like you to imagine something. An island with nobody else on it. No cameras, no photos. Only you.
+      - speaker: guide
+        text:
+          zh: 在那座岛上，“拿不出手”这四个字是什么意思？拿给谁？这个烦恼里从头到尾都站着一双别人的眼睛。
+          en: On that island, what would “presentable” even mean? Presentable to whom? There has been a pair of someone else’s eyes inside this worry the whole time.
+    next: reveal_all
+
+  money_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个堵是真的。而且钱少有一部分是很实在的难处：房租、学费、饭钱，这些不是换个想法就没有了，这一点结尾我们会说。
+          en: That weight is real. And part of having less money is plain hardship. Rent, tuition, food. Those don’t vanish because you think differently, and we’ll come back to that at the end.
+      - speaker: guide
+        text:
+          zh: 不过你写的是“别人有的，我家没有”。留意这句话的前半句。让你发堵的那一部分，是在和别人放在一起看的时候才出现的。
+          en: But what you chose says “other people have things my family doesn’t.” Notice the first half of that. The part that sits heavy shows up only when you’re set side by side with other people.
+    next: reveal_all
+
+  future_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个堵是真的，十几二十岁的人几乎都有。
+          en: That weight is real, and nearly everyone in their teens and twenties carries it.
+      - speaker: guide
+        text:
+          zh: 我只请你把“怕选错”拆开看一眼。怕的是这条路我自己走着不喜欢，还是怕被同龄人落下，怕父母失望，怕以后被人说“你看你当初”？如果后面几样占了大半，那这个烦恼里站着很多人。
+          en: I’d just like you to open up “scared of choosing wrong” and look inside. Is the fear that you won’t like the road once you’re on it? Or is it falling behind people your age, disappointing your parents, hearing “told you so” later? If those make up most of it, there are a lot of people standing inside this worry.
+    next: reveal_all
+
+  reveal_all:
+    type: reveal
+    source: book
+    title:
+      zh: 烦恼里都站着别人
+      en: There are other people inside every worry
+    body:
+      zh: |-
+        阿德勒的说法很绝对，作者也照原样接了过来：
+
+        > 人的一切烦恼，都是人际关系的烦恼。
+
+        意思是，看起来只和自己有关的烦恼，比如觉得自己不够聪明、不够好看、不够成功，往里看都有别人在：和谁比，给谁看，怕谁怎么想。
+
+        “一切”这个词用得很重。它站不站得住，这一课的结尾我们会回来说。
+      en: |-
+        Adler put it in absolute terms, and the authors take it over as it stands:
+
+        > All human problems are problems of interpersonal relationships.
+
+        Meaning that worries which look as if they concern only you, such as not being smart enough, attractive enough or successful enough, turn out to have other people inside them: measured against whom, shown to whom, afraid of what whom will think.
+
+        “All” is a heavy word. Whether it holds is something we’ll come back to at the end of this lesson.
+    next: scene_award
+
+  # ───────────────────────── Choice point 2: what changed in ten minutes ─────────────────────────
+  scene_award:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 我们看它是怎么发生的。只需要十分钟。
+          en: Let’s watch how it happens. It only takes ten minutes.
+      - speaker: narrator
+        text:
+          zh: 晚上十一点。你躺在床上，觉得这学期过得还不错。然后你刷到高中同学周然发的一张照片：她拿了全国比赛的奖。
+          en: 11 p.m. You’re lying in bed thinking this term has gone pretty well. Then you scroll past a photo from Priya, a classmate from high school. She’s just won a national competition.
+      - speaker: narrator
+        text:
+          zh: 你放下手机。这学期好像一下子什么都不是了。
+          en: You put the phone down. The term suddenly seems to amount to nothing.
+    next: cp2
+
+  cp2:
+    type: choice
+    prompt:
+      zh: 十分钟前和现在，变了的是什么？
+      en: Between ten minutes ago and now, what changed?
+    options:
+      - id: fact
+        stance: detour
+        text:
+          zh: 没什么变的。我本来就不如她，只是刚才没看到。
+          en: Nothing. I was never as good as her. I just hadn’t seen it yet.
+        next: fact_1
+      - id: fragile
+        stance: detour
+        text:
+          zh: 什么都没变，是我自己太玻璃心了。
+          en: Nothing changed. I’m just being pathetically thin-skinned.
+        next: fragile_1
+      - id: ruler
+        stance: book
+        text:
+          zh: 我没变，这学期也没变。变的是我拿谁当尺子。
+          en: I didn’t change, and neither did my term. What changed is who I’m using as the ruler.
+        next: ruler_1
+
+  # fact
+  fact_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 她拿了奖，这是事实，没有人要你否认它。
+          en: She won. That’s a fact, and nobody’s asking you to deny it.
+      - speaker: guide
+        text:
+          zh: 我只看这两句话中间的那个连接：“她拿了奖”，所以“我这学期什么都不是”。
+          en: I’m only looking at the joint between two sentences. “She won,” therefore “my term amounts to nothing.”
+    next: fact_q
+
+  fact_q:
+    type: choice
+    prompt:
+      zh: 那个“所以”，是谁写的？
+      en: Who wrote that “therefore”?
+    options:
+      - id: i_did
+        stance: open
+        text:
+          zh: 是我自己写上去的。
+          en: I did. That part was mine.
+        next: fact_a1
+      - id: obvious
+        stance: open
+        text:
+          zh: 不用谁写，这是明摆着的。
+          en: Nobody had to. It’s just obvious.
+        next: fact_a2
+
+  fact_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。前半句是事实，后半句是你给它的意思。
+          en: Right. The first half is fact. The second half is the meaning you gave it.
+      - speaker: guide
+        text:
+          zh: 这正是书里说的：自卑感不是事实，是解释。事实只有“她拿了奖”和“我这学期做了这些事”。把两件事连成一句判决的，是你。
+          en: This is exactly the book’s point. A feeling of inferiority isn’t a fact, it’s an interpretation. The only facts are “she won” and “this is what I did this term.” The one who joined them into a verdict is you.
+    next: reveal_subjective
+
+  fact_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 感觉上确实明摆着，快得像没有经过任何人的手。
+          en: It does feel obvious. It arrives so fast it seems nobody’s hand touched it.
+      - speaker: guide
+        text:
+          zh: 可是试一下：周然的妈妈看到同一张照片，会得出“所以你这学期什么都不是”吗？不会。同一个事实，到了不同的人那里，后半句完全不一样。那后半句就不在事实里，在看的人那里。
+          en: But try this. Priya’s mother sees the same photo. Does she conclude “so your term amounts to nothing”? No. The same fact gets a completely different second half depending on who’s looking. So the second half isn’t in the fact. It’s in the person looking.
+    next: reveal_subjective
+
+  # fragile
+  fragile_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有顺着那股劲去贬低这一学期，这很好。
+          en: You didn’t go along with the pull to write off your whole term. Good.
+      - speaker: guide
+        text:
+          zh: 只是“我太玻璃心了”是换了个方向的贬低：刚才嫌自己不够强，现在嫌自己不够硬。我们不骂它，听一下它。
+          en: But “pathetically thin-skinned” is a put-down pointed in a new direction. A moment ago you weren’t accomplished enough. Now you’re not tough enough. Let’s not scold the feeling. Let’s listen to it.
+    next: fragile_q
+
+  fragile_q:
+    type: choice
+    prompt:
+      zh: 那一下难受，是在告诉你什么？
+      en: That pang. What is it telling you?
+    options:
+      - id: i_want_too
+        stance: open
+        text:
+          zh: 我也想做出点像样的东西。
+          en: That I want to make something worthwhile too.
+        next: fragile_a1
+      - id: i_lose
+        stance: open
+        text:
+          zh: 我比不过别人。
+          en: That I can’t measure up to other people.
+        next: fragile_a2
+
+  fragile_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那它就不是玻璃心，是书里说的健康的那一面。
+          en: Then it isn’t thin skin. It’s the healthy side the book describes.
+      - speaker: guide
+        text:
+          zh: 作者认为，想变得更好的心情人人都有，自卑感可以是往前走的动力。那一下难受在指路，不是在判你。
+          en: The authors hold that everyone wants to become better, and that a feeling of inferiority can be what moves you forward. The pang is pointing somewhere. It isn’t sentencing you.
+    next: reveal_subjective
+
+  fragile_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是它最常被听成的样子。
+          en: That’s the way it’s most often heard.
+      - speaker: guide
+        text:
+          zh: 不过同一下难受里其实有两层。一层是“我也想做出点东西”，这一层是好的，是动力。另一层是“我比不过”，这一层是把想变好，换算成了和某个人的输赢。书留下前一层，要拿掉的是后一层的那把尺子。
+          en: But there are really two layers in that one pang. One is “I want to make something too.” That layer is good. It’s fuel. The other is “I can’t measure up,” which converts wanting to be better into a win-or-lose against a particular person. The book keeps the first layer. What it wants removed is the ruler in the second.
+    next: reveal_subjective
+
+  # ruler (closest to the book -> one layer deeper)
+  ruler_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。十分钟前你拿上学期的自己量，量出来不错。十分钟后你拿周然量，量出来什么都不是。被量的东西一点没变。
+          en: Yes. Ten minutes ago you measured against last term’s you, and it came out fine. Ten minutes later you measured against Priya, and it came out as nothing. The thing being measured didn’t change at all.
+      - speaker: guide
+        text:
+          zh: 那下一个问题就来了。
+          en: Which raises the next question.
+    next: ruler_q
+
+  ruler_q:
+    type: choice
+    prompt:
+      zh: 这把尺子，该换成谁？
+      en: Who should the ruler be instead?
+    options:
+      - id: someone_worse
+        stance: detour
+        text:
+          zh: 换成比我差的人。这样心里就舒服了。
+          en: Someone doing worse than me. Then I’d feel better.
+        next: ruler_a1
+      - id: ideal_self
+        stance: book
+        text:
+          zh: 换成我想成为的那个自己。
+          en: The person I want to become.
+        next: ruler_a2
+
+  ruler_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这招确实管用，而且几乎人人都偷偷用过。
+          en: That trick does work, and nearly everyone has used it on the quiet.
+      - speaker: guide
+        text:
+          zh: 只是它没有把尺子拿掉，只是换了个让自己赢的对手。明天再刷到一个更厉害的人，这份舒服就没了。书的建议是把尺子从别人身上整个拿走：比较的对象是理想中的自己，不是任何一个别人。
+          en: But it doesn’t remove the ruler. It just swaps in an opponent you can beat. Scroll past someone more impressive tomorrow and the comfort is gone. The book’s suggestion is to take the ruler off other people altogether. The comparison is with your ideal self, not with anyone else.
+    next: reveal_subjective
+
+  ruler_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的回答：和“理想的自己”比，而不是和别人比。
+          en: That is the book’s answer exactly. Compare with your ideal self, not with others.
+      - speaker: guide
+        text:
+          zh: 这样一来，周然拿不拿奖，都不会让你离那个自己更远一步。她走她的，你量你的。
+          en: Once you do, whether Priya wins or not, it doesn’t put you a single step further from that self. She walks hers. You measure yours.
+    next: reveal_subjective
+
+  reveal_subjective:
+    type: reveal
+    source: book
+    title:
+      zh: 自卑感是一种解释
+      en: Inferiority is an interpretation
+    body:
+      zh: |-
+        作者区分了两样东西：客观的事实，和我们给事实的意思。
+
+        > 自卑感不是事实，是拿自己和别人比较之后给出的解释。
+
+        既然是解释，就可以换。
+
+        作者还说，自卑感本身不是坏事。想变得更好的心情人人都有，书里叫“追求优越性”。它健康的样子是和理想中的自己比，朝前走；而不是和别人比，分高下。
+      en: |-
+        The authors separate two things: objective facts, and the meaning we give to facts.
+
+        > A feeling of inferiority is not a fact. It is an interpretation that comes from comparing yourself with others.
+
+        And an interpretation can be changed.
+
+        They add that the feeling is not bad in itself. Everyone wants to become better. The book calls this the “pursuit of superiority.” In its healthy form it means comparing with your ideal self and moving forward, not comparing with others and ranking.
+    next: scene_two
+
+  # ───────────────────────── Choice point 3: two disguises ─────────────────────────
+  scene_two:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 自卑感可以是动力。但它也有两种变了形的用法。看两个人。
+          en: A feeling of inferiority can be fuel. It also has two bent uses. Meet two people.
+      - speaker: kai
+        text:
+          zh: “那个实习我就不投了。我这种普通学校出来的，投了也是白投。”
+          en: “I’m not applying for that internship. Coming from a no-name school like mine, there’s no point.”
+      - speaker: lu
+        text:
+          zh: “我表哥在大厂当总监。上次吃饭他还说，我这个想法比他们组里的人强多了。”
+          en: “My cousin’s a director at a big tech company. Last time we had dinner he said my idea beat anything his team has come up with.”
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 这两个人里，谁在被自卑感牵着走？
+      en: Of these two, which one is being led around by a feeling of inferiority?
+    options:
+      - id: only_kai
+        stance: detour
+        text:
+          zh: 只有阿凯。小鹿明明很自信，是另一回事。
+          en: Only Marcus. Dana is obviously confident, so she’s a different case.
+        next: onlykai_1
+      - id: neither
+        stance: detour
+        text:
+          zh: 都不是。他们只是在陈述各自的实际情况。
+          en: Neither. Each of them is simply describing their own situation.
+        next: neither_1
+      - id: both
+        stance: book
+        text:
+          zh: 两个都是，只是方向正好相反。
+          en: Both. They just lean in opposite directions.
+        next: both_1
+
+  # only_kai
+  onlykai_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 阿凯那一句你看得很准。小鹿这一句，我们多看两眼。
+          en: You read Marcus exactly right. Dana’s line deserves a second look.
+      - speaker: guide
+        text:
+          zh: 她这句话里出现了两个人：当总监的表哥，和表哥组里的人。
+          en: Two parties appear in her sentence. The cousin who’s a director, and the people on the cousin’s team.
+    next: onlykai_q
+
+  onlykai_q:
+    type: choice
+    prompt:
+      zh: 一个对自己的想法真有把握的人，需要这两样吗？
+      en: Would someone truly sure of their own idea need either of them?
+    options:
+      - id: no_need
+        stance: open
+        text:
+          zh: 不需要。直接讲想法就够了。
+          en: No. They’d just tell you the idea.
+        next: onlykai_a1
+      - id: just_sharing
+        stance: open
+        text:
+          zh: 她可能只是顺口提一句吧。
+          en: Maybe she’s just mentioning it in passing.
+        next: onlykai_a2
+
+  onlykai_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。她没有讲想法本身，讲的是“谁说它好”和“它比谁强”。
+          en: Right. She never told us the idea. She told us who praised it and whom it beat.
+      - speaker: guide
+        text:
+          zh: 书里把这叫优越情结：借别人的光环，或者靠压过别人，来让自己显得够格。它和阿凯的“投了也白投”来自同一个地方，只是一个往下缩，一个往上垫。
+          en: The book calls this a superiority complex. Borrowing someone else’s shine, or standing on someone, in order to seem good enough. It comes from the same place as Marcus’s “no point applying.” One shrinks down. The other props itself up.
+    next: reveal_complex
+
+  onlykai_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 有可能。一句话判不了一个人。
+          en: Possibly. One sentence can’t settle what a person is.
+      - speaker: guide
+        text:
+          zh: 只是留意她提的是什么：不是想法本身，而是“谁说它好”和“它比谁强”。如果一个人每次都要搬出这些才开得了口，那底下多半压着一句没说的话：光是我自己，恐怕不够。书里把这叫优越情结，它和阿凯的话来自同一个地方。
+          en: Just notice what she mentioned. Not the idea itself, but who praised it and whom it beat. If someone needs to bring those along every time before they can speak, there’s usually an unspoken line underneath. On my own I’m probably not enough. The book calls this a superiority complex, and it comes from the same place as what Marcus said.
+    next: reveal_complex
+
+  # neither
+  neither_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 两句话里的事实部分都是真的：阿凯的学校确实普通，小鹿的表哥确实是总监。
+          en: The factual parts of both are true. Marcus’s school really is ordinary. Dana’s cousin really is a director.
+      - speaker: guide
+        text:
+          zh: 我们只看阿凯那句话的结构：“因为我的学校普通，所以我不投。”
+          en: Let’s look only at the structure of what Marcus said. “Because my school is ordinary, I’m not applying.”
+    next: neither_q
+
+  neither_q:
+    type: choice
+    prompt:
+      zh: “学校普通”能直接推出的，是哪一句？
+      en: What does “my school is ordinary” actually lead to?
+    options:
+      - id: harder
+        stance: open
+        text:
+          zh: “所以我被选上的机会小一些。”
+          en: “So my chances are somewhat lower.”
+        next: neither_a1
+      - id: pointless
+        stance: open
+        text:
+          zh: “所以我投了也没用。”
+          en: “So applying is pointless.”
+        next: neither_a2
+
+  neither_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。事实只能推到“机会小一些”。
+          en: Right. The fact only gets you as far as “somewhat lower.”
+      - speaker: guide
+        text:
+          zh: 从“小一些”到“不投了”，中间那一步不是事实，是决定。书里把这种句式叫自卑情结：因为我有某个不足，所以我做不到某件事。它的用处是：不投，就不会被拒。
+          en: "From “somewhat lower” to “I’m not applying,” the step in between isn’t a fact. It’s a decision. The book calls this pattern an inferiority complex: because I have such-and-such shortcoming, I can’t do such-and-such. Its use is plain. If you don’t apply, you can’t be rejected."
+    next: reveal_complex
+
+  neither_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是阿凯自己走的那一步。
+          en: That’s the very step Marcus took.
+      - speaker: guide
+        text:
+          zh: 可事实只能推到“机会小一些”。小一些不是零。从“小一些”跳到“没用”，多出来的那一截是他自己加的。书里把这种句式叫自卑情结：因为我有某个不足，所以我做不到某件事。它有一个实在的好处：不投，就不会被拒。
+          en: "But the fact only gets you to “somewhat lower chances.” Lower isn’t zero. The leap from “lower” to “pointless” is something he added himself. The book calls this pattern an inferiority complex: because I have such-and-such shortcoming, I can’t do such-and-such. It has one solid benefit. If you don’t apply, you can’t be rejected."
+    next: reveal_complex
+
+  # both (closest to the book -> turned on the reader; neither answer is wrong)
+  both_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。一个往下缩，一个往上垫，底下是同一句话：光是我自己，恐怕不够。
+          en: Yes. One shrinks down, one props itself up, and underneath both is the same line. On my own I’m probably not enough.
+      - speaker: guide
+        text:
+          zh: 看别人总是比较容易。所以这一问换成你。这里没有哪个答案更好。
+          en: It’s always easier to see in other people. So this question is about you. Neither answer here is the better one.
+    next: both_q
+
+  both_q:
+    type: choice
+    prompt:
+      zh: 你自己更常用哪一种？
+      en: Which one do you reach for more often?
+    options:
+      - id: shrink
+        stance: open
+        text:
+          zh: 更常说“我这种人，算了吧”。
+          en: More often it’s “someone like me? Never mind.”
+        next: both_a1
+      - id: prop
+        stance: open
+        text:
+          zh: 更常悄悄亮出点什么，让人高看我一眼。
+          en: More often I quietly flash something so people think more of me.
+        next: both_a2
+
+  both_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 谢谢你答得这么老实。
+          en: Thank you for answering that honestly.
+      - speaker: guide
+        text:
+          zh: “算了吧”有一个很实在的好处：不试，就不会输。下次这三个字冒出来的时候，可以多问自己一句：这一次，我是真的不想要，还是在躲一个可能的“不行”？
+          en: “Never mind” has one very solid benefit. If you don’t try, you can’t lose. Next time those words come up, you might ask yourself one more thing. Do I truly not want this one, or am I dodging a possible “no”?
+    next: reveal_complex
+
+  both_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 谢谢你答得这么老实。这一种很少有人肯认。
+          en: Thank you for answering that honestly. Few people will own up to this one.
+      - speaker: guide
+        text:
+          zh: 亮出来的那一下很管用，对方的眼神确实会变。只是它得一直续：下一次还得再亮点什么。下次手伸向那样东西的时候，可以多问自己一句：不亮它，光是我，在这儿行不行？
+          en: The flash works. The look on the other person’s face really does change. It just has to keep being renewed. Next time there has to be something else to flash. When your hand next goes toward that thing, you might ask yourself one more question. Without it, with only me, am I all right here?
+    next: reveal_complex
+
+  reveal_complex:
+    type: reveal
+    source: book
+    title:
+      zh: 自卑感的两种变形
+      en: Two bent forms of inferiority
+    body:
+      zh: |-
+        作者认为，有问题的不是自卑感，而是用它的两种方式：
+
+        - 自卑情结：把自卑感当作不行动的理由。句式是“因为我有某个不足，所以我做不到”。
+        - 优越情结：受不了自卑感，又不想真去努力，于是借别人的光环、靠炫耀，来显得自己够格。
+
+        两者看上去相反，其实是一回事的两头。
+      en: |-
+        In the authors’ view the problem isn’t the feeling of inferiority. It’s two ways of using it:
+
+        - The inferiority complex: using the feeling as a reason not to act. The pattern is “because I have this shortcoming, I can’t.”
+        - The superiority complex: unable to bear the feeling but unwilling to do the work, a person borrows someone else’s shine, or boasts, in order to seem good enough.
+
+        They look like opposites. They are two ends of one thing.
+    next: scene_hall
+
+  # ───────────────────────── Choice point 4: competition ─────────────────────────
+  scene_hall:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 第二天。你在教学楼的走廊里迎面遇到了周然。
+          en: The next day. You run into Priya face to face in the corridor.
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: “恭喜”两个字，你说得出口吗？
+      en: “Congratulations.” Can you get the word out?
+    options:
+      - id: sour
+        stance: detour
+        text:
+          zh: 说得出。但说的时候，心里是酸的。
+          en: Yes. But it tastes sour while I’m saying it.
+        next: sour_1
+      - id: cannot
+        stance: detour
+        text:
+          zh: 说不太出。她赢了，就好像我输了。
+          en: Not really. Her winning feels like me losing.
+        next: cannot_1
+      - id: sincere
+        stance: book
+        text:
+          zh: 说得出，是真心的。她的奖没拿走我什么。
+          en: Yes, and I mean it. Her prize took nothing from me.
+        next: sincere_1
+
+  # sour
+  sour_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 嘴上说了，心里酸。这大概是最常见也最诚实的一种。
+          en: The word comes out and something sours inside. That’s probably the most common answer, and the most honest.
+      - speaker: guide
+        text:
+          zh: 我们问问那份酸。
+          en: Let’s ask the sourness a question.
+    next: sour_q
+
+  sour_q:
+    type: choice
+    prompt:
+      zh: 她拿奖，拿走了你的什么？
+      en: Her winning. What did it take from you?
+    options:
+      - id: rank_dropped
+        stance: open
+        text:
+          zh: 没拿走什么。可我好像往后掉了一名。
+          en: Nothing, really. But it’s as if I dropped a place.
+        next: sour_a1
+      - id: attention
+        stance: open
+        text:
+          zh: 拿走了本来可能落在我身上的目光。
+          en: The attention that might have come my way.
+        next: sour_a2
+
+  sour_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “往后掉了一名。”那张排名表贴在哪儿？
+          en: “Dropped a place.” Where is that ranking posted?
+      - speaker: guide
+        text:
+          zh: 她的比赛你没有参加，你们甚至不在同一个学校。那张把你们俩排在一起的榜，是你心里画的。酸不是因为你输了，是因为你一直默默在和所有认识的人比一场没人宣布过的赛。
+          en: You weren’t in her competition. You’re not even at the same school. The table that ranks the two of you together is one you drew in your own head. The sour taste isn’t from losing. It’s from quietly running, against everyone you know, a race nobody ever announced.
+    next: reveal_race
+
+  sour_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个回答很具体：你把目光当成了一块大小固定的蛋糕，她多一口，你就少一口。
+          en: That’s a very concrete answer. You’re treating attention as a cake of fixed size. A bite more for her is a bite less for you.
+      - speaker: guide
+        text:
+          zh: 如果人和人之间是这样分蛋糕的，那每个做得好的人都是来抢你的。书说，这就是把人生当成比赛的代价：身边的人一个个变成对手，别人的好消息都成了你的坏消息。
+          en: If that’s how things are shared out between people, then everyone who does well is taking from you. The book says this is the cost of treating life as a competition. One by one the people around you turn into rivals, and every piece of their good news becomes bad news for you.
+    next: reveal_race
+
+  # cannot
+  cannot_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你没有硬挤出一句假的恭喜。这份老实很难得。
+          en: You didn’t force out a fake congratulations. That honesty is rare.
+      - speaker: guide
+        text:
+          zh: 我们顺着“她赢了就是我输了”往下走一步。假设人生真是一场只有一个冠军的比赛。
+          en: Let’s follow “her winning is my losing” one step further. Suppose life really is a race with a single champion.
+    next: cannot_q
+
+  cannot_q:
+    type: choice
+    prompt:
+      zh: 那么周然是你的什么？班上其他人呢？
+      en: Then what is Priya to you? And everyone else in your class?
+    options:
+      - id: rivals
+        stance: open
+        text:
+          zh: 都是我的对手，一个也不例外。
+          en: Rivals. Every one of them.
+        next: cannot_a1
+      - id: no_friends
+        stance: open
+        text:
+          zh: ……那样的话，我就没有朋友了。
+          en: …In that case I’d have no friends.
+        next: cannot_a2
+
+  cannot_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，全是对手。连你最好的朋友也是，只是暂时排在你后面，或者前面。
+          en: Yes, all rivals. Your best friend too, who just happens to be ranked behind you for now, or ahead.
+      - speaker: guide
+        text:
+          zh: 这就是书里说的代价：把关系看成竞争，世界就站满了要赢过或者要防着的人。说不出“恭喜”不是你小气，是这套看法的必然结果。
+          en: This is the cost the book describes. See relationships as a contest and the world fills up with people to beat or to guard against. Being unable to say “congratulations” isn’t pettiness on your part. It follows directly from that way of seeing.
+    next: reveal_race
+
+  cannot_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你自己把这条路走到头了。
+          en: You walked that road to its end by yourself.
+      - speaker: guide
+        text:
+          zh: 是的。在一场所有人对所有人的比赛里，朋友只是还没分出胜负的对手。书的主张是反过来：人生不是比赛。不比了，周然就只是周然，一个做成了一件事的人。
+          en: Yes. In a race of everyone against everyone, a friend is only a rival you haven’t settled the score with yet. The book argues the reverse. Life isn’t a competition. Stop competing, and Priya is just Priya. Someone who pulled off something.
+    next: reveal_race
+
+  # sincere (closest to the book -> one layer deeper)
+  sincere_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 能真心说出这两个字，说明在你眼里她不是来赢你的。书里把这样的人叫伙伴。
+          en: Being able to say it and mean it shows she isn’t, in your eyes, someone out to beat you. The book’s word for such a person is comrade.
+      - speaker: narrator
+        text:
+          zh: 一个月后，换你拿了一个不小的奖。你最好的朋友看到了消息，一句话也没说。
+          en: A month later it’s your turn. You win something substantial. Your closest friend sees the news and says nothing at all.
+    next: sincere_q
+
+  sincere_q:
+    type: choice
+    prompt:
+      zh: 你怎么看他的沉默？
+      en: What do you make of his silence?
+    options:
+      - id: fake_friend
+        stance: detour
+        text:
+          zh: 他在嫉妒我。看来不是真朋友。
+          en: He’s jealous. So much for being a real friend.
+        next: sincere_a1
+      - id: his_hurdle
+        stance: book
+        text:
+          zh: 他可能正站在我上个月的位置上。那是他要过的坎。
+          en: He may be standing right where I stood last month. That’s his hurdle to get over.
+        next: sincere_a2
+
+  sincere_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 好消息没人接，是会失落的，尤其是最想听他说的那个人。
+          en: Good news that nobody catches does sting, most of all when it’s the one person you wanted to hear from.
+      - speaker: guide
+        text:
+          zh: 只是想想上个月放下手机的那个晚上。那时候的你，算不算周然的“假朋友”？他此刻多半正在量一把尺子，就像你量过的那样。给他下判决，等于你也拿出了一把尺子：真朋友，假朋友。
+          en: But think back to the night last month when you put your phone down. Were you a “fake friend” to Priya then? Right now he’s most likely holding up a ruler, just as you did. Passing a verdict on him means you’ve pulled out a ruler of your own. Real friend, fake friend.
+    next: reveal_race
+
+  sincere_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你认出了那个位置，因为你自己站过。
+          en: You recognized the spot, because you’ve stood on it yourself.
+      - speaker: guide
+        text:
+          zh: 而且你没有把他的沉默算成对你的打分。他什么时候说得出“恭喜”，是他的事。你这边能做的，是不把这次得奖变成你们之间的一场比赛。
+          en: And you didn’t count his silence as a score against you. When he becomes able to say “congratulations” is up to him. What you can do on your side is not turn this prize into a contest between the two of you.
+    next: reveal_race
+
+  reveal_race:
+    type: reveal
+    source: book
+    title:
+      zh: 人生不是比赛
+      en: Life is not a competition
+    body:
+      zh: |-
+        作者认为，“追求优越性”不是要赢过别人，而是自己往前迈步。
+
+        > 人与人不同，但平等。
+
+        走在前面的和走在后面的，只是在同一片平地上位置不同，没有上下之分。
+
+        作者还指出竞争的代价：把人际关系看成比赛，别人就成了对手，你就没法真心为别人高兴。放下比赛，别人才可能成为伙伴。
+      en: |-
+        For the authors, the “pursuit of superiority” doesn’t mean beating other people. It means taking your own step forward.
+
+        > People are different, but equal.
+
+        Those walking ahead and those walking behind are simply at different points on the same level ground. Nobody is above or below.
+
+        They also name the cost of competing. Treat relationships as a race and other people become rivals, and you can no longer be glad for them. Drop the race, and they can become comrades.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。下面是我们整理的质疑和边界：
+
+        - “一切烦恼”说得太满。贫穷、疾病、天灾带来的难处是实打实的，不全是人和人之间的事。很多心理学家也认为，人有一些烦恼就在自己里面。
+        - 和别人比较几乎是人的本能，不是一句“别比了”就放得下的。做不到不比，不等于你失败了。
+        - 竞争并不总是坏事。体育、考试、做产品，有时正是对手让人做得更好。
+        - “和理想的自己比”也可能变成另一种苛刻：理想定得太高，人一样会被压垮。
+        - 如果“我不够好”的感觉已经严重影响到吃饭、睡觉和上学，请找你信任的大人或专业的心理帮助。
+      en: |-
+        That was the book’s position. Here are the objections and limits, as we’ve gathered them:
+
+        - “All problems” overstates it. The hardship of poverty, illness and disaster is solid, and not wholly a matter between people. Many psychologists also hold that some of our troubles live inside us.
+        - Comparing ourselves with others is close to instinct. Nobody drops it on being told “stop comparing.” Failing to stop doesn’t mean you’ve failed.
+        - Competition isn’t always bad. In sport, in exams, in building things, a rival is sometimes exactly what makes people better.
+        - “Compare with your ideal self” can become a harshness of its own. Set the ideal too high and it crushes just as well.
+        - If the sense of not being good enough is seriously affecting your eating, sleeping or schoolwork, please reach out to an adult you trust or to professional mental-health support.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。阿凯对你说：“可我确实不如别人啊，这是事实，又不是我想出来的。”用你自己的话回答他，两三句就够。
+      en: Your turn. Marcus says to you, “But I really am worse than other people. That’s a fact. I’m not making it up.” Answer him in your own words. Two or three sentences will do.
+    checkpoints:
+      - id: interpretation
+        label:
+          zh: 我讲了自卑感是比较出来的解释，不是事实本身
+          en: I said inferiority is an interpretation that comes from comparing, not the fact itself
+        hint:
+          zh: 事实只有“我是这样，他是那样”。“所以我不行”是比较之后自己加上去的意思，而意思可以换。
+          en: The facts are only “I’m like this, he’s like that.” “So I’m no good” is a meaning added afterwards by comparing, and meanings can be changed.
+        cues:
+          zh: [比较, 解释, 尺子, 主观, 怎么看, 和谁比, 意思, 所以]
+          en: [compar, interpret, ruler, subjective, meaning, measur, how you see, against whom]
+      - id: use
+        label:
+          zh: 我讲了它可以是动力，坏在拿它当理由或拿光环盖住它
+          en: I said it can be fuel, and that the trouble is using it as a reason or hiding it under shine
+        hint:
+          zh: 想变好的心情是好的。有害的是两种用法：“因为我不行，所以不试”，或者靠炫耀来掩盖。
+          en: Wanting to be better is good. The harm lies in two uses, “I’m no good so I won’t try,” or covering it up by boasting.
+        cues:
+          zh: [动力, 理由, 借口, 炫耀, 光环, 不试, 努力, 进步, 变好]
+          en: [fuel, drive, motivat, reason, excuse, boast, show off, try, effort, better]
+      - id: not_race
+        label:
+          zh: 我讲了人生不是比赛：和理想的自己比，别人是伙伴
+          en: "I said life isn’t a race: compare with your ideal self, and others are comrades"
+        hint:
+          zh: 比较的对象是理想中的自己。人与人不同但平等；不把关系当比赛，别人才不是对手。
+          en: The comparison is with your ideal self. People are different but equal, and once relationships aren’t a race, others stop being rivals.
+        cues:
+          zh: [比赛, 竞争, 理想, 自己比, 伙伴, 对手, 平等, 输赢]
+          en: [race, competi, contest, ideal, comrade, rival, equal, win, lose]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。它没有说你不该难受。它只是让你看见，那份难受里一直站着别人，而尺子在你手里。
+          en: That’s this lesson. It never said you shouldn’t feel bad. It only let you see that there have been other people inside the feeling all along, and that the ruler is in your hand.
+      - speaker: guide
+        text:
+          zh: 既然烦恼都发生在人和人之间，下一步就是分清楚：哪些事是我的，哪些不是。下一课从这里开始。
+          en: If our troubles all happen between people, the next step is sorting out which matters are mine and which aren’t. The next lesson starts there.
