@@ -1,0 +1,1269 @@
+# 课题分离 / Separation of tasks
+#
+# Shape of the lesson: four choice points. At each one, the option closest to the book goes one
+# layer deeper; every other option gets a detour written only for it (acknowledge -> one question
+# back -> the reader sees the snag themselves) and then rejoins the shared path.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: task-separation
+
+title:
+  zh: 课题分离
+  en: Separation of tasks
+
+question:
+  zh: 这件事，到底是谁的？
+  en: Whose is this, really?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 判断一件事是谁的课题，只看一点：这个选择带来的后果，最终由谁来承担。
+    en: "To tell whose task something is, ask one thing: who ends up living with the consequences of this choice?"
+  - zh: 不去干涉别人的课题，也不让别人干涉自己的课题。
+    en: Don’t step into other people’s tasks, and don’t let other people step into yours.
+  - zh: 别人怎么看待、怎么评价你的选择，是别人的课题，你左右不了。
+    en: What other people think of your choice is their task. It isn’t yours to control.
+  - zh: 以“为你好”为名的干涉，有时真正满足的是干涉者自己的需要。
+    en: Stepping in “for your own good” sometimes serves the needs of the person stepping in.
+  - zh: 课题分离不是疏远。可以随时准备帮忙，但不强行介入；接不接受，由对方决定。
+    en: Separating tasks isn’t pulling away. You can stand ready to help without forcing it; whether to take the help is the other person’s call.
+  - zh: 课题分离是人际关系的入口，不是终点。
+    en: Separating tasks is where good relationships start, not where they end up.
+
+cast:
+  friend:
+    name: { zh: 林栀, en: Mina }
+  mom:
+    name: { zh: 妈妈, en: Mom }
+
+start: open
+
+nodes:
+  # ───────────────────────── Choice point 1: the mirror ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 先不讲道理。给你看一个周三晚上。
+          en: No theory yet. Let me show you a Wednesday night.
+    next: scene_wed
+
+  scene_wed:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 周三，晚上十一点。林栀的作品集周五零点截止，投的是她唯一想去的那家工作室。
+          en: Wednesday, 11 p.m. Mina’s portfolio is due Friday at midnight. It’s her application to the one studio she actually wants.
+      - speaker: narrator
+        text:
+          zh: 她目前的进度：一张封面。她正在做的事：追剧，第九集。
+          en: "Her progress so far: a cover page. What she’s doing right now: episode nine."
+      - speaker: narrator
+        text:
+          zh: 你坐在她旁边。你看了一眼她的屏幕，又看了一眼日历。
+          en: You’re sitting next to her. You look at her screen. You look at the calendar.
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 这里没有标准答案。你真实会怎么做？
+      en: There’s no right answer here. What would you honestly do?
+    options:
+      - id: nag
+        stance: detour
+        text:
+          zh: 提醒她。她不动就再提醒，烦也要说，真朋友才会管。
+          en: Remind her. Then remind her again. Annoying, sure, but that’s what real friends do.
+        next: nag_1
+      - id: doit
+        stance: detour
+        text:
+          zh: 我先帮她把排版框架搭出来。有了开头，她自然就动了。
+          en: I’ll quietly set up the layout for her. Once there’s a start, she’ll get going.
+        next: doit_1
+      - id: silent
+        stance: detour
+        text:
+          zh: 什么都不说。这是她自己的事，我不该插手。
+          en: Say nothing. It’s her business, and it’s not my place to get involved.
+        next: silent_1
+      - id: offer
+        stance: book
+        text:
+          zh: 跟她说一次我有点担心，问她要不要帮忙，然后随她。
+          en: Tell her once that I’m a bit worried, ask if she wants help, then leave it with her.
+        next: offer_1
+
+  # nag
+  nag_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你会开口，是因为她对你重要。这一点我不想让你丢掉。
+          en: You’d speak up because she matters to you. I don’t want you to lose that.
+      - speaker: guide
+        text:
+          zh: 我只问一件事。假设你提醒到第五次，她终于合上剧，开始做了。
+          en: Just one question. Say that on your fifth reminder she finally closes the show and starts working.
+    next: nag_q
+
+  nag_q:
+    type: choice
+    prompt:
+      zh: 那一刻，她是为了什么在做？
+      en: In that moment, what is she working for?
+    options:
+      - id: for_herself
+        stance: open
+        text:
+          zh: 为了她自己的申请。我只是推了一把。
+          en: Her own application. I only gave her a push.
+        next: nag_a1
+      - id: for_quiet
+        stance: open
+        text:
+          zh: ……多半是为了让我别再念了。
+          en: …Mostly to get me to stop talking.
+        next: nag_a2
+
+  nag_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 有可能。那下一个截止日呢？你不在旁边的那一次。
+          en: Could be. And the next deadline, the one where you’re not in the room?
+      - speaker: guide
+        text:
+          zh: 如果每次都要有人推第一把，这件事就悄悄换了主人：做不做，成了你的事；她的事，只剩下应付你。
+          en: If someone always has to give the first push, the thing quietly changes owners. Whether it gets done becomes your job. Her job shrinks to handling you.
+    next: test_intro
+
+  nag_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你自己说出来了。
+          en: You said it yourself.
+      - speaker: guide
+        text:
+          zh: 她手上的事，从“我的申请”变成了“让朋友安静下来”。作品集也许交得上，但“这是我自己的事”那个感觉，被拿走了一点。
+          en: What she’s doing has turned from “my application” into “getting my friend off my back.” The portfolio may go in on time. But some of the feeling that this is hers went with it.
+    next: test_intro
+
+  # doit
+  doit_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你想动手，是因为你做得到，而且看着着急。这是真本事，也是真心。
+          en: You’d step in because you can, and because it’s hard to watch. That’s real skill and real care.
+      - speaker: guide
+        text:
+          zh: 往后推一步。框架搭好了，她很感动，接着做完，交了，还过了。三个月后，工作室的第一个截止日来了。这次你不在。
+          en: Run it forward. You build the layout, she’s touched, she finishes, she gets in. Three months later the studio hands her a first deadline. This time you’re not there.
+    next: doit_q
+
+  doit_q:
+    type: choice
+    prompt:
+      zh: 面对那个空白文件，她心里知道的是什么？
+      en: Facing that blank file, what does she know about herself?
+    options:
+      - id: can_finish
+        stance: open
+        text:
+          zh: 她知道自己最后总能做完。
+          en: That she always gets it done in the end.
+        next: doit_a1
+      - id: was_carried
+        stance: open
+        text:
+          zh: 她知道上一次的开头，是别人替她扛的。
+          en: That last time, someone else did the starting for her.
+        next: doit_a2
+
+  doit_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 做完，她确实会。但最难的那一段，对着空白开始，她没练过。
+          en: Finishing, yes. But the hardest part, starting from nothing, is the part she never got to practice.
+      - speaker: guide
+        text:
+          zh: 你替她省掉的，恰好是她最需要自己走的那一步。
+          en: The step you saved her is exactly the one she most needed to take herself.
+    next: test_intro
+
+  doit_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。而且她会记得一件更细的事：在你眼里，她是需要被接手的那种人。
+          en: Yes. And she’ll remember something quieter too. In your eyes, she was someone who needed taking over.
+      - speaker: guide
+        text:
+          zh: 帮忙是好意。但它捎带了一句没说出口的话：我不太信你自己能行。
+          en: The help was kind. It also carried a sentence nobody said out loud. I don’t quite trust you to manage this.
+    next: test_intro
+
+  # silent
+  silent_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: “这是她自己的事。”这个判断和这本书的方向是一致的。你比大多数人更早停住了手。
+          en: “It’s her business.” That instinct runs the same way this book does. You stopped your hand sooner than most people would.
+      - speaker: guide
+        text:
+          zh: 我只追问沉默的那一半。你坐在她旁边，一句话也没有。
+          en: I only want to ask about the silence. You’re sitting right next to her, and you say nothing at all.
+    next: silent_q
+
+  silent_q:
+    type: choice
+    prompt:
+      zh: 从林栀那边看，你的沉默像什么？
+      en: From where Mina sits, what does your silence look like?
+    options:
+      - id: respect
+        stance: open
+        text:
+          zh: 像尊重。我相信她自己有数。
+          en: Respect. I trust her to know what she’s doing.
+        next: silent_a1
+      - id: indifference
+        stance: open
+        text:
+          zh: 像不在乎。或者像在等着看她出事。
+          en: Like I don’t care. Or like I’m waiting to watch it go wrong.
+        next: silent_a2
+
+  silent_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果她感受到的是这个，那很好。可她怎么知道？
+          en: If that’s what reaches her, good. But how would she know?
+      - speaker: guide
+        text:
+          zh: 尊重和冷淡，从外面看长得一模一样。区别只在一点：她知不知道，她一开口，你就在。
+          en: From the outside, respect and indifference look identical. The only difference is whether she knows that the moment she asks, you’re there.
+    next: test_intro
+
+  silent_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 嗯。你没有干涉，但也把“我在这儿”一起收走了。
+          en: Right. You didn’t interfere. But you also took “I’m here” off the table.
+      - speaker: guide
+        text:
+          zh: 要放下的是“替她决定”。“让她知道有人可以靠”，可以留着。
+          en: The thing to put down is deciding for her. Letting her know she has someone to lean on, you can keep.
+    next: test_intro
+
+  # offer (closest to the book -> one layer deeper)
+  offer_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 说一次，问一句，然后把决定还给她。这和书的方向很接近，等下你会看到为什么。
+          en: Say it once, ask once, hand the decision back. That’s close to where the book lands, and you’ll see why in a minute.
+      - speaker: guide
+        text:
+          zh: 所以我给你加一点难度。
+          en: So let me make it harder.
+      - speaker: narrator
+        text:
+          zh: 你说了。林栀说：“知道啦，我有数。”然后点开了第十集。周四晚上十点，文件夹里还是只有一张封面。
+          en: You say it. Mina says, “I know, I know, I’ve got it,” and starts episode ten. Thursday, 10 p.m. The folder still holds one cover page.
+    next: offer_q
+
+  offer_q:
+    type: choice
+    prompt:
+      zh: 现在呢？
+      en: And now?
+    options:
+      - id: again
+        stance: detour
+        text:
+          zh: 再说一次。上次可能说得太轻，她没当回事。
+          en: Say it again. Maybe I was too gentle and she didn’t take it seriously.
+        next: offer_a1
+      - id: hold
+        stance: book
+        text:
+          zh: 不再说了。心里很难受，但该说的我已经说了。
+          en: Leave it. It’s uncomfortable to watch, but I’ve said what I had to say.
+        next: offer_a2
+
+  offer_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 很诚实。想说第二次的冲动，几乎人人都有。
+          en: That’s honest. Almost everyone feels the pull to say it a second time.
+      - speaker: guide
+        text:
+          zh: 只是想一下：她第一次不是没听见。她听见了，然后选了第十集。再说一遍，传过去的就不再是提醒，而是“你选错了，改”。
+          en: Think about it, though. She heard you the first time. She heard you and chose episode ten. Said again, it stops being information. It becomes “you chose wrong, fix it.”
+    next: test_intro
+
+  offer_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一步最难，也最少人做到：明明看得见坑，还是把方向盘留在她手里。
+          en: This is the hardest move and the rarest. You can see the pothole, and you still leave the wheel in her hands.
+      - speaker: guide
+        text:
+          zh: 留意你说的“心里很难受”。先记着它，我们后面要回来找它。
+          en: Notice that you said it’s uncomfortable. Hold on to that. We’re coming back for it.
+    next: test_intro
+
+  # ───────────────────────── The test (book) ─────────────────────────
+  test_intro:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 提醒、代劳、沉默、只说一次。四种做法，其实都在回答同一个问题：这件事，到底是谁的？
+          en: Reminding, taking over, staying quiet, saying it once. All four are answers to the same question. Whose is this, really?
+    next: reveal_test
+
+  reveal_test:
+    type: reveal
+    source: book
+    title:
+      zh: 怎么分
+      en: How to tell
+    body:
+      zh: |-
+        阿德勒心理学认为，每件事都有它的主人。这本书给的分辨办法只有一个问题：
+
+        > 这个选择带来的后果，最终由谁来承担？
+
+        谁承担，就是谁的课题。作者主张：不去干涉别人的课题，也不让别人干涉自己的课题。
+      en: |-
+        In Adlerian psychology, every matter has an owner. The book offers a single question for finding out who:
+
+        > Who ends up living with the consequences of this choice?
+
+        Whoever that is, the task is theirs. The authors’ position: don’t step into other people’s tasks, and don’t let anyone step into yours.
+    next: after_test
+
+  after_test:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 作品集交不上，错过那家工作室的是林栀，不是你。按这个标准，它是她的课题。
+          en: If the portfolio doesn’t go in, Mina is the one who misses the studio. Not you. By this test, the task is hers.
+      - speaker: guide
+        text:
+          zh: 听起来很干净。我们马上把它弄脏一点。
+          en: Sounds tidy. Let’s get it dirty.
+    next: scene_mom
+
+  # ───────────────────────── Choice point 2: the other direction ─────────────────────────
+  scene_mom:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 换你了。你决定从会计转去数字媒体，申请表已经交了。你打电话告诉妈妈。
+          en: Your turn. You’ve decided to switch from accounting to animation, and the form is already in. You call your mom to tell her.
+      - speaker: narrator
+        text:
+          zh: 她沉默了很久，说了一句“你自己看着办吧”，挂了。之后三天，她没回你的微信。
+          en: A long silence. Then “Do what you want,” and she hangs up. For three days after that, she leaves your texts on read.
+      - speaker: guide
+        text:
+          zh: 先不管转专业对不对。只看一件事。
+          en: Never mind whether switching is the right call. Look at one thing only.
+    next: cp2
+
+  cp2:
+    type: choice
+    prompt:
+      zh: 妈妈的难过，是谁的课题？
+      en: Your mom being upset. Whose task is that?
+    options:
+      - id: mine
+        stance: detour
+        text:
+          zh: 我的。是我的决定让她难过的，我有责任让她好起来。
+          en: Mine. My decision upset her, so it’s on me to make her feel better.
+        next: mine_1
+      - id: hers_cold
+        stance: detour
+        text:
+          zh: 她的。所以她怎么想，从现在起跟我没关系了。
+          en: Hers. So from here on, what she thinks has nothing to do with me.
+        next: cold_1
+      - id: both
+        stance: detour
+        text:
+          zh: 我们两个人的。一家人的事，分不了那么清楚。
+          en: Both of ours. With family you can’t split things that cleanly.
+        next: both_1
+      - id: hers_warm
+        stance: book
+        text:
+          zh: 她的。我左右不了，但我可以好好解释，继续对她好。
+          en: Hers. I can’t control it, but I can explain myself well and keep being good to her.
+        next: warm_1
+
+  # mine
+  mine_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你会这么想，说明你在乎她。把妈妈的难过当成无所谓的人，才让人担心。
+          en: Thinking this way means you care about her. The people to worry about are the ones who’d shrug it off.
+      - speaker: guide
+        text:
+          zh: 那我们认真对待“让她好起来”这个任务。
+          en: So let’s take “make her feel better” seriously, as a job.
+    next: mine_q
+
+  mine_q:
+    type: choice
+    prompt:
+      zh: 做到哪一步，才算完成？
+      en: When would that job count as done?
+    options:
+      - id: until_supports
+        stance: open
+        text:
+          zh: 做到她理解并支持我的决定为止。
+          en: When she understands my decision and backs it.
+        next: mine_a1
+      - id: switch_back
+        stance: open
+        text:
+          zh: 可能……只有我把专业转回去。
+          en: Maybe… only when I switch back.
+        next: mine_a2
+
+  mine_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 她什么时候理解、会不会理解，这个开关在谁手里？在她手里。
+          en: When she comes around, and whether she ever does. Who holds that switch? She does.
+      - speaker: guide
+        text:
+          zh: 你给自己接了一个按钮不在自己手上的任务。解释，是你能做的；“被理解”，不是你交付得了的东西。
+          en: You’ve signed up for a job whose finish button is in someone else’s hand. Explaining is yours to do. Being understood isn’t yours to deliver.
+    next: reveal_two
+
+  mine_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你看到了。
+          en: You see it.
+      - speaker: guide
+        text:
+          zh: 如果她的情绪归你负责，那到最后，你的专业就得由她的情绪来定。可这四年的课是你去上，之后的路是你去走。后果在你身上，决定却不在了。
+          en: If her feelings are yours to manage, then in the end her feelings pick your major. But you’re the one sitting in those classes for years and living with what comes after. The consequences would still be yours. The decision wouldn’t.
+    next: reveal_two
+
+  # hers_cold
+  cold_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 前半句和书一致。按“谁承担后果”来分，她怎么感受、怎么消化，确实是她的课题。
+          en: The first half matches the book. By the consequences test, how she feels and how she works through it really is her task.
+      - speaker: guide
+        text:
+          zh: 我想停在“跟我没关系”上。
+          en: It’s “nothing to do with me” I want to stop on.
+      - speaker: narrator
+        text:
+          zh: 第四天，她终于回了一条：“吃饭了吗。”
+          en: On day four she finally texts back. “Have you eaten?”
+    next: cold_q
+
+  cold_q:
+    type: choice
+    prompt:
+      zh: 你怎么回？
+      en: What do you send back?
+    options:
+      - id: reply_normally
+        stance: open
+        text:
+          zh: 照常回。她的情绪归她，但她还是我妈。
+          en: A normal reply. Her feelings are hers, and she’s still my mom.
+        next: cold_a1
+      - id: make_her_wait
+        stance: open
+        text:
+          zh: 先不回。她冷了我三天，也该她先道歉。
+          en: Nothing yet. She iced me for three days. She can apologize first.
+        next: cold_a2
+
+  cold_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那你其实不是“没关系”。你分开的是责任，不是感情。
+          en: Then it isn’t really “nothing to do with me.” What you separated was the responsibility. The affection stayed.
+      - speaker: guide
+        text:
+          zh: 这正是书的意思：课题可以分开，人不用分开。
+          en: That’s the book’s point exactly. You can separate the tasks without separating the people.
+    next: reveal_two
+
+  cold_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 被晾三天，会想让她先低头，这很自然。
+          en: Three days of silence. Wanting her to bend first makes complete sense.
+      - speaker: guide
+        text:
+          zh: 留意一下你在等什么：等她先改变态度。也就是说，你在试着管理她的反应，而那恰好是你刚才说不归你管的东西。分离的意思是放下对她反应的控制，不是换一种方式向她提要求。
+          en: Notice what you’re waiting for, though. You’re waiting for her to change first. That’s you trying to manage her reaction, the very thing you just said wasn’t yours. Separating means letting go of controlling how she responds. It doesn’t mean finding a new way to demand something from her.
+    next: reveal_two
+
+  # both
+  both_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 一家人的事确实缠在一起。这不是你想错了，是事实。批评这本书的人里，很多也是这么说的。
+          en: Family things really are tangled. You’re not wrong about that. Plenty of this book’s critics say the same.
+      - speaker: guide
+        text:
+          zh: 所以我们不硬切，只把缠在一起的线一根一根看。
+          en: So we won’t cut anything. We’ll just look at the tangled threads one at a time.
+    next: both_q
+
+  both_q:
+    type: choice
+    prompt:
+      zh: 下面哪一根线，只有你握得住？
+      en: Which of these threads can only you hold?
+    options:
+      - id: my_major
+        stance: open
+        text:
+          zh: 读哪个专业，并且为它负责。
+          en: Which major I study, and answering for it.
+        next: both_a1
+      - id: her_feeling
+        stance: open
+        text:
+          zh: 让妈妈不再为这件事难过。
+          en: Getting Mom to stop being upset about this.
+        next: both_a2
+
+  both_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。课是你去上，之后的工作是你去找。这一根，别人握不了。
+          en: Yes. You’re the one who goes to the classes and looks for the work afterward. Nobody else can hold that thread.
+      - speaker: guide
+        text:
+          zh: 而“她什么时候想通”是另一根，只有她握得住。两根线缠在一起，不等于它们是同一根。
+          en: “When she makes peace with it” is a different thread, and only she can hold it. Two threads tangled together are still two threads.
+    next: reveal_two
+
+  both_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 握一握这根试试。你能决定她哪一天想通吗？
+          en: Try holding that one. Can you decide which day she makes peace with it?
+      - speaker: guide
+        text:
+          zh: 你能做的是解释，是继续对她好。但“不再难过”发生在她心里，只有她握得住。而“读哪个专业、为它负责”，才是只有你握得住的那一根。缠在一起，不等于是同一根。
+          en: What you can do is explain, and keep being good to her. But “not upset anymore” happens inside her, and only she can hold it. “Which major, and answering for it” is the thread only you can hold. Tangled isn’t the same as one.
+    next: reveal_two
+
+  # hers_warm (closest to the book -> one layer deeper)
+  warm_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你同时做到了两件多数人只做得到一件的事：没有把她的情绪背到自己身上，也没有因此变冷。
+          en: You just did two things most people can only do one of. You didn’t take her feelings onto your back, and you didn’t go cold either.
+      - speaker: guide
+        text:
+          zh: 那我往深处推一步。
+          en: So let me push one step deeper.
+      - speaker: narrator
+        text:
+          zh: 你好好解释了。妈妈听完，说：“我是为你好。你以后会后悔的。”
+          en: You explain it well. She hears you out and says, “I only want what’s best for you. You’re going to regret this.”
+    next: warm_q
+
+  warm_q:
+    type: choice
+    prompt:
+      zh: “你以后会后悔的。”这句话，你怎么放？
+      en: “You’re going to regret this.” Where do you put that sentence?
+    options:
+      - id: prove_it
+        stance: detour
+        text:
+          zh: 她在否定我。我得做出成绩，证明我没选错。
+          en: She’s doubting me. I’ll have to do well enough to prove I chose right.
+        next: warm_a1
+      - id: own_it
+        stance: book
+        text:
+          zh: 她可能是对的。可就算后悔，那也是我的后悔。
+          en: She might be right. But if I regret it, the regret will be mine.
+        next: warm_a2
+
+  warm_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 很自然的反应，而且这股劲真的能让人做出成绩。
+          en: A natural reaction, and that kind of fire really can carry a person far.
+      - speaker: guide
+        text:
+          zh: 只是看它把你带去哪儿：从今以后你读这个专业，有一部分是为了“让她看到”。她的评价又坐回了驾驶座。书的建议更朴素：她怎么评价你的选择，是她的课题；你的课题，只是把自己选的路走好。
+          en: Look where it takes you, though. From now on, part of why you study this is so she’ll see. Her verdict is back in the driver’s seat. The book’s advice is plainer. What she makes of your choice is her task. Yours is only to walk the road you picked, and walk it well.
+    next: reveal_two
+
+  warm_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话很有分量。你没有假装自己一定对，你只是认领了后果。
+          en: That sentence has weight. You didn’t pretend to be certain. You just claimed the consequences.
+      - speaker: guide
+        text:
+          zh: 按书的标准，这才是“这是我的课题”的完整意思：不是“我是对的”，而是“无论对错，由我来承担”。
+          en: By the book’s test, that’s the full meaning of “this is my task.” Not “I’m right.” Rather, “right or wrong, I’m the one who carries it.”
+    next: reveal_two
+
+  reveal_two:
+    type: reveal
+    source: book
+    title:
+      zh: 两个方向
+      en: It runs both ways
+    body:
+      zh: |-
+        课题分离是双向的。
+
+        - 向外：别人的课题，不去干涉。
+        - 向内：自己的课题，不让别人干涉。别人怎么看待、怎么评价你的选择，作者认为那是别人的课题，你左右不了。
+
+        作者还提醒：以“为你好”为名的干涉，有时真正满足的，是干涉者自己的需要，比如安心，或者面子。
+      en: |-
+        Separation of tasks runs in both directions.
+
+        - Outward: other people’s tasks aren’t yours to step into.
+        - Inward: your tasks aren’t theirs to step into. What others think of your choice is, in the authors’ view, their task, and you can’t control it.
+
+        The authors add a warning. Stepping in “for your own good” sometimes serves the person stepping in: their peace of mind, or how things look.
+    next: after_two
+
+  after_two:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 最后那句话是一面镜子。它照得到你妈妈，也照得到周三晚上的你。
+          en: That last line is a mirror. It shows your mom. It also shows you, on Wednesday night.
+    next: scene_tight
+
+  # ───────────────────────── Choice point 3: whose discomfort ─────────────────────────
+  scene_tight:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 回到周三晚上。你坐在林栀旁边，看着第九集的片头，心里发紧。
+          en: Back to Wednesday night. You’re next to Mina, watching the opening credits of episode nine, and your chest is tight.
+    next: cp3
+
+  cp3:
+    type: choice
+    prompt:
+      zh: 那个“发紧”，是谁的？
+      en: That tightness. Whose is it?
+    options:
+      - id: hers
+        stance: detour
+        text:
+          zh: 是因为她。她自己不着急，我才替她着急的。
+          en: It comes from her. She’s not worried, so I end up worrying for her.
+        next: hers_1
+      - id: good_sign
+        stance: detour
+        text:
+          zh: 着急说明我在乎她。这种感觉没必要分是谁的。
+          en: Worrying means I care. A feeling like that doesn’t need an owner.
+        next: good_1
+      - id: mine_feeling
+        stance: book
+        text:
+          zh: 是我的。看着在乎的人往坑里走，难受的人是我。
+          en: Mine. I’m the one who can’t stand watching someone I love walk toward a hole.
+        next: feel_1
+
+  # hers
+  hers_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 引起这个感觉的，确实是她的事。这一点你没说错。
+          en: What set the feeling off is her situation. You’re right about that.
+      - speaker: guide
+        text:
+          zh: 我换个问法。假如她现在立刻关掉剧，开始做。
+          en: Let me ask it differently. Suppose she shuts the show right now and gets to work.
+    next: hers_q
+
+  hers_q:
+    type: choice
+    prompt:
+      zh: 最先松一口气的，是谁？
+      en: Who breathes out first?
+    options:
+      - id: me
+        stance: open
+        text:
+          zh: 是我。
+          en: Me, honestly.
+        next: hers_a1
+      - id: her
+        stance: open
+        text:
+          zh: 是她吧。
+          en: Her, probably.
+        next: hers_a2
+
+  hers_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。那口气是你松的，说明那份紧也是你的。
+          en: Right. You’re the one who breathes out, so the tightness was yours too.
+      - speaker: guide
+        text:
+          zh: 所以催她的时候，有一部分其实是在请她帮忙：帮你把你的焦虑关掉。
+          en: Which means part of every reminder is a request. You’re asking her to switch off your anxiety for you.
+    next: reveal_pause
+
+  hers_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 也许她也会松一口气。不过她的压力，她一直在用自己的办法处理着，比如第九集。
+          en: Maybe she does too. But she’s been handling her own pressure in her own way all along. Episode nine, for instance.
+      - speaker: guide
+        text:
+          zh: 而你胸口那份紧，是在她动手的那一秒才散的。它住在你身上。所以催她的时候，有一部分是在请她帮你关掉你的焦虑。
+          en: The tightness in your chest, though, only lets go the second she starts. It lives in you. So part of every reminder is asking her to switch off your anxiety for you.
+    next: reveal_pause
+
+  # good_sign
+  good_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 在乎是真的，也是好的。这本书从头到尾没有叫人不在乎。
+          en: The caring is real, and it’s good. Nowhere does this book ask anyone to care less.
+      - speaker: guide
+        text:
+          zh: 我只想把一样东西从里面拿出来看。
+          en: There’s just one thing I’d like to lift out of it and look at.
+    next: good_q
+
+  good_q:
+    type: choice
+    prompt:
+      zh: “在乎她”和“想让这份难受马上停下来”，是同一件事吗？
+      en: “Caring about her” and “needing this feeling to stop right now.” Same thing?
+    options:
+      - id: not_same
+        stance: open
+        text:
+          zh: 不是。我可以在乎她，同时带着这份难受。
+          en: No. I can care about her and carry the discomfort too.
+        next: good_a1
+      - id: same
+        stance: open
+        text:
+          zh: 差不多。在乎一个人，就会想做点什么。
+          en: Pretty much. When you care, you want to do something.
+        next: good_a2
+
+  good_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 就是这个区别。
+          en: That’s the difference.
+      - speaker: guide
+        text:
+          zh: 在乎，是给她的。急着让难受停下来，是为自己的。前一个留着；后一个，需要你自己接住。
+          en: The caring is for her. The rush to make the feeling stop is for you. Keep the first. The second is yours to catch.
+    next: reveal_pause
+
+  good_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 想做点什么，没问题。看一下“做多少”就好。
+          en: Wanting to do something is fine. Just look at how much.
+      - speaker: guide
+        text:
+          zh: 如果目的是让她好，一句“需要我就说”已经够了。如果一句不够，非要她现在就动，那多出来的力气，是在安抚你自己。
+          en: If the goal is her good, “I’m here if you need me” covers it. If one sentence isn’t enough and she has to start now, the extra force is there to calm you.
+    next: reveal_pause
+
+  # mine_feeling (closest to the book -> one layer deeper; both answers are sound)
+  feel_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你找到了这一课里最不容易看见的东西。
+          en: You’ve found the thing in this lesson that’s hardest to see.
+      - speaker: guide
+        text:
+          zh: 那还剩最后一层。既然这份难受是你自己的课题。
+          en: One layer left, then. If this discomfort is your own task.
+    next: feel_q
+
+  feel_q:
+    type: choice
+    prompt:
+      zh: 你打算拿它怎么办？
+      en: What will you do with it?
+    options:
+      - id: digest
+        stance: open
+        text:
+          zh: 自己消化。出去走一圈，做我自己的事。
+          en: Deal with it myself. Take a walk, get on with my own things.
+        next: feel_a1
+      - id: name_it
+        stance: open
+        text:
+          zh: 告诉她：我有点替你着急，这是我的问题。需要我就说。
+          en: "Tell her: I’m a little anxious for you, and that part’s on me. I’m here if you need me."
+        next: feel_a2
+
+  feel_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是把自己的课题接住了，没有把它变成她的任务。
+          en: That’s you catching your own task instead of turning it into her assignment.
+      - speaker: guide
+        text:
+          zh: 她甚至不会知道你做了这件事。课题分离做得最好的时候，常常是看不见的。
+          en: She won’t even know you did it. Separation of tasks, done well, is often invisible.
+    next: reveal_pause
+
+  feel_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话同时做了三件事：说了真话，认领了自己的情绪，把门留着。
+          en: That sentence does three things at once. It tells the truth, it owns your feeling, and it leaves the door open.
+      - speaker: guide
+        text:
+          zh: 而且注意，它没有一个字在要求她改变。
+          en: And notice that not one word of it asks her to change.
+    next: reveal_pause
+
+  reveal_pause:
+    type: reveal
+    source: ours
+    title:
+      zh: 开口之前，先问自己两句
+      en: Two questions before you speak
+    body:
+      zh: |-
+        这不是书里的内容，是我们顺着它的逻辑整理的一个小做法。想插手之前，先问自己：
+
+        - 这件事的后果，最后落在谁身上？
+        - 我现在想开口，是为了让对方好，还是为了让我自己不难受？
+
+        如果答案是“对方”和“我自己”，那么该处理的是你的难受，不是对方的选择。
+      en: |-
+        This isn’t from the book. It’s a small habit we built by following its logic. Before stepping in, ask yourself:
+
+        - Who ends up living with the consequences here?
+        - Am I about to speak so they’ll be okay, or so I’ll stop feeling bad?
+
+        If the answers are “them” and “me,” the thing to deal with is your discomfort, not their choice.
+    next: before_cp4
+
+  # ───────────────────────── Choice point 4: what is left ─────────────────────────
+  before_cp4:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 走到这儿，通常会冒出一个疑问。我替你把它说出来。
+          en: Around here a doubt usually shows up. Let me say it for you.
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: 照这么分下去，人和人之间还剩什么？
+      en: If we keep dividing things up like this, what’s left between people?
+    options:
+      - id: nothing
+        stance: detour
+        text:
+          zh: 剩下各管各的。听着清爽，可是也挺冷的。
+          en: Everyone minding their own business. Clean, I guess, but pretty cold.
+        next: nothing_1
+      - id: rule
+        stance: detour
+        text:
+          zh: 剩下一条规矩。谁再来管我，我就拿它顶回去。
+          en: A rule. Next time someone tries to run my life, I’ll throw it back at them.
+        next: rule_1
+      - id: here
+        stance: book
+        text:
+          zh: 剩下“我在这儿”。可以帮，但等对方来要，不硬塞。
+          en: “I’m here.” Help is on offer, but I wait to be asked. I don’t force it.
+        next: here_1
+
+  # nothing
+  nothing_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个担心，是这本书最常被质疑的地方之一。不是你读歪了。
+          en: That worry is one of the most common objections to this book. You’re not misreading it.
+      - speaker: guide
+        text:
+          zh: 想象你最难的一个晚上。有人坐到你旁边。
+          en: Picture one of your hardest nights. Someone sits down beside you.
+    next: nothing_q
+
+  nothing_q:
+    type: choice
+    prompt:
+      zh: 你更想听见哪一句？
+      en: Which would you rather hear?
+    options:
+      - id: told
+        stance: open
+        text:
+          zh: “听我的，你应该这么做。”
+          en: “Listen to me. Here’s what you should do.”
+        next: nothing_a1
+      - id: with
+        stance: open
+        text:
+          zh: “你来定。需要我的时候，我在。”
+          en: “It’s your call. And I’m here when you need me.”
+        next: nothing_a2
+
+  nothing_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 人很累的时候，确实会想让别人直接给答案。这很真实。
+          en: When you’re worn out, you do want someone to just hand you the answer. That’s real.
+      - speaker: guide
+        text:
+          zh: 只是留意那一刻你要的是什么：是有人替你扛，还是有人陪你扛？前一种解了今晚的累，却把以后的每个决定都押在他身上。后一种里，课题是分开的，人没有分开，所以它不冷。
+          en: Notice what you’re asking for in that moment, though. Someone to carry it for you, or someone to carry it with you? The first eases tonight and stakes every later decision on them. In the second, the task is separate and the people aren’t. That’s why it isn’t cold.
+    next: reveal_help
+
+  nothing_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这句话里没有一点干涉，可它一点也不冷。
+          en: There’s no interference anywhere in that sentence, and nothing cold about it either.
+      - speaker: guide
+        text:
+          zh: “你来定”，是把课题分开。“我在”，是人没有分开。书的本意是这两句一起说。只说前一句，才会冷。
+          en: “It’s your call” separates the task. “I’m here” keeps the people together. The book means for both to be said. It only turns cold when you say the first half alone.
+    next: reveal_help
+
+  # rule
+  rule_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 守得住自己的边界，是这一课的一半，而且是很多人最需要的那一半。
+          en: Holding your own line is half of this lesson, and for a lot of people it’s the half they need most.
+      - speaker: guide
+        text:
+          zh: 我们试一下这条规矩。妈妈又说“你会后悔的”，你回她：“这是我的课题，你别干涉。”
+          en: Let’s test the rule. Your mom says “You’ll regret this” again, and you answer, “This is my task. Stay out of it.”
+    next: rule_q
+
+  rule_q:
+    type: choice
+    prompt:
+      zh: 这句话在做什么？
+      en: What is that sentence doing?
+    options:
+      - id: protecting
+        stance: open
+        text:
+          zh: 在保护我自己的选择。
+          en: Protecting my own choice.
+        next: rule_a1
+      - id: demanding
+        stance: open
+        text:
+          zh: 在要求她改变她的做法。
+          en: Demanding that she change how she acts.
+        next: rule_a2
+
+  rule_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 保护选择，其实不需要她同意。你照自己的决定去做，就已经保护住了。
+          en: Protecting your choice doesn’t actually need her agreement. You protect it by going ahead and living it.
+      - speaker: guide
+        text:
+          zh: 那句话多做的一件事，是要求她闭嘴。可她说不说、怎么想，按你自己手里这条标准，是她的课题。
+          en: The extra thing that sentence does is tell her to be quiet. And whether she speaks, and what she thinks, is her task. By your own rule.
+    next: reveal_help
+
+  rule_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你看得很准。“你别干涉我”这句话本身，是在干涉她怎么当妈妈。
+          en: Sharp. “Stay out of it” is itself a way of stepping into how she does being a mother.
+      - speaker: guide
+        text:
+          zh: 课题分离是用来整理自己手里的东西的，不是用来指挥别人的。你不必说服她停下，只需要不被她的话带走。
+          en: Separation of tasks is for sorting what’s in your own hands. It isn’t for directing other people. You don’t have to make her stop. You only have to not be moved by it.
+    next: reveal_help
+
+  # here (closest to the book -> one layer deeper)
+  here_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的立场。干涉，是替对方做决定。援助，是让对方知道：需要的时候，你在。
+          en: That’s the book’s position. Interfering is deciding for someone. Helping is making sure they know you’re there when they want you.
+      - speaker: guide
+        text:
+          zh: 最后一个场景，也是最难的一个。
+          en: One last scene, and it’s the hardest.
+      - speaker: narrator
+        text:
+          zh: 周五，晚上十一点四十。林栀没做完，申请没交上。她合上电脑，眼睛红了：“你当时怎么不骂醒我。”
+          en: Friday, 11:40 p.m. Mina didn’t finish, and the application never went in. She closes her laptop, eyes red. “Why didn’t you just yell at me?”
+    next: here_q
+
+  here_q:
+    type: choice
+    prompt:
+      zh: 你怎么回？
+      en: What do you say?
+    options:
+      - id: sorry
+        stance: detour
+        text:
+          zh: “对不起。我当时应该更用力地提醒你的。”
+          en: “I’m sorry. I should have pushed you so much harder than I did.”
+        next: here_a1
+      - id: told_you
+        stance: detour
+        text:
+          zh: “我提醒过你的，是你自己说有数。”
+          en: “I did say something. You told me you had it under control.”
+        next: here_a2
+      - id: stay
+        stance: book
+        text:
+          zh: “没交上，我也难受。下次想让我盯着你，提前说。”
+          en: “I hate that it didn’t go in. Want me on your case next time? Just say.”
+        next: here_a3
+
+  here_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你想接住她的难过，这很温柔。
+          en: You want to catch her pain. That’s tender.
+      - speaker: guide
+        text:
+          zh: 只是这句道歉悄悄把课题接了过来：下一个截止日，催她又成了你的职责。她此刻需要的是有人陪着，不是有人替她认领后果。
+          en: But the apology quietly takes the task over. At the next deadline, chasing her is your job again. What she needs right now is company, not someone to claim her consequences for her.
+    next: reveal_help
+
+  here_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 论事实，你没说错。后果是她的。
+          en: On the facts, you’re right. The consequences are hers.
+      - speaker: guide
+        text:
+          zh: 但“这是你的课题”和“所以别来找我”是两句话。她伸手的这一刻，恰好是对方主动来求助的时候。责任可以不接，人可以接住。
+          en: But “this was your task” and “so don’t come to me” are two different sentences. This moment, with her reaching out, is exactly the moment someone asks for help. You can decline the responsibility and still catch the person.
+    next: reveal_help
+
+  here_a3:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你陪她待在后果里，没有把它抢走，也没有说教。
+          en: You stay in the consequences with her. You don’t take them from her, and you don’t lecture.
+      - speaker: guide
+        text:
+          zh: 而且你留了一扇门：盯不盯，由她来请。同样是提醒，她请你的，是援助；你硬塞的，是干涉。
+          en: And you leave a door open. Whether you get on her case is hers to ask for. The same reminder is help when she asked for it and interference when you forced it.
+    next: reveal_help
+
+  reveal_help:
+    type: reveal
+    source: book
+    title:
+      zh: 分开之后
+      en: After the separating
+    body:
+      zh: |-
+        作者强调，课题分离不是为了疏远别人。可以随时准备帮忙，但不强行介入；接不接受、改不改变，由对方决定。
+
+        书里把课题分离看作人际关系的入口，而不是终点。终点是另一个概念，我们之后会走到。
+      en: |-
+        The authors stress that separating tasks is not about pushing people away. You can stand ready to help without forcing your way in. Whether to accept it, and whether to change, is up to the other person.
+
+        The book treats separation of tasks as the doorway into good relationships, not the destination. The destination is another idea, and we’ll get there later.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。下面是我们整理的常见质疑和边界：
+
+        - 后果由谁承担，并不总分得清。小组作业里队友摆烂，分数你也有份，那一部分就是你的课题。
+        - 有些关系本来就带着责任，比如父母对年幼的孩子。分离课题不等于可以撒手不管。
+        - 它容易被拿来当冷漠的借口。“那是你的课题”可以是尊重，也可以是把人推开。
+        - 如果有人可能伤害自己或别人，不要用“那是他的课题”来处理。请马上找你信任的大人或专业的帮助。
+      en: |-
+        That was the book’s position. Here are the common objections and limits, as we’ve gathered them:
+
+        - Who lives with the consequences isn’t always clear. When a teammate coasts on a group project, the grade is yours too, and that share is your task.
+        - Some relationships come with responsibility built in, like a parent’s for a young child. Separating tasks is no license to walk away.
+        - It’s easy to use as cover for coldness. “That’s your task” can be respect. It can also be a way of pushing someone off.
+        - If someone might hurt themselves or others, “that’s their task” is the wrong tool. Get an adult you trust or professional help right away.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。林栀问你：“所以课题分离到底是什么？”用你自己的话回答她，两三句就够。
+      en: Your turn. Mina asks you, “So what is this separation of tasks thing?” Answer her in your own words. Two or three sentences will do.
+    checkpoints:
+      - id: test
+        label:
+          zh: 我讲了怎么分：看后果最终由谁承担
+          en: "I said how to tell: who lives with the consequences"
+        hint:
+          zh: 这是整课的支点：一件事是谁的课题，看它的后果最终落在谁身上。
+          en: "This is the hinge of the whole lesson: a task belongs to whoever ends up living with its consequences."
+        cues:
+          zh: [后果, 承担, 结果, 负责, 买单, 落在]
+          en: [consequence, live with, lives with, bear, outcome, result, responsib, pays]
+      - id: both_ways
+        label:
+          zh: 我讲了两个方向：不干涉别人，也不让别人干涉我
+          en: I said it runs both ways, toward others and toward me
+        hint:
+          zh: 它是双向的。不去管别人的课题；别人怎么看我的选择，也是他们的课题。
+          en: It runs both ways. Other people’s tasks aren’t mine to manage, and what they think of my choices is their task.
+        cues:
+          zh: [干涉, 插手, 替他, 替她, 替别人, 评价, 看法, 怎么看, 期待, 管我]
+          en: [interfer, interven, step in, meddl, control, decide for, opinion, approv, think of me, expect]
+      - id: not_cold
+        label:
+          zh: 我讲了它不是冷漠：可以帮，但由对方决定要不要
+          en: I said it isn’t coldness, and that help stays on offer
+        hint:
+          zh: 分开的是课题，不是人。可以随时准备帮忙，但不硬塞。
+          en: You separate the tasks, not the people. You can be ready to help without forcing it.
+        cues:
+          zh: [帮, 陪, 支持, 我在, 关心, 冷漠, 不管, 援助, 需要我]
+          en: [help, support, there for, here for, offer, care, cold, ignor, abandon]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。你现在手里有一个问题，可以带进任何一段关系：这件事，到底是谁的？
+          en: That’s this lesson. You’re now carrying a question you can bring into any relationship. Whose is this, really?
+      - speaker: guide
+        text:
+          zh: 它还留下一个尾巴。如果别人怎么看我是别人的课题，那么被人讨厌呢？下一课从这里开始。
+          en: It leaves one loose end. If what people think of me is their task, what about being disliked? The next lesson starts there.

@@ -1,0 +1,43 @@
+id: courage
+languages: [zh, en]
+
+title:
+  zh: 被讨厌的勇气
+  en: The Courage to Be Disliked
+authors:
+  zh: 岸见一郎、古贺史健
+  en: Ichiro Kishimi and Fumitake Koga
+guideName:
+  zh: 页页
+  en: Paige
+
+intro:
+  zh: 不是摘要，也不是测验。一次一个念头，用你自己的选择走进这本书。
+  en: Not a summary, not a quiz. One idea at a time, and you walk into the book through your own choices.
+
+# The whole path, in teaching order. A concept becomes playable once its file exists in concepts/.
+path:
+  - id: world-is-simple
+    stage: { zh: 换一副眼睛, en: A different pair of eyes }
+    title: { zh: 世界是多么简单, en: The world is simple }
+  - id: interpersonal
+    stage: { zh: 换一副眼睛, en: A different pair of eyes }
+    title: { zh: 一切烦恼都来自人际关系, en: All problems are interpersonal }
+  - id: task-separation
+    stage: { zh: 划界与自由, en: Lines and freedom }
+    title: { zh: 课题分离, en: Separation of tasks }
+  - id: courage-disliked
+    stage: { zh: 划界与自由, en: Lines and freedom }
+    title: { zh: 被讨厌的勇气, en: The courage to be disliked }
+  - id: authorship
+    stage: { zh: 划界与自由, en: Lines and freedom }
+    title: { zh: 承认“我”的主体性, en: You are the author }
+  - id: horizontal
+    stage: { zh: 与人连接, en: With other people }
+    title: { zh: 横向关系与纵向关系, en: Horizontal and vertical relationships }
+  - id: community
+    stage: { zh: 与人连接, en: With other people }
+    title: { zh: 共同体感觉, en: Community feeling }
+  - id: here-and-now
+    stage: { zh: 落地, en: Landing }
+    title: { zh: 此时此刻, en: Here and now }
