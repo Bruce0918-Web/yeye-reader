@@ -1,0 +1,1285 @@
+# 世界是多么简单 / The world is simple (with teleology: purpose, not cause)
+#
+# Shape of the lesson: four choice points, same pattern as the other lessons. The option closest
+# to the book goes one layer deeper; every other option gets a detour written only for it.
+#
+# This lesson carries the book's most disputed claim (that trauma does not exist). The objection
+# branches treat the reader's resistance as legitimate, and the debate card says plainly where
+# modern psychology disagrees.
+#
+# All scenes and people are ours. Nothing here quotes the book or reuses its dialogue.
+
+id: world-is-simple
+
+title:
+  zh: 世界是多么简单
+  en: The world is simple
+
+question:
+  zh: 我现在这样，是因为过去，还是为了什么？
+  en: Am I like this because of my past, or for the sake of something?
+
+# Core statements, for checking against the book.
+core:
+  - zh: 世界本身是简单的。让它显得复杂的，是我们各自看它的方式。
+    en: The world itself is simple. What makes it look complicated is the way each of us looks at it.
+  - zh: 阿德勒心理学不问“过去的原因”，而问“现在的目的”。书里把前者叫原因论，后者叫目的论。
+    en: Adlerian psychology asks about present purposes, not past causes. The book calls the first view aetiology and the second teleology.
+  - zh: 人不是被过去的经历决定的，而是被自己赋予那些经历的意义决定的。作者因此主张“心理创伤并不存在”。
+    en: We are not determined by our past experiences, but by the meaning we give them. On that basis the authors claim that trauma does not exist.
+  - zh: 不安、恐惧这类情绪是真实的，同时它们也可以在为某个目的服务。
+    en: Feelings such as anxiety and fear are real, and they can at the same time be serving a purpose.
+  - zh: 一个人看世界、看自己的惯常方式（书里叫“生活方式”）是自己选的，所以可以重新选。
+    en: A person’s habitual way of seeing the world and themselves (the book calls it “lifestyle”) is chosen, and so it can be chosen again.
+  - zh: 人之所以不改变，是因为对自己下了“不改变”的决心：现在的活法虽然不满意，但熟悉。改变需要的是勇气。
+    en: People don’t change because they have decided not to. The present way of living is unsatisfying but familiar. What change takes is courage.
+
+cast:
+  mo:
+    name: { zh: 陈默, en: Noah }
+
+start: open
+
+nodes:
+  # ───────────────────────── Choice point 1: why isn't he going ─────────────────────────
+  open:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这本书的第一句断言是：世界很简单。听着像一句漂亮话。我们先不信它，看一个周三晚上。
+          en: The book’s first claim is that the world is simple. It sounds like a pretty slogan. Let’s not believe it yet, and look at a Wednesday night.
+    next: scene_msg
+
+  scene_msg:
+    type: beat
+    lines:
+      - speaker: narrator
+        text:
+          zh: 周四的课上，每个人要站起来讲三分钟。周三晚上十一点，陈默给你发消息。
+          en: In Thursday’s class everyone has to stand up and speak for three minutes. Wednesday, 11 p.m., Noah texts you.
+      - speaker: mo
+        text:
+          zh: “我明天请假。你知道的，小学五年级那次被全班笑了之后，我就没法当着人讲话了。”
+          en: “I’m skipping tomorrow. You know how it is. Ever since the whole class laughed at me in fifth grade, I just can’t talk in front of people.”
+    next: cp1
+
+  cp1:
+    type: choice
+    prompt:
+      zh: 你觉得，陈默明天为什么不去？
+      en: Why do you think Noah isn’t going tomorrow?
+    options:
+      - id: past
+        stance: detour
+        text:
+          zh: 因为五年级那次。那种事会跟着人一辈子。
+          en: Because of fifth grade. That kind of thing follows a person for life.
+        next: past_1
+      - id: nature
+        stance: detour
+        text:
+          zh: 因为他天生内向。性格这东西是改不了的。
+          en: Because he’s naturally shy. Personality isn’t something you can change.
+        next: nature_1
+      - id: excuse
+        stance: detour
+        text:
+          zh: 说白了是借口。他就是不想面对，不想努力。
+          en: Honestly, it’s an excuse. He just doesn’t want to face it or make the effort.
+        next: excuse_1
+      - id: purpose
+        stance: book
+        text:
+          zh: 因为不去，他就不用冒再被笑一次的险。
+          en: Because if he stays home, he doesn’t risk being laughed at again.
+        next: purpose_1
+
+  # past
+  past_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 那次被笑是真的，疼也是真的。这一课从头到尾不会否认这一点。
+          en: The laughing really happened and it really hurt. Nothing in this lesson is going to deny that.
+      - speaker: narrator
+        text:
+          zh: 同一个班里还有周然。她小学时也当众出过一次大丑，被笑了一个学期。她现在是辩论队的。
+          en: In the same class there’s Priya. In grade school she also bombed in front of everyone and was laughed at for a whole term. She’s on the debate team now.
+    next: past_q
+
+  past_q:
+    type: choice
+    prompt:
+      zh: 同一类经历，两个方向。差别出在哪？
+      en: The same kind of experience, two directions. Where does the difference come from?
+    options:
+      - id: less_hurt
+        stance: open
+        text:
+          zh: 周然当时可能没伤得那么重。
+          en: Maybe it didn’t hurt Priya as badly.
+        next: past_a1
+      - id: reading
+        stance: open
+        text:
+          zh: 出在两个人后来怎么看那件事。
+          en: From how each of them came to see what happened.
+        next: past_a2
+
+  past_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 也许。别人的疼有多重，我们没法替他们称。
+          en: Maybe. We can’t weigh other people’s pain for them.
+      - speaker: guide
+        text:
+          zh: 我们能看见的只有一点：经历本身没有规定方向。如果它规定了，被笑过的人都该走到同一个地方。让两个人分开的，是之后各自拿这件事来说明什么。
+          en: The one thing we can see is that the experience itself didn’t set a direction. If it did, everyone who’d been laughed at would end up in the same place. What split these two is what each of them later took the event to mean.
+    next: reveal_purpose
+
+  past_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。一个把它读成“我不适合站在人前”。另一个把它读成“我再也不要因为这个闭嘴”。
+          en: Yes. One read it as “I don’t belong in front of people.” The other read it as “I’m never letting that shut me up again.”
+      - speaker: guide
+        text:
+          zh: 事情是一样的。意思是各自给的。
+          en: The event was the same. The meaning was supplied by each of them.
+    next: reveal_purpose
+
+  # nature
+  nature_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 人和人的气质确实不同，有人天生就安静一些。这一点没有错。
+          en: People do differ in temperament, and some are quieter by nature. Nothing wrong with that observation.
+      - speaker: narrator
+        text:
+          zh: 同一个陈默，周五晚上在游戏语音里指挥五个人打团。全队嗓门最大的就是他。
+          en: The same Noah, Friday night, is on game voice chat calling the shots for a squad of five. He’s the loudest one on the team.
+    next: nature_q
+
+  nature_q:
+    type: choice
+    prompt:
+      zh: 这个人，是“没法当着人讲话”吗？
+      en: Is this a person who “can’t talk in front of people”?
+    options:
+      - id: friends_only
+        stance: open
+        text:
+          zh: 那不一样，游戏里都是熟人。
+          en: That’s different. In the game they’re all people he knows.
+        next: nature_a1
+      - id: some_places
+        stance: open
+        text:
+          zh: 看来不是不能讲，是在某些地方不讲。
+          en: So it isn’t that he can’t. It’s that in some places he doesn’t.
+        next: nature_a2
+
+  nature_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，是熟人。也就是说，他开不开口取决于场合，不取决于嗓子，也不取决于天性。
+          en: Right, people he knows. Which means whether he speaks depends on the setting. Not on his voice, and not on his nature.
+      - speaker: guide
+        text:
+          zh: 一个会随场合开关的东西，更像一种做法，不太像出厂设置。
+          en: Something that switches on and off with the setting looks more like a practice than a factory default.
+    next: reveal_purpose
+
+  nature_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。“我内向”听起来像在描述一个零件，其实是在描述一个做法：在这类场合，我选择不出声。
+          en: Yes. “I’m shy” sounds like the description of a part he was built with. It’s really the description of a practice. In this kind of room, I choose to stay quiet.
+      - speaker: guide
+        text:
+          zh: 书里不把这叫性格，而叫“生活方式”。这个词后面还会出现。
+          en: The book doesn’t call this personality. It calls it “lifestyle.” That word comes back later.
+    next: reveal_purpose
+
+  # excuse
+  excuse_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你看出来他在躲，这一点其实离书很近。
+          en: You can see he’s avoiding something, and that part is actually close to the book.
+      - speaker: guide
+        text:
+          zh: 我只想在“借口”这个词上停一下。说借口，意思是他在骗人。
+          en: I only want to pause on the word “excuse.” To call it an excuse is to say he’s fooling someone.
+    next: excuse_q
+
+  excuse_q:
+    type: choice
+    prompt:
+      zh: 他在骗谁？
+      en: Who is he fooling?
+    options:
+      - id: us
+        stance: open
+        text:
+          zh: 骗我们。装可怜，好让大家别逼他。
+          en: Us. Playing the victim so nobody pushes him.
+        next: excuse_a1
+      - id: himself_too
+        stance: open
+        text:
+          zh: 他自己大概也是真信的。
+          en: He probably believes it himself.
+        next: excuse_a2
+
+  excuse_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果是装的，没人看着的时候他应该松一口气。可他周三晚上是真的睡不着，真的心慌。
+          en: If it were an act, he’d relax when nobody was watching. But on Wednesday night he really can’t sleep, and his heart really is racing.
+      - speaker: guide
+        text:
+          zh: 书的说法不是“他在装”。它说的是：心慌是真的，同时它也在为一个目的服务，让“不去”变得理所当然。这里面没有骗子。
+          en: The book isn’t saying he’s faking. It says the panic is real, and at the same time it serves a purpose. It makes not going feel like the only reasonable thing. Nobody here is a liar.
+    next: reveal_purpose
+
+  excuse_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 是的。所以“借口”这个词不太准，它带着指责。
+          en: Yes. Which is why “excuse” is slightly off. It carries a charge of blame.
+      - speaker: guide
+        text:
+          zh: 书不是在指责他。它只是换了一个问题：不问“他是怎么变成这样的”，而问“这样对他有什么用”。指责让人缩回去。这个问题让人有路可走。
+          en: The book isn’t blaming him. It just swaps the question. Not “how did he get this way” but “what does being this way do for him.” Blame makes a person shrink back. That question gives them somewhere to go.
+    next: reveal_purpose
+
+  # purpose (closest to the book -> one layer deeper)
+  purpose_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你问的是“这样对他有什么用”，不是“他怎么变成这样的”。这正是书的方向。
+          en: You asked what staying home does for him, not how he came to be this way. That’s exactly the book’s direction.
+      - speaker: guide
+        text:
+          zh: 不过陈默不会轻易同意你。
+          en: Noah isn’t going to agree with you easily, though.
+      - speaker: mo
+        text:
+          zh: “可我是真的心慌，手都在抖。这总不是我选的吧？”
+          en: “But I’m actually panicking. My hands are shaking. I didn’t choose that, did I?”
+    next: purpose_q
+
+  purpose_q:
+    type: choice
+    prompt:
+      zh: 你怎么看他手上的那个抖？
+      en: What do you make of the shaking in his hands?
+    options:
+      - id: not_chosen
+        stance: detour
+        text:
+          zh: 真的在抖，就说明不是他选的。那“目的”一说就站不住了。
+          en: If the shaking is real, he didn’t choose it. So the talk of “purpose” falls apart.
+        next: purpose_a1
+      - id: real_and_useful
+        stance: book
+        text:
+          zh: 抖是真的，也不是故意的。但它刚好帮他得到了“不用上台”。
+          en: The shaking is real and it isn’t deliberate. It also happens to get him out of standing up there.
+        next: purpose_a2
+
+  purpose_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 抖是真的，这一点你完全对。没有人能命令自己的手发抖。
+          en: The shaking is real, and you’re completely right about that. Nobody can order their own hands to tremble.
+      - speaker: guide
+        text:
+          zh: 只是“真的”和“有用处”并不冲突。书里说的“目的”，不是指他心里盘算好了再去发抖，而是指这份不安在替他做一件事：把“不去”变成唯一合理的选择。不是故意的，也可以是有方向的。
+          en: But “real” and “useful” don’t cancel each other. When the book says “purpose,” it doesn’t mean he planned it out and then started shaking. It means the anxiety is doing a job for him. It turns “not going” into the only sensible option. Something can be undeliberate and still have a direction.
+    next: reveal_purpose
+
+  purpose_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 两件事同时为真，你没有为了保住一件而丢掉另一件。这比多数读者走得远。
+          en: Both things are true at once, and you didn’t drop one to keep the other. That’s further than most readers get.
+      - speaker: guide
+        text:
+          zh: 这也是这本书最容易被读错的地方：它没有说感受是假的。它说的是，真的感受也可以有用处。
+          en: This is also where the book is most often misread. It never says the feeling is fake. It says a real feeling can also have a use.
+    next: reveal_purpose
+
+  # ───────────────────────── Purpose, not cause (book) ─────────────────────────
+  reveal_purpose:
+    type: reveal
+    source: book
+    title:
+      zh: 不问原因，问目的
+      en: Ask about the purpose, not the cause
+    body:
+      zh: |-
+        多数人这样解释自己：因为过去发生了某件事，所以我现在是这样。书里把这种看法叫原因论。
+
+        阿德勒心理学把问题倒过来问，书里叫目的论：
+
+        > 我现在这样，是为了什么？
+
+        作者的主张是：人不是被过去的经历决定的，而是被自己赋予那些经历的意义决定的。
+      en: |-
+        Most of us explain ourselves like this: something happened in the past, so now I’m this way. The book calls that view aetiology.
+
+        Adlerian psychology asks the question the other way round. The book calls it teleology:
+
+        > What am I being this way for?
+
+        The authors’ claim is that we are not determined by our past experiences, but by the meaning we give those experiences.
+    next: after_purpose
+
+  after_purpose:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个想法有很锋利的一面，书也没有把刀刃收起来。我们不绕开它。
+          en: This idea has a sharp edge, and the book doesn’t sheathe it. We won’t walk around it.
+      - speaker: guide
+        text:
+          zh: 作者顺着这个逻辑，说了全书最重的一句话：心理创伤并不存在。
+          en: Following that logic, the authors make the heaviest statement in the whole book. Trauma does not exist.
+    next: cp2
+
+  # ───────────────────────── Choice point 2: "trauma does not exist" ─────────────────────────
+  cp2:
+    type: choice
+    prompt:
+      zh: 听到这句话，你的第一反应是？
+      en: Hearing that, what’s your first reaction?
+    options:
+      - id: cold
+        stance: detour
+        text:
+          zh: 这太冷血了。照这么说，受过伤的人是自找的？
+          en: That’s cold. So people who’ve been hurt brought it on themselves?
+        next: cold_1
+      - id: get_over
+        stance: detour
+        text:
+          zh: 有道理。过去的事其实不重要，想开点就好了。
+          en: Makes sense. The past doesn’t really matter. You just have to let it go.
+        next: over_1
+      - id: not_that_easy
+        stance: detour
+        text:
+          zh: 道理我懂。可有些事不是换个想法就过得去的。
+          en: I get the logic. But some things don’t go away because you think about them differently.
+        next: noteasy_1
+      - id: not_decided
+        stance: book
+        text:
+          zh: 它不是说事情没发生，是说事情本身不替我决定以后。
+          en: It isn’t saying nothing happened. Just that it doesn’t get to decide what’s next.
+        next: decided_1
+
+  # cold
+  cold_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这个反应很重要。很多读者和不少心理学家，也正是在这里反对这本书的。
+          en: That reaction matters. A lot of readers, and a fair number of psychologists, part ways with the book right here.
+      - speaker: guide
+        text:
+          zh: 我请你先分辨两句话。它们常常被当成同一句。
+          en: Let me ask you to tell two sentences apart first. They’re often taken for the same one.
+    next: cold_q
+
+  cold_q:
+    type: choice
+    prompt:
+      zh: 哪一句才是书的意思？
+      en: Which one is the book actually saying?
+    options:
+      - id: not_serious
+        stance: open
+        text:
+          zh: “那件事其实没那么严重。”
+          en: “What happened wasn’t really that serious.”
+        next: cold_a1
+      - id: serious_but
+        stance: open
+        text:
+          zh: “那件事很严重，但它不能替你决定以后怎么活。”
+          en: “What happened was serious, but it can’t decide how you live from here.”
+        next: cold_a2
+
+  cold_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果书是这个意思，你就该生气。但它不是。
+          en: If that were what the book meant, you’d be right to be angry. It isn’t.
+      - speaker: guide
+        text:
+          zh: 它没有说伤害不存在、不严重，更没有说那是受伤的人的错。它否认的只有一件事：过去像程序一样，把现在写死了。
+          en: It doesn’t say the harm didn’t happen or didn’t matter, and it certainly doesn’t say it was the hurt person’s fault. It denies exactly one thing. That the past writes the present like a program that can’t be edited.
+    next: reveal_meaning
+
+  cold_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，是这一句。
+          en: Yes, that one.
+      - speaker: guide
+        text:
+          zh: 发生了什么，不由你负责。接下来往哪走，书认为还在你手里。它想说的不是一句指责，而是想把一样东西还给你。至于它还得好不好，结尾我们会说。
+          en: What happened is not on you. Where you go from here, the book holds, is still in your hands. It means that as something handed back to you, not as an accusation. Whether it hands it back well is a question we’ll come to at the end.
+    next: reveal_meaning
+
+  # get_over
+  over_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你抓住了这句话让人松一口气的那一半：过去没有把我锁死。
+          en: You’ve caught the half of this that brings relief. The past hasn’t locked me in.
+      - speaker: narrator
+        text:
+          zh: 你的朋友刚经历了一件很糟的事。你对她说：“想开点就好了。”
+          en: A friend of yours has just been through something awful. You tell her, “You just have to let it go.”
+    next: over_q
+
+  over_q:
+    type: choice
+    prompt:
+      zh: 她听到的是什么？
+      en: What does she hear?
+    options:
+      - id: encouragement
+        stance: open
+        text:
+          zh: 听到的是：有人在给我打气，站在我这边。
+          en: That someone’s cheering her on and is on her side.
+        next: over_a1
+      - id: your_fault
+        stance: open
+        text:
+          zh: 听到的是：你还难过，是因为你不够努力。
+          en: “If you’re still hurting, you’re not trying hard enough.”
+        next: over_a2
+
+  over_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你的本意是鼓励，这我相信。
+          en: You mean it as encouragement. I believe that.
+      - speaker: guide
+        text:
+          zh: 只是站在她那边听，“想开点”很容易变成“你怎么还没想开”。而且“过去不重要”也不是书的意思。过去发生了，它是材料。书说的只是：材料不等于图纸。这个想法是给自己照的镜子，不是拿去敲别人的锤子。
+          en: From where she stands, though, “let it go” slides easily into “why haven’t you let it go yet.” And “the past doesn’t matter” isn’t the book’s point either. The past happened. It’s the material. The book says only that material is not a blueprint. This idea is a mirror for yourself. It isn’t a hammer for other people.
+    next: reveal_meaning
+
+  over_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 是的。你一下就站到了她那边。
+          en: Yes. You went straight to her side of it.
+      - speaker: guide
+        text:
+          zh: 所以这个想法有个使用说明：它是给自己照的镜子，不是拿去敲别人的锤子。而且“过去不重要”也不是书的意思。过去发生了，它是材料。书说的只是：材料不等于图纸。
+          en: So this idea comes with instructions. It’s a mirror for yourself, not a hammer for other people. And “the past doesn’t matter” isn’t the book’s point either. The past happened. It’s the material. The book says only that material is not a blueprint.
+    next: reveal_meaning
+
+  # not_that_easy
+  noteasy_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你说得对。书也没有说换个想法很容易。
+          en: You’re right. And the book never says thinking differently is easy.
+      - speaker: guide
+        text:
+          zh: “过不去”这三个字里，其实装着两件事。
+          en: Inside “it doesn’t go away” there are really two separate things.
+    next: noteasy_q
+
+  noteasy_q:
+    type: choice
+    prompt:
+      zh: 书在谈的是哪一件？
+      en: Which one is the book talking about?
+    options:
+      - id: feelings_fade
+        stance: open
+        text:
+          zh: 那件事留下的感受，会不会消失。
+          en: Whether the feelings it left behind will fade.
+        next: noteasy_a1
+      - id: where_next
+        stance: open
+        text:
+          zh: 我带着这些感受，接下来往哪走。
+          en: Where I go next, carrying those feelings.
+        next: noteasy_a2
+
+  noteasy_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 感受不一定会消失，书没有承诺这个。有些感受需要时间，有些需要专业的帮助。
+          en: The feelings may not fade, and the book doesn’t promise they will. Some need time. Some need professional help.
+      - speaker: guide
+        text:
+          zh: 书谈的是另一件：带着这些感受，接下来往哪走。它的主张是，哪怕感受还在，这一步也还没有被过去定死。
+          en: The book is about the other thing. Where you go next while carrying them. Its claim is that even with the feelings still there, that next step hasn’t been fixed by the past.
+    next: reveal_meaning
+
+  noteasy_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对，是这一件。
+          en: Yes, that one.
+      - speaker: guide
+        text:
+          zh: 书没有承诺感受会消失，那可能需要时间，也可能需要专业的帮助。它只主张一点：哪怕感受还在，接下来的这一步，也没有被过去定死。
+          en: The book makes no promise that the feelings disappear. That may take time, and it may take professional help. It claims one thing only. Even with the feelings still there, the next step hasn’t been fixed by the past.
+    next: reveal_meaning
+
+  # not_decided (closest to the book -> one layer deeper)
+  decided_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你读到了那句话真正在否认的东西：不是事情，而是“事情替我做决定”。
+          en: You read what that sentence is really denying. Not the event. The idea that the event decides for me.
+      - speaker: guide
+        text:
+          zh: 那我往下追一步。
+          en: So let me press one step further.
+    next: decided_q
+
+  decided_q:
+    type: choice
+    prompt:
+      zh: 既然意义是自己给的，是不是想换就能换？
+      en: If the meaning is something I give, can I swap it whenever I like?
+    options:
+      - id: anytime
+        stance: detour
+        text:
+          zh: 是。既然是我给的，我就可以随时换一个好的。
+          en: Yes. If I gave it, I can trade it for a better one at any time.
+        next: decided_a1
+      - id: costly
+        stance: book
+        text:
+          zh: 能换，但不轻松。旧的意义用了很多年，它有它的用处。
+          en: I can, but not lightly. The old meaning has been in use for years, and it earns its keep.
+        next: decided_a2
+
+  decided_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 逻辑上你是对的，书也确实说：从此刻就可以换。
+          en: Logically you’re right, and the book does say it can be changed starting now.
+      - speaker: guide
+        text:
+          zh: 只是想想陈默。“我没法当着人讲话”这个意思，他用了十年。它一直在替他挡掉上台的风险。换掉它，等于把这层保护也拆了。所以书说改变需要的不是决定，是勇气。能换，和换得动，中间隔着这个。
+          en: Think about Noah, though. He’s used the meaning “I can’t talk in front of people” for ten years. All that time it has kept the risk of standing up away from him. Swapping it out means taking the shield down too. That’s why the book says change takes courage, not just a decision. Between “can be changed” and “I can bring myself to change it” sits exactly that.
+    next: reveal_meaning
+
+  decided_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。旧的意义不是白白留着的，它一直在干活。
+          en: Yes. The old meaning doesn’t stick around for nothing. It’s been working the whole time.
+      - speaker: guide
+        text:
+          zh: “我没法当着人讲话”替陈默挡了十年的风险。看清它在保护什么，才谈得上换不换。这一点我们马上回来说。
+          en: “I can’t talk in front of people” has shielded Noah from risk for ten years. You have to see what it protects before swapping it is even on the table. We’re coming straight back to this.
+    next: reveal_meaning
+
+  reveal_meaning:
+    type: reveal
+    source: book
+    title:
+      zh: 经历不替你做决定
+      en: Experience doesn’t decide for you
+    body:
+      zh: |-
+        “心理创伤并不存在”，是作者的原主张，也是全书争议最大的地方之一。
+
+        按我们的理解，这句话否认的不是伤害和痛苦，而是一条因果：过去发生了那件事，所以现在只能这样。
+
+        > 过去发生了什么，不能替你决定现在怎么活。
+
+        作者认为，起决定作用的是我们给那段经历的意义，而意义是自己给的。这一课的结尾，我们会把反对的声音也摆出来。
+      en: |-
+        “Trauma does not exist” is the authors’ own claim, and one of the most disputed things in the book.
+
+        As we read it, what the sentence denies is not harm or pain. It denies a chain of cause: that happened back then, so this is the only way I can be now.
+
+        > What happened in the past cannot decide how you live now.
+
+        The authors hold that what decides is the meaning we give the experience, and that the meaning is ours to give. At the end of this lesson we’ll lay out the voices against this too.
+    next: after_meaning
+
+  after_meaning:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 如果真是这样，就冒出一个很自然的问题：既然能重新选，为什么大多数人不选？
+          en: If that’s true, an obvious question follows. If we can choose again, why do most of us not?
+      - speaker: mo
+        text:
+          zh: “我也想改啊。我比谁都讨厌现在的自己。”
+          en: “I want to change. Nobody hates the way I am more than I do.”
+    next: cp3
+
+  # ───────────────────────── Choice point 3: why people don't change ─────────────────────────
+  cp3:
+    type: choice
+    prompt:
+      zh: 他讨厌现在的自己，却一直没改。为什么？
+      en: He hates the way he is and still hasn’t changed. Why?
+    options:
+      - id: willpower
+        stance: detour
+        text:
+          zh: 意志力不够。真想改的人，早就改了。
+          en: Not enough willpower. People who really want to change already have.
+        next: will_1
+      - id: wait
+        stance: detour
+        text:
+          zh: 环境不对。等换个班、换个地方，自然就好了。
+          en: Wrong environment. Once he’s in a new class or a new place, it’ll sort itself out.
+        next: wait_1
+      - id: method
+        stance: detour
+        text:
+          zh: 他不知道方法。有人教他几招技巧就行了。
+          en: He doesn’t know how. Someone just needs to teach him a few techniques.
+        next: method_1
+      - id: familiar
+        stance: book
+        text:
+          zh: 现在这样虽然难受，但熟悉。改了会怎样，他不知道。
+          en: The way he is hurts, but he knows it. He has no idea what happens if he changes.
+        next: familiar_1
+
+  # willpower
+  will_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这是最常见的解释，听着也很合理：想改而没改，就是不够想。
+          en: It’s the commonest explanation, and it sounds reasonable. Wanting to change and not changing must mean not wanting it enough.
+      - speaker: narrator
+        text:
+          zh: 为了躲周四的三分钟，陈默编了请假理由，找人问能不能代讲，熬到凌晨两点反复想各种退路。
+          en: To get out of Thursday’s three minutes, Noah has invented a reason to be absent, asked whether someone could present for him, and lain awake until 2 a.m. going over every escape route.
+    next: will_q
+
+  will_q:
+    type: choice
+    prompt:
+      zh: 这算意志力弱吗？
+      en: Does that look like weak willpower?
+    options:
+      - id: persistent
+        stance: open
+        text:
+          zh: 这么说，他倒是挺有毅力的。
+          en: Put that way, he’s actually pretty persistent.
+        next: will_a1
+      - id: just_avoiding
+        stance: open
+        text:
+          zh: 那是逃避，不能算意志力。
+          en: That’s avoidance. It doesn’t count as willpower.
+        next: will_a2
+
+  will_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。他的意志力一点也不弱，只是全都花在了“保持原样”上。
+          en: Right. His willpower isn’t weak at all. It’s just all being spent on staying the same.
+      - speaker: guide
+        text:
+          zh: 书的说法是：他不是没有能力改，而是对自己下了“不改”的决心。这听着很刺耳，但也意味着力气是有的，只是方向可以换。
+          en: The book’s way of putting it is that he isn’t unable to change. He has decided not to. It’s a harsh thing to hear. It also means the strength is there, and only the direction needs to change.
+    next: reveal_decide
+
+  will_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 是逃避。不过逃避也是要花力气的，而且他花得很认真。
+          en: It is avoidance. But avoidance takes effort too, and he’s putting in serious effort.
+      - speaker: guide
+        text:
+          zh: 所以他缺的不是力气。书的说法是：他对自己下了“不改”的决心，然后把力气都用在了执行这个决心上。问题不在油门，在方向盘。
+          en: So strength isn’t what he lacks. The book says he has decided not to change, and then spent all his strength carrying out that decision. The problem isn’t the accelerator. It’s the steering.
+    next: reveal_decide
+
+  # wait
+  wait_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 环境确实有影响。换一个更友善的班，开口是会容易一些。
+          en: Environment does matter. In a kinder class, speaking up would be easier.
+      - speaker: narrator
+        text:
+          zh: 高三的时候，陈默也说过一句话：“等上了大学，就好了。”
+          en: In his last year of high school, Noah used to say something too. “It’ll be fine once I’m at university.”
+    next: wait_q
+
+  wait_q:
+    type: choice
+    prompt:
+      zh: 他现在上大学了。发生了什么？
+      en: He’s at university now. What happened?
+    options:
+      - id: brought_it
+        stance: open
+        text:
+          zh: 他把原来的做法也一起带来了。
+          en: He brought his old way of doing things with him.
+        next: wait_a1
+      - id: still_wrong
+        stance: open
+        text:
+          zh: 可能是大学的环境也还是不对。
+          en: Maybe the university environment is wrong for him too.
+        next: wait_a2
+
+  wait_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。教室换了，同学换了，带进教室的那个看法没有换。
+          en: Right. The room changed, the classmates changed, and the outlook he carried into the room didn’t.
+      - speaker: guide
+        text:
+          zh: “等环境好了再改”有一个隐藏的好处：在那之前，什么都不用做。书里说，改变不需要等任何条件，要等的只有自己。
+          en: “I’ll change once things are better” has a hidden benefit. Until then, nothing has to be done. The book says change doesn’t need to wait on any condition. The only thing it waits on is you.
+    next: reveal_decide
+
+  wait_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 有可能。那下一个环境呢？工作以后，换城市以后？
+          en: Could be. And the next environment? After he gets a job, after he moves cities?
+      - speaker: guide
+        text:
+          zh: 如果每个环境都“还是不对”，就值得看看一直没换的那样东西：他带进每个环境的看法。“等环境好了再改”有一个隐藏的好处，就是在那之前什么都不用做。
+          en: If every environment turns out to be “still wrong,” it’s worth looking at the one thing that never changes. The outlook he carries into each of them. “I’ll change once things are better” has a hidden benefit. Until then, nothing has to be done.
+    next: reveal_decide
+
+  # method
+  method_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 方法是有用的。会深呼吸、会列提纲，上台确实稳得多。
+          en: Technique does help. Knowing how to breathe and how to outline makes standing up a lot steadier.
+      - speaker: narrator
+        text:
+          zh: 你把一本《三分钟讲清楚一件事》放在陈默桌上。他翻完了，还做了笔记。
+          en: You leave a book called “Say It in Three Minutes” on Noah’s desk. He reads it cover to cover and even takes notes.
+    next: method_q
+
+  method_q:
+    type: choice
+    prompt:
+      zh: 周四，他会去吗？
+      en: Thursday comes. Does he go?
+    options:
+      - id: still_no
+        stance: open
+        text:
+          zh: 多半还是不去。
+          en: Most likely he still doesn’t.
+        next: method_a1
+      - id: now_yes
+        stance: open
+        text:
+          zh: 会吧。有了方法，心里就有底了。
+          en: I think so. With a method, he’d have something to stand on.
+        next: method_a2
+
+  method_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。他缺的从来不是“怎么讲”。
+          en: Right. “How to do it” was never what he was missing.
+      - speaker: guide
+        text:
+          zh: 方法回答的是“怎么做”。挡住他的是另一个问题：做了以后，万一又被笑怎么办。这个问题任何技巧都回答不了，书里把回答它需要的东西叫作勇气。
+          en: Technique answers “how.” What stops him is a different question. If I do it and they laugh again, then what? No technique answers that. The book’s name for what it takes to answer it is courage.
+    next: reveal_decide
+
+  method_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 方法确实能给人底气，对很多人这就够了。
+          en: Technique really does give people something to stand on, and for many that’s enough.
+      - speaker: guide
+        text:
+          zh: 只是陈默这些年看过的视频、收藏的文章已经不少了。方法回答的是“怎么做”，挡住他的是“万一又被笑怎么办”。只要这个问题还在，再好的方法也只会被收进收藏夹。书里把回答它需要的东西叫作勇气。
+          en: Thing is, Noah has watched plenty of videos and saved plenty of articles over the years. Technique answers “how.” What stops him is “what if they laugh again.” While that question stands, the best method in the world just gets bookmarked. The book’s name for what it takes to answer it is courage.
+    next: reveal_decide
+
+  # familiar (closest to the book -> one layer deeper)
+  familiar_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这正是书的回答：熟悉的不满，比陌生的未知更让人安心。
+          en: That’s the book’s answer exactly. A familiar dissatisfaction feels safer than an unfamiliar unknown.
+      - speaker: guide
+        text:
+          zh: 那再往里看一层。
+          en: So let’s look one layer further in.
+    next: familiar_q
+
+  familiar_q:
+    type: choice
+    prompt:
+      zh: “一直不上台”，除了难受，还给了陈默什么？
+      en: Besides the misery, what does “never standing up” give Noah?
+    options:
+      - id: nothing
+        stance: detour
+        text:
+          zh: 什么也没给，纯粹是惯性。
+          en: Nothing. It’s pure inertia.
+        next: familiar_a1
+      - id: the_if
+        stance: book
+        text:
+          zh: 给了他一个“如果”：如果我去讲，其实是能讲好的。
+          en: An “if.” If I ever did get up there, I’d actually be good.
+        next: familiar_a2
+
+  familiar_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 惯性肯定有。十年的做法，不会没有惯性。
+          en: There’s inertia, certainly. Ten years of a habit doesn’t come without it.
+      - speaker: guide
+        text:
+          zh: 不过目的论会多问一句：这个惯性在保住什么？只要不上台，陈默就永远不用面对“我认真讲了，还是讲砸了”这个结果。他可以一直留着一个“如果我去讲，其实能讲好”。这个“如果”，就是不上台给他的东西。
+          en: Teleology asks one more question, though. What is the inertia keeping safe? As long as he never stands up, Noah never has to meet the result “I really tried, and I still bombed.” He gets to keep an “if I ever did it, I’d actually be good.” That “if” is what never standing up gives him.
+    next: reveal_decide
+
+  familiar_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。只要不去，那个“如果”就永远是完好的。
+          en: Yes. As long as he doesn’t go, the “if” stays perfectly intact.
+      - speaker: guide
+        text:
+          zh: 去了，它就要被换成一个真实的结果，可能好，也可能不好。所以他不是懒，也不是弱。他是在保护一个可能性。书说改变需要勇气，指的就是这个：愿意拿“如果”去换一个真的结果。
+          en: If he goes, it has to be traded for a real result, which may be good and may not be. So he isn’t lazy and he isn’t weak. He’s protecting a possibility. When the book says change takes courage, this is what it means. Being willing to trade the “if” for something real.
+    next: reveal_decide
+
+  reveal_decide:
+    type: reveal
+    source: book
+    title:
+      zh: 不改变，也是一个决定
+      en: Not changing is also a decision
+    body:
+      zh: |-
+        书里把一个人看世界、看自己的惯常方式叫“生活方式”。作者认为它不是天生的，而是自己选的。既然是选的，就可以重新选。
+
+        那人为什么不改？作者的回答是：因为对自己下了“不改变”的决心。现在的活法虽然不满意，但熟悉，知道会发生什么。换一种，前面是未知。
+
+        > 缺的不是能力，是勇气。
+      en: |-
+        The book calls a person’s habitual way of seeing the world and themselves their “lifestyle.” The authors hold that it isn’t inborn. It’s chosen. And what was chosen can be chosen again.
+
+        So why don’t people change? The authors’ answer: because they have decided not to. The current way of living is unsatisfying, but it’s familiar, and you know what will happen. Choose another and what lies ahead is unknown.
+
+        > What’s missing isn’t ability. It’s courage.
+    next: reveal_rewrite
+
+  reveal_rewrite:
+    type: reveal
+    source: ours
+    title:
+      zh: 把“因为”改写成“我选择”
+      en: Rewrite “because” as “I choose”
+    body:
+      zh: |-
+        这不是书里的内容，是我们顺着它的逻辑整理的一个小练习。只对自己用，不对别人用。
+
+        - 先写一句你常说的：“因为……，所以我没办法……。”
+        - 把它改写成：“我选择不……，因为这样我可以……。”
+
+        比如“因为我内向，所以没法发言”，改成“我选择不发言，因为这样我不用冒被笑的险”。
+
+        改写不是为了责备自己。看清之后继续这么选也可以，只是从此它是你选的。
+      en: |-
+        This isn’t from the book. It’s a small exercise we built by following its logic. Use it on yourself only, never on someone else.
+
+        - Write down a sentence you often say: “Because of …, I can’t ….”
+        - Rewrite it as: “I choose not to …, because that way I get to ….”
+
+        So “Because I’m shy, I can’t speak up” becomes “I choose not to speak up, because that way I don’t risk being laughed at.”
+
+        The rewrite isn’t for blaming yourself. Once you’ve seen it clearly you may go on choosing the same thing. Only now it’s something you chose.
+    next: before_cp4
+
+  # ───────────────────────── Choice point 4: "the world is simple" ─────────────────────────
+  before_cp4:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 现在回到开头那句被我们放在一边的话：世界很简单。
+          en: Now back to the sentence we set aside at the start. The world is simple.
+    next: cp4
+
+  cp4:
+    type: choice
+    prompt:
+      zh: 走到这里，你怎么读这句话？
+      en: Having come this far, how do you read it?
+    options:
+      - id: easy
+        stance: detour
+        text:
+          zh: 意思是其实没什么难的，是我自己想太多了。
+          en: It means nothing’s really that hard. I’ve just been overthinking.
+        next: easy_1
+      - id: naive
+        stance: detour
+        text:
+          zh: 这是没吃过苦的人说的话。真实的世界就是复杂的。
+          en: Only someone who’s never had it rough could say that. The real world is complicated.
+        next: naive_1
+      - id: lens
+        stance: book
+        text:
+          zh: 世界还是那个世界。复杂的是我给它加上的那层解释。
+          en: The world is whatever it is. The complicated part is the layer of interpretation I put on it.
+        next: lens_1
+
+  # easy
+  easy_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 你听出了这句话里松绑的意思，这是对的。
+          en: You heard the loosening in that sentence, and you’re right to.
+      - speaker: guide
+        text:
+          zh: 我只想把两个词分开：简单，和容易。陈默周四要做的事是：站起来，讲三分钟，坐下。
+          en: I only want to pull two words apart. Simple, and easy. What Noah has to do on Thursday is stand up, talk for three minutes, sit down.
+    next: easy_q
+
+  easy_q:
+    type: choice
+    prompt:
+      zh: 这件事，对他来说是？
+      en: For him, that is?
+    options:
+      - id: simple_not_easy
+        stance: open
+        text:
+          zh: 很简单，但一点也不容易。
+          en: Very simple, and not easy at all.
+        next: easy_a1
+      - id: complicated
+        stance: open
+        text:
+          zh: 对他来说就是很复杂。
+          en: For him it really is complicated.
+        next: easy_a2
+
+  easy_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。书说的是“简单”，从来没说“容易”。
+          en: Right. The book says “simple.” It never says “easy.”
+      - speaker: guide
+        text:
+          zh: 所以也不必把它读成“是我想太多”，那又成了一句对自己的指责。它的意思只是：要做的事本身并不复杂。难的是做它需要的那点勇气。
+          en: So there’s no need to read it as “I’ve been overthinking,” which is just one more accusation aimed at yourself. It means only that the thing to be done isn’t complicated in itself. The hard part is the bit of courage it takes.
+    next: reveal_debate
+
+  easy_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 他感受到的确实是复杂。十年的回忆、可能的眼神、各种退路，全压在那三分钟上。
+          en: What he feels is complication, no question. Ten years of memory, the looks he imagines, every escape route, all piled onto those three minutes.
+      - speaker: guide
+        text:
+          zh: 可是把这些一层层拿开，底下那件事还是：站起来，讲三分钟，坐下。复杂的不是这件事，是压在它上面的东西。书说的“简单”指的是底下那一层。它没有说容易。
+          en: But lift those off one layer at a time and the thing underneath is still stand up, talk for three minutes, sit down. The task isn’t what’s complicated. It’s what has been stacked on top of it. The book’s “simple” refers to that bottom layer. It doesn’t say easy.
+    next: reveal_debate
+
+  # naive
+  naive_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 现实里的不公、贫穷、疾病都是真的。这本书在这一点上常被批评，你的怀疑站得住。
+          en: Injustice, poverty and illness are real. The book is often criticized on exactly this point, and your suspicion holds up.
+      - speaker: narrator
+        text:
+          zh: 周四的教室。三十个人看向讲台。陈默看到的是：三十个等着笑我的人。
+          en: Thursday’s classroom. Thirty people looking at the front. What Noah sees is thirty people waiting to laugh at him.
+    next: naive_q
+
+  naive_q:
+    type: choice
+    prompt:
+      zh: 坐在第三排的你，看到的是什么？
+      en: You’re in the third row. What do you see?
+    options:
+      - id: own_worries
+        stance: open
+        text:
+          zh: 三十个在想“待会儿我自己怎么讲”的人。
+          en: Thirty people thinking about how their own turn is going to go.
+        next: naive_a1
+      - id: they_will_laugh
+        stance: open
+        text:
+          zh: 差不多吧。真讲砸了，是会有人笑的。
+          en: Much the same. If he bombs, some people will laugh.
+        next: naive_a2
+
+  naive_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 同一间教室，同样三十个人。你和他看到的是两个世界。
+          en: Same room, same thirty people. You and he are looking at two different worlds.
+      - speaker: guide
+        text:
+          zh: 书说的“简单”不是指世界里没有难处。它指的是：我们和世界之间隔着一副自己戴上的眼镜，很多复杂是镜片上的。真正的难处仍然是真的，这一点结尾我们会说。
+          en: When the book says “simple,” it doesn’t mean the world has no hardship in it. It means there’s a pair of glasses between us and the world that we put on ourselves, and a lot of the complication is on the lenses. Real hardship is still real. We’ll say so at the end.
+    next: reveal_debate
+
+  naive_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 会有人笑，这是实话。世界不会因为换个看法就变得友善。
+          en: Some will laugh. That’s true. The world doesn’t turn kind because you look at it differently.
+      - speaker: guide
+        text:
+          zh: 只是“有两三个人可能会笑”和“三十个人等着笑我”之间，差了二十七个人。这二十七个人不在教室里，在镜片上。书说的“简单”就是指这一部分。它没有说剩下的那两三个不存在。
+          en: But between “two or three might laugh” and “thirty people are waiting to laugh at me” there’s a gap of twenty-seven people. Those twenty-seven aren’t in the room. They’re on the lenses. That part is what the book’s “simple” is about. It doesn’t claim the other two or three aren’t there.
+    next: reveal_debate
+
+  # lens (closest to the book -> one layer deeper)
+  lens_1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 这就是书的意思。世界没有变，变的是看它的那副眼镜，而眼镜是自己戴上的。
+          en: That’s what the book means. The world hasn’t changed. What changes is the glasses you look through, and you’re the one who put them on.
+      - speaker: narrator
+        text:
+          zh: 周四。陈默去了。他讲得磕磕绊绊，中间卡了整整五秒，后排有两个人笑了。
+          en: Thursday. Noah goes. He stumbles through it, freezes for a full five seconds in the middle, and two people at the back laugh.
+    next: lens_q
+
+  lens_q:
+    type: choice
+    prompt:
+      zh: 这算什么？
+      en: What does that count as?
+    options:
+      - id: failure
+        stance: detour
+        text:
+          zh: 算失败。他证明了自己果然不行。
+          en: A failure. He’s proved he really can’t do it.
+        next: lens_a1
+      - id: new_choice
+        stance: book
+        text:
+          zh: 算他换了一次选法。讲得怎样是另一回事。
+          en: A different choice, made once. How well it went is a separate matter.
+        next: lens_a2
+
+  lens_a1:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 讲得不好，这是事实。被笑了也是事实。
+          en: It went badly. That’s a fact. He was laughed at. Also a fact.
+      - speaker: guide
+        text:
+          zh: 可“果然不行”是哪来的？那是旧眼镜又戴上了：一件事发生了，马上被读成十年前的那个意思。同样这三分钟，也可以读成“我第一次没有躲”。事情没变，读法是他的。
+          en: But where does “really can’t do it” come from? That’s the old glasses going back on. Something happens and is instantly read with the meaning from ten years ago. The same three minutes can also be read as “the first time I didn’t hide.” The event is the same. The reading is his.
+    next: reveal_debate
+
+  lens_a2:
+    type: beat
+    lines:
+      - speaker: guide
+        text:
+          zh: 对。他拿“如果”换了一个真的结果。结果不漂亮，但它是真的。
+          en: Yes. He traded the “if” for a real result. It isn’t a pretty one. It is real.
+      - speaker: guide
+        text:
+          zh: 书说改变可以从此刻开始，指的就是这个：变的不是成绩，是选法。成绩要很多次才会变，选法一次就变了。
+          en: This is what the book means when it says change can start right now. What changes isn’t the result. It’s the choosing. Results take many tries to change. The choosing changed in one.
+    next: reveal_debate
+
+  reveal_debate:
+    type: reveal
+    source: debate
+    title:
+      zh: 它不是唯一的答案
+      en: It isn’t the only answer
+    body:
+      zh: |-
+        以上是这本书的立场。这一课的争议比别的课都大，下面是我们整理的质疑和边界：
+
+        - “创伤不存在”是全书最受批评的说法。现代心理学和医学认为，心理创伤是真实存在的，会实际影响身体和大脑，常常需要专业治疗，不是换个想法就能解决的。
+        - 目的论很容易滑成责怪受害者：“你是自己选择这样的。”这不是书的本意，但这种误用很常见。它适合拿来看自己，不适合拿来评判别人。
+        - 不是所有处境都由得人选。贫穷、疾病、歧视、家庭，会实实在在地限制一个人能选什么。
+        - 阿德勒的理论提出于大约一百年前，其中不少说法没有被后来的研究证实。把它当成一个看问题的角度，比当成科学结论更稳妥。
+        - 如果过去的事正在严重影响你的生活，请找你信任的大人，或者专业的心理帮助。这不是软弱，也不和这一课矛盾。
+      en: |-
+        That was the book’s position. This lesson is more disputed than any other, and here are the objections and limits as we’ve gathered them:
+
+        - “Trauma does not exist” is the most criticized claim in the book. Modern psychology and medicine hold that psychological trauma is real, that it affects the body and brain, and that it often needs professional treatment. It is not solved by thinking differently.
+        - Teleology slides easily into blaming the victim: “you chose to be this way.” That isn’t what the book intends, but the misuse is common. It suits looking at yourself. It doesn’t suit judging others.
+        - Not every situation is open to choice. Poverty, illness, discrimination and family can put hard limits on what a person is able to choose.
+        - Adler’s theory dates from about a century ago, and a good deal of it hasn’t been confirmed by later research. It’s safer taken as a way of looking at things than as a scientific finding.
+        - If something in your past is seriously affecting your life now, please reach out to an adult you trust or to professional mental-health support. That isn’t weakness, and it doesn’t contradict this lesson.
+    next: retell
+
+  # ───────────────────────── Say it back ─────────────────────────
+  retell:
+    type: retell
+    prompt:
+      zh: 换你讲了。陈默问你：“你说我不是因为五年级那次才这样的。那我是因为什么？”用你自己的话回答他，两三句就够。别让他觉得自己在挨骂。
+      en: Your turn. Noah asks you, “You say fifth grade isn’t why I’m like this. So why am I?” Answer him in your own words. Two or three sentences will do. Try not to make him feel told off.
+    checkpoints:
+      - id: purpose
+        label:
+          zh: 我讲了换一个问法：不问原因，问“这样是为了什么”
+          en: "I said to change the question: not the cause, but what it’s for"
+        hint:
+          zh: 这是这一课的支点：不问“我是怎么变成这样的”，而问“我现在这样，对我有什么用”。
+          en: "This is the hinge of the lesson: not “how did I get this way” but “what does being this way do for me.”"
+        cues:
+          zh: [目的, 为了, 有什么用, 用处, 好处, 保护, 不用, 躲]
+          en: [purpose, goal, what for, serve, protect, in order to, so that, avoid, gets him out, gets you out]
+      - id: meaning
+        label:
+          zh: 我讲了过去不替现在做决定：意义是自己给的
+          en: I said the past doesn’t decide the present, and the meaning is ours to give
+        hint:
+          zh: 那件事是真的，疼也是真的。但决定现在的不是事情本身，而是自己给它的意义。
+          en: What happened was real, and so was the hurt. But what shapes the present isn’t the event itself. It’s the meaning you give it.
+        cues:
+          zh: [过去, 经历, 意义, 决定, 怎么看, 解释, 那件事, 读成]
+          en: [past, experience, meaning, decide, determin, interpret, what happened, define]
+      - id: choose
+        label:
+          zh: 我讲了这是选的，所以能重选，需要的是勇气
+          en: I said it was chosen, so it can be chosen again, and that takes courage
+        hint:
+          zh: 现在的活法是自己选的，所以可以重新选。难的不是能力，而是放下熟悉的东西所需要的勇气。
+          en: The current way of living was chosen, so it can be chosen again. The hard part isn’t ability. It’s the courage to let go of what’s familiar.
+        cues:
+          zh: [选, 勇气, 改变, 重新, 决心, 熟悉, 敢]
+          en: [choose, chose, choice, courage, change, decision, familiar, brave, dare]
+    next: end
+
+  end:
+    type: end
+    lines:
+      - speaker: guide
+        text:
+          zh: 这一课到这儿。它没有说你的过去不重要。它只是把一个问题交到你手里：我现在这样，是为了什么？
+          en: That’s this lesson. It never said your past doesn’t matter. It only put one question in your hands. What am I being this way for?
+      - speaker: guide
+        text:
+          zh: 如果你认真问下去，会发现一件有点意外的事：我们想躲开的东西，几乎都和别人有关。下一课从这里开始。
+          en: Ask it seriously and you’ll run into something a little unexpected. Nearly everything we’re trying to avoid has to do with other people. The next lesson starts there.

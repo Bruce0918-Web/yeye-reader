@@ -10,7 +10,8 @@
     "lint:content": "tsx tools/lint-content.ts",
     "test": "vitest run",
     "walk": "tsx tools/walk-all.ts",
-    "build:single": "npm run lint:content && tsc --noEmit && vite build --mode single"
+    "build:single": "npm run lint:content && tsc --noEmit && vite build --mode single",
+    "scan:hant": "tsx tools/scan-traditional.ts"
   },
   "dependencies": {
     "preact": "^10.24.0"
